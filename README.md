@@ -3,7 +3,9 @@
 Bài thuyết trình học thuật dạng **web slide** (HTML thuần, 1 file, chạy offline).
 
 ## Cách xem
-Mở file [`presentation.html`](presentation.html) bằng trình duyệt (Chrome/Edge). Không cần cài đặt gì thêm.
+Mở file [`index.html`](index.html) bằng trình duyệt (Chrome/Edge). Không cần cài đặt gì thêm.
+
+**Xem online:** https://tu-tuong-hcm202.vercel.app
 
 ## Điều hướng
 | Phím | Hành động |
