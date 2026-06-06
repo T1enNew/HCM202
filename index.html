@@ -49,7 +49,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
 .deck{position:fixed;inset:0;z-index:1}
 .slide{
   position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  padding:56px 80px 84px;opacity:0;pointer-events:none;
+  padding:42px 54px 74px;opacity:0;pointer-events:none;
   transform:translateY(28px) scale(.97);
   transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease)
 }
@@ -72,7 +72,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 
-.inner{width:100%;max-width:1180px;display:flex;flex-direction:column;gap:24px}
+.inner{width:100%;max-width:1180px;display:flex;flex-direction:column;gap:24px;zoom:1.1}
 
 /* deco */
 .dc{position:absolute;pointer-events:none}
@@ -171,7 +171,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
 .rstep:nth-child(4) .rnum{animation-delay:1.5s}
 
 /* title slide */
-.ts{text-align:center;max-width:880px;margin:auto}
+.ts{text-align:center;max-width:880px;margin:auto;zoom:1.1}
 .ts .big{
   font-family:var(--serif);
   font-size:clamp(32px,5vw,62px);font-weight:700;line-height:1.16;letter-spacing:.3px;
@@ -186,7 +186,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
   animation:heroIn .8s var(--ease) .55s both}
 
 /* outro */
-.outro{text-align:center;max-width:880px;margin:auto}
+.outro{text-align:center;max-width:880px;margin:auto;zoom:1.1}
 .outro .big{
   font-family:var(--serif);
   font-size:clamp(36px,5.6vw,70px);font-weight:700;line-height:1.18;letter-spacing:.3px;
