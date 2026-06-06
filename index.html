@@ -207,18 +207,15 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
 .mbox{background:rgba(255,255,255,.55);border:2px dashed #b9c6e0;border-radius:18px;
   min-height:175px;display:flex;align-items:center;justify-content:center;
   font-size:14px;color:var(--sub);letter-spacing:1.5px;text-align:center;padding:16px}
-/* danh sách thành viên */
-.mlist{display:flex;flex-direction:column;gap:9px}
-.member{display:flex;align-items:center;gap:13px;
-  background:var(--card);border:1px solid var(--cardb);border-radius:12px;
-  padding:10px 15px;box-shadow:var(--shadow);backdrop-filter:blur(8px);
-  transition:transform .25s,box-shadow .25s}
-.member:hover{transform:translateX(6px);box-shadow:0 13px 30px rgba(30,58,138,.15)}
-.mav{width:36px;height:36px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;
-  background:linear-gradient(135deg,#2563eb,#7c3aed);box-shadow:0 4px 12px rgba(37,99,235,.3)}
-.mname{font-size:14px;font-weight:600;color:var(--ink);line-height:1.25}
-.mid{font-size:11.5px;color:var(--sub);letter-spacing:.6px;font-weight:500}
+/* danh sách thành viên — gọn, không avatar */
+.mlist{display:flex;flex-direction:column;gap:8px}
+.member{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--card);border:1px solid var(--cardb);border-left:3px solid #2563eb;
+  border-radius:10px;padding:10px 16px;box-shadow:var(--shadow);backdrop-filter:blur(8px);
+  transition:transform .22s,box-shadow .22s}
+.member:hover{transform:translateX(5px);box-shadow:0 12px 26px rgba(30,58,138,.14)}
+.mname{font-size:14px;font-weight:600;color:var(--ink);line-height:1.2}
+.mid{font-size:12px;color:var(--sub);letter-spacing:.5px;font-weight:600;flex-shrink:0}
 
 /* progress */
 .pbar{position:fixed;bottom:0;left:0;right:0;z-index:200;height:3px;background:rgba(30,58,138,.1)}
@@ -308,12 +305,12 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
       <div style="display:flex;flex-direction:column;gap:13px">
         <div class="colhead">👥 Thành viên nhóm — 6 thành viên</div>
         <div class="mlist">
-          <div class="member"><span class="mav">HT</span><div><div class="mname">Huỳnh Phước Thiện</div><div class="mid">SE172095</div></div></div>
-          <div class="member"><span class="mav">NV</span><div><div class="mname">Ngô Trí Vinh</div><div class="mid">SE180738</div></div></div>
-          <div class="member"><span class="mav">PM</span><div><div class="mname">Phạm Công Minh</div><div class="mid">SE180071</div></div></div>
-          <div class="member"><span class="mav">NN</span><div><div class="mname">Nguyễn Thanh Minh Nhật</div><div class="mid">SE171539</div></div></div>
-          <div class="member"><span class="mav">TT</span><div><div class="mname">Thái Tấn Tiến</div><div class="mid">SE172575</div></div></div>
-          <div class="member"><span class="mav">ND</span><div><div class="mname">Ngô Phạm Nhựt Duy</div><div class="mid">SE161783</div></div></div>
+          <div class="member"><span class="mname">Huỳnh Phước Thiện</span><span class="mid">SE172095</span></div>
+          <div class="member"><span class="mname">Ngô Trí Vinh</span><span class="mid">SE180738</span></div>
+          <div class="member"><span class="mname">Phạm Công Minh</span><span class="mid">SE180071</span></div>
+          <div class="member"><span class="mname">Nguyễn Thanh Minh Nhật</span><span class="mid">SE171539</span></div>
+          <div class="member"><span class="mname">Thái Tấn Tiến</span><span class="mid">SE172575</span></div>
+          <div class="member"><span class="mname">Ngô Phạm Nhựt Duy</span><span class="mid">SE161783</span></div>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:13px">
