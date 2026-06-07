@@ -313,6 +313,11 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
 .s8grid .cardimg img{object-position:center top}
 @media(max-width:768px){.s8grid .cardimg{height:175px}}
 
+/* slide 9 — 2 thẻ có ảnh lớn 2 bên (Trí / Đức) */
+.s9grid{align-items:stretch}
+.s9grid .cardimg{height:230px}
+@media(max-width:768px){.s9grid .cardimg{height:175px}}
+
 /* progress */
 .pbar{position:fixed;bottom:0;left:0;right:0;z-index:200;height:3px;background:rgba(30,58,138,.1)}
 .pfill{height:100%;width:0;background:linear-gradient(90deg,#2563eb,#f59e0b);
@@ -655,9 +660,9 @@ body.shownav .hint{animation:pulse 3s ease infinite}
     <div class="lbl ai d1">Phần 4 · Vận dụng thực tiễn</div>
     <div class="h1 ai d2">VẬN DỤNG THỰC TIỄN CHO SINH VIÊN</div>
     <div class="divline ai d3"></div>
-    <div class="g2 ai d4">
+    <div class="g2 s9grid ai d4">
       <div class="card" style="display:flex;flex-direction:column;gap:13px">
-        <div class="cardimg"></div>
+        <div class="cardimg"><img src="tri.png" alt="Hành trình học tập: sinh viên cùng nhau học, rèn tư duy, tự học suốt đời"></div>
         <div class="colhead">📚 Hành trình Học tập (Trí)</div>
         <div class="cbody"><ul>
           <li>"Học đi đôi với hành" — đưa lý luận vào thực tế.</li>
@@ -666,7 +671,7 @@ body.shownav .hint{animation:pulse 3s ease infinite}
         </ul></div>
       </div>
       <div class="card" style="display:flex;flex-direction:column;gap:13px">
-        <div class="cardimg"></div>
+        <div class="cardimg"><img src="duc.png" alt="Phát triển bản thân: cân bằng Đức và Tài, sống trung thực, trách nhiệm, giữ bản sắc"></div>
         <div class="colhead">🌟 Phát triển bản thân (Đức)</div>
         <div class="cbody"><ul>
           <li>Phấn đấu "vừa hồng vừa chuyên" — song hành Đức &amp; Tài.</li>
