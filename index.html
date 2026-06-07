@@ -318,13 +318,20 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
 /* badge + hint */
 .badge{position:fixed;top:20px;right:22px;z-index:200;font-size:11px;color:var(--sub);font-weight:800;letter-spacing:2px}
 .hint{position:fixed;bottom:64px;left:50%;transform:translateX(-50%);z-index:200;
-  font-size:11px;color:rgba(30,58,138,.32);letter-spacing:1px;animation:pulse 3s ease infinite}
+  font-size:11px;color:rgba(30,58,138,.32);letter-spacing:1px}
 
 @media(max-width:768px){
   .slide{padding:36px 20px 74px}
   .g3,.g2{grid-template-columns:1fr}
   .dots{display:none}
 }
+
+/* ẩn nav + hint — chỉ hiện khi rê chuột xuống sát đáy */
+.nav,.hint{opacity:0;pointer-events:none;
+  transform:translateX(-50%) translateY(14px);
+  transition:opacity .35s var(--ease),transform .35s var(--ease)}
+body.shownav .nav,body.shownav .hint{opacity:1;transform:translateX(-50%);pointer-events:auto}
+body.shownav .hint{animation:pulse 3s ease infinite}
 </style>
 </head>
 <body>
@@ -784,6 +791,21 @@ document.addEventListener('touchend',e=>{
     leaf.firstChild.style.animationDelay=(-Math.random()*sway)+'s';
     bg.appendChild(leaf);
   }
+})();
+
+/* ===== Hiện nav/hint khi rê chuột xuống đáy màn hình ===== */
+(function bottomReveal(){
+  const ZONE=120; let hideT;
+  window.addEventListener('mousemove',e=>{
+    if(e.clientY > window.innerHeight - ZONE){
+      clearTimeout(hideT);
+      document.body.classList.add('shownav');
+    }else if(document.body.classList.contains('shownav')){
+      clearTimeout(hideT);
+      hideT=setTimeout(()=>document.body.classList.remove('shownav'),600);
+    }
+  });
+  window.addEventListener('mouseleave',()=>document.body.classList.remove('shownav'));
 })();
 
 ui();
