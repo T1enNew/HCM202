@@ -217,6 +217,32 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
 .mname{font-size:14px;font-weight:600;color:var(--ink);line-height:1.2}
 .mid{font-size:12px;color:var(--sub);letter-spacing:.5px;font-weight:600;flex-shrink:0}
 
+/* ===== KHUNG ẢNH — chèn ảnh minh hoạ =====
+   Cách dùng: thay <div class="cardimg"></div>
+   bằng       <div class="cardimg"><img src="link-hoặc-tên-file.jpg" alt=""></div> */
+.cardimg{margin:-22px -22px 15px;height:108px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13));
+  display:flex;align-items:center;justify-content:center}
+.cardimg.sm{height:80px}
+.cardimg::before{content:'🖼️  Chèn ảnh';position:absolute;font-size:11px;letter-spacing:1px;
+  color:var(--sub);font-weight:700;opacity:.85}
+.cardimg img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+
+.imgframe{position:relative;border-radius:14px;overflow:hidden;min-height:150px;
+  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13));
+  border:1px solid var(--cardb);box-shadow:var(--shadow);
+  display:flex;align-items:center;justify-content:center}
+.imgframe::before{content:'🖼️  Chèn ảnh minh hoạ';position:absolute;font-size:12px;
+  letter-spacing:1px;color:var(--sub);font-weight:700;opacity:.85}
+.imgframe img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+
+.sthumb{width:86px;height:86px;border-radius:12px;flex-shrink:0;overflow:hidden;position:relative;
+  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13));
+  box-shadow:0 6px 16px rgba(30,58,138,.16)}
+.sthumb::before{content:'🖼️';position:absolute;inset:0;display:flex;align-items:center;
+  justify-content:center;font-size:22px;opacity:.5}
+.sthumb img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+
 /* progress */
 .pbar{position:fixed;bottom:0;left:0;right:0;z-index:200;height:3px;background:rgba(30,58,138,.1)}
 .pfill{height:100%;width:0;background:linear-gradient(90deg,#2563eb,#f59e0b);
@@ -334,6 +360,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
     <div class="divline ai d3"></div>
     <div class="g3 ai d4">
       <div class="card">
+        <div class="cardimg"></div>
         <div class="femoji" style="font-size:32px;margin-bottom:11px">🏮</div>
         <div class="ctitle">Tinh hoa Phương Đông</div>
         <div class="cbody"><ul>
@@ -342,6 +369,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
         </ul></div>
       </div>
       <div class="card">
+        <div class="cardimg"></div>
         <div class="femoji" style="font-size:32px;margin-bottom:11px">🗽</div>
         <div class="ctitle">Tư tưởng Phương Tây</div>
         <div class="cbody"><ul>
@@ -350,6 +378,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
         </ul></div>
       </div>
       <div class="card">
+        <div class="cardimg"></div>
         <div class="femoji" style="font-size:32px;margin-bottom:11px">⚙️</div>
         <div class="ctitle">Chủ nghĩa Mác – Lênin</div>
         <div class="cbody"><ul>
@@ -370,6 +399,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
     <div class="divline ai d3"></div>
     <div class="g3 ai d4">
       <div class="card">
+        <div class="cardimg"></div>
         <div class="cnum">01</div>
         <div class="ctitle">Không trừu tượng,<br>không thần thánh hóa</div>
         <div class="cbody"><ul>
@@ -378,6 +408,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
         </ul></div>
       </div>
       <div class="card">
+        <div class="cardimg"></div>
         <div class="cnum">02</div>
         <div class="ctitle">Thực thể tự nhiên<br>&amp; xã hội</div>
         <div class="cbody"><ul>
@@ -386,6 +417,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
         </ul></div>
       </div>
       <div class="card">
+        <div class="cardimg"></div>
         <div class="cnum">03</div>
         <div class="ctitle">Đối tượng yêu thương<br>cụ thể</div>
         <div class="cbody"><ul>
@@ -418,7 +450,8 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
           <div class="cbody">Còn một "đốm lửa thiện" thì giáo dục đúng đắn sẽ giúp con người tự cải tạo, hướng thiện.</div>
         </div>
       </div>
-      <div style="display:flex;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:14px;justify-content:center">
+        <div class="imgframe" style="min-height:140px"></div>
         <div class="quote" style="width:100%">
           <div class="femoji" style="font-size:38px;text-align:center;margin-bottom:14px">💬</div>
           <div style="font-size:16px;line-height:1.85;text-align:center">
@@ -440,6 +473,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
     <div class="divline ai d3"></div>
     <div class="g2 ai d4">
       <div class="card" style="display:flex;flex-direction:column;gap:12px">
+        <div class="cardimg"></div>
         <div class="colhead">🎯 Con người là Mục tiêu</div>
         <div class="cbody"><ul>
           <li>Giải phóng dân tộc suy cho cùng là để giải phóng con người.</li>
@@ -450,6 +484,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
         </div>
       </div>
       <div class="card" style="display:flex;flex-direction:column;gap:12px">
+        <div class="cardimg"></div>
         <div class="colhead">⚡ Con người là Động lực</div>
         <div class="cbody"><ul>
           <li>Cách mạng là sự nghiệp của quần chúng nhân dân.</li>
@@ -473,6 +508,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
     </div>
     <div class="g3 ai d5">
       <div class="card">
+        <div class="cardimg sm"></div>
         <div class="cnum">01</div>
         <div class="ctitle">Giáo dục Đạo đức (Đức)</div>
         <div class="cbody"><ul>
@@ -482,6 +518,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
         </ul></div>
       </div>
       <div class="card">
+        <div class="cardimg sm"></div>
         <div class="cnum">02</div>
         <div class="ctitle">Trí tuệ &amp; Văn hóa (Trí – Mỹ)</div>
         <div class="cbody"><ul>
@@ -491,6 +528,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
         </ul></div>
       </div>
       <div class="card">
+        <div class="cardimg sm"></div>
         <div class="cnum">03</div>
         <div class="ctitle">Thể chất &amp; Tinh thần (Thể)</div>
         <div class="cbody"><ul>
@@ -511,6 +549,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
     <div class="divline ai d3"></div>
     <div class="g2 ai d4">
       <div class="card" style="display:flex;flex-direction:column;gap:13px">
+        <div class="cardimg"></div>
         <div class="colhead">💡 Phương pháp "Nêu gương"</div>
         <div class="cbody"><ul>
           <li>Lấy gương người tốt, việc tốt để giáo dục lẫn nhau.</li>
@@ -521,6 +560,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
         </div>
       </div>
       <div class="card" style="display:flex;flex-direction:column;gap:13px">
+        <div class="cardimg"></div>
         <div class="colhead">🌱 Tự rèn luyện &amp; Tu dưỡng</div>
         <div class="cbody"><ul>
           <li>Giáo dục phải đi đôi với tự giáo dục, tự ý thức.</li>
@@ -540,6 +580,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
     <div class="divline ai d3"></div>
     <div class="g2 ai d4">
       <div class="card" style="display:flex;flex-direction:column;gap:13px">
+        <div class="cardimg"></div>
         <div class="colhead">📚 Hành trình Học tập (Trí)</div>
         <div class="cbody"><ul>
           <li>"Học đi đôi với hành" — đưa lý luận vào thực tế.</li>
@@ -548,6 +589,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
         </ul></div>
       </div>
       <div class="card" style="display:flex;flex-direction:column;gap:13px">
+        <div class="cardimg"></div>
         <div class="colhead">🌟 Phát triển bản thân (Đức)</div>
         <div class="cbody"><ul>
           <li>Phấn đấu "vừa hồng vừa chuyên" — song hành Đức &amp; Tài.</li>
@@ -567,6 +609,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
     <div class="divline ai d3"></div>
     <div class="stacks ai d4">
       <div class="scard">
+        <div class="sthumb"></div>
         <div class="sicon" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">🏛️</div>
         <div class="sbody">
           <h4>Nền tảng chiến lược bền vững</h4>
@@ -574,6 +617,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
         </div>
       </div>
       <div class="scard">
+        <div class="sthumb"></div>
         <div class="sicon" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">🔮</div>
         <div class="sbody">
           <h4>Tầm nhìn vượt thời đại</h4>
@@ -581,6 +625,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
         </div>
       </div>
       <div class="scard">
+        <div class="sthumb"></div>
         <div class="sicon" style="background:linear-gradient(135deg,#d97706,#f59e0b)">🌟</div>
         <div class="sbody">
           <h4>Sứ mệnh của thế hệ trẻ</h4>
