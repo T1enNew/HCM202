@@ -291,6 +291,22 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
 .s5card .cbody{font-size:12.5px;line-height:1.6}
 @media(max-width:768px){.s5grid{grid-template-columns:1fr}.s5img{min-height:200px}}
 
+/* slide 7 — ảnh "trồng người" + 3 thẻ Đức/Trí-Mỹ/Thể */
+.s7grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:22px;align-items:stretch}
+.s7img{position:relative;margin:0;border-radius:18px;overflow:hidden;min-height:300px;
+  box-shadow:var(--shadow);border:1px solid var(--cardb);
+  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13))}
+.s7img::before{content:'🖼️  Lưu ảnh tên  chien-luoc-trong-nguoi.png';position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;
+  font-size:12px;letter-spacing:.5px;color:var(--sub);font-weight:700}
+.s7img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.s7side{display:flex;flex-direction:column;gap:11px;justify-content:space-between}
+.s7card{padding:13px 16px;display:flex;gap:14px;align-items:flex-start}
+.s7card .cnum{margin-bottom:0;width:38px;height:38px;border-radius:11px;font-size:15px;flex-shrink:0}
+.s7card .ctitle{font-size:14px;margin-bottom:5px}
+.s7card .cbody{font-size:12.5px;line-height:1.55}
+@media(max-width:768px){.s7grid{grid-template-columns:1fr}.s7img{min-height:200px}}
+
 /* progress */
 .pbar{position:fixed;bottom:0;left:0;right:0;z-index:200;height:3px;background:rgba(30,58,138,.1)}
 .pfill{height:100%;width:0;background:linear-gradient(90deg,#2563eb,#f59e0b);
@@ -548,44 +564,49 @@ body.shownav .hint{animation:pulse 3s ease infinite}
 
 <!-- ⑦ STRATEGY CONTENT -->
 <div class="slide" data-i="6">
-  <div class="inner">
+  <div class="inner" style="max-width:1160px;gap:15px">
     <div class="lbl ai d1">Phần 3 · Nội dung chiến lược</div>
     <div class="h1 ai d2">NỘI DUNG CHIẾN LƯỢC "TRỒNG NGƯỜI"</div>
     <div class="divline ai d3"></div>
-    <div class="quote ai d4" style="text-align:center;font-size:15px;padding:13px 24px;border-radius:14px;border-left:none;border-top:4px solid var(--amber)">
+    <div class="quote ai d4" style="text-align:center;font-size:15px;padding:11px 24px;border-radius:14px;border-left:none;border-top:4px solid var(--amber)">
       "Vì lợi ích mười năm thì phải trồng cây, vì lợi ích trăm năm thì phải trồng người."
       <span style="color:var(--sub);font-style:normal;font-family:var(--font)"> — Hồ Chí Minh</span>
     </div>
-    <div class="g3 ai d5">
-      <div class="card">
-        <div class="cardimg sm"></div>
-        <div class="cnum">01</div>
-        <div class="ctitle">Giáo dục Đạo đức (Đức)</div>
-        <div class="cbody"><ul>
-          <li>Bồi dưỡng lý tưởng cách mạng, lòng yêu nước, thương dân.</li>
-          <li>Rèn trung thực, liêm khiết, "chí công vô tư".</li>
-          <li>Là gốc rễ của con người mới.</li>
-        </ul></div>
-      </div>
-      <div class="card">
-        <div class="cardimg sm"></div>
-        <div class="cnum">02</div>
-        <div class="ctitle">Trí tuệ &amp; Văn hóa (Trí – Mỹ)</div>
-        <div class="cbody"><ul>
-          <li><strong>Trí:</strong> nâng cao học vấn, học đi đôi với hành.</li>
-          <li><strong>Mỹ:</strong> giáo dục thẩm mỹ, lối sống văn minh.</li>
-          <li>Giữ bản sắc &amp; tiếp thu tinh hoa nhân loại.</li>
-        </ul></div>
-      </div>
-      <div class="card">
-        <div class="cardimg sm"></div>
-        <div class="cnum">03</div>
-        <div class="ctitle">Thể chất &amp; Tinh thần (Thể)</div>
-        <div class="cbody"><ul>
-          <li>Sức khỏe là vốn quý nhất — "Dân cường thì nước thịnh".</li>
-          <li>Thể lực bền bỉ để lao động và bảo vệ Tổ quốc.</li>
-          <li>Tôi luyện ý chí kiên cường vượt khó.</li>
-        </ul></div>
+    <div class="s7grid ai d5">
+      <figure class="s7img">
+        <img src="chien-luoc-trong-nguoi.png" alt="Chiến lược trồng người: Bác Hồ chăm dưỡng thế hệ tương lai trên ba trụ cột Đức – Trí &amp; Mỹ – Thể">
+      </figure>
+      <div class="s7side">
+        <div class="card s7card">
+          <div class="cnum">01</div>
+          <div>
+            <div class="ctitle">Giáo dục Đạo đức (Đức)</div>
+            <div class="cbody"><ul>
+              <li>Bồi dưỡng lý tưởng cách mạng, lòng yêu nước, thương dân.</li>
+              <li>Rèn trung thực, liêm khiết, "chí công vô tư" — gốc rễ của con người mới.</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card s7card">
+          <div class="cnum">02</div>
+          <div>
+            <div class="ctitle">Trí tuệ &amp; Văn hóa (Trí – Mỹ)</div>
+            <div class="cbody"><ul>
+              <li><strong>Trí:</strong> nâng cao học vấn, học đi đôi với hành.</li>
+              <li><strong>Mỹ:</strong> giáo dục thẩm mỹ, giữ bản sắc &amp; tiếp thu tinh hoa nhân loại.</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card s7card">
+          <div class="cnum">03</div>
+          <div>
+            <div class="ctitle">Thể chất &amp; Tinh thần (Thể)</div>
+            <div class="cbody"><ul>
+              <li>Sức khỏe là vốn quý nhất — "Dân cường thì nước thịnh".</li>
+              <li>Thể lực bền bỉ, tôi luyện ý chí kiên cường vượt khó.</li>
+            </ul></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
