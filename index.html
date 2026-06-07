@@ -372,6 +372,304 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
   transition:opacity .35s var(--ease),transform .35s var(--ease)}
 body.shownav .nav,body.shownav .hint{opacity:1;transform:translateX(-50%);pointer-events:auto}
 body.shownav .hint{animation:pulse 3s ease infinite}
+
+/* ===== MINIGAME STYLE ===== */
+.mg-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 22px;
+  align-items: stretch;
+  width: 100%;
+}
+@media(max-width: 768px) {
+  .mg-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+.mg-card {
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px;
+}
+.mg-qheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(30, 58, 138, 0.08);
+  padding-bottom: 8px;
+}
+.mg-qnum {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--amberD);
+  background: rgba(245, 158, 11, 0.12);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.mg-score {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue2);
+}
+.mg-question {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+.mg-anagram-board {
+  position: relative;
+  height: 120px;
+  width: 100%;
+  margin: 15px 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  border: 1px solid rgba(30, 58, 138, 0.05);
+  overflow: hidden;
+}
+.mg-anagram-placeholder {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(30, 58, 138, 0.15);
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 70px;
+  transform: translateX(-50%);
+}
+.mg-anagram-badge {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--violet));
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
+  cursor: default;
+  user-select: none;
+  top: 15px;
+  transform: translateX(-50%);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 2;
+}
+.mg-anagram-badge.assembled {
+  background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.35);
+  transform: translateX(-50%) scale(1.08);
+}
+.mg-option {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(30, 58, 138, 0.1);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink2);
+  cursor: pointer;
+  transition: all 0.22s var(--ease);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mg-option:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: var(--blue2);
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.08);
+}
+.mg-option.correct {
+  background: #dcfce7 !important;
+  border-color: #22c55e !important;
+  color: #15803d !important;
+  font-weight: 600;
+}
+.mg-option.incorrect {
+  background: #fee2e2 !important;
+  border-color: #ef4444 !important;
+  color: #b91c1c !important;
+  animation: shake 0.4s ease;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* Right Panel: Word Board */
+.mg-board {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+}
+.mg-title-sub {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.mg-pool-wrapper {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px dashed rgba(30, 58, 138, 0.2);
+  border-radius: 14px;
+  padding: 12px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mg-letters-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.mg-letter-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--violet));
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.22s var(--ease);
+  animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.mg-letter-badge:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 6px 14px rgba(124, 58, 237, 0.4);
+}
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Word Assembly Slots */
+.mg-word-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-top: 6px;
+}
+.mg-word-row {
+  display: flex;
+  gap: 6px;
+}
+.mg-slot {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid rgba(30, 58, 138, 0.15);
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--navy);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.mg-slot.filled {
+  background: #fff;
+  border-color: var(--amber);
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.2);
+}
+.mg-slot:hover {
+  border-color: var(--blue2);
+}
+
+/* Success Card */
+.mg-success-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: scaleUpIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  min-height: 340px;
+}
+@keyframes scaleUpIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.mg-success-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  animation: bounce 2s infinite;
+}
+.mg-success-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: #15803d;
+  margin-bottom: 10px;
+}
+.mg-success-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink2);
+  margin-bottom: 18px;
+  max-width: 480px;
+}
+.mg-reset-btn {
+  background: linear-gradient(135deg, var(--blue), var(--violet));
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+.mg-reset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+}
+
+/* Confetti particles */
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+  animation: confettiFall 2.5s linear infinite;
+}
+@keyframes confettiFall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(420px) rotate(360deg); opacity: 0; }
+}
 </style>
 </head>
 <body>
@@ -382,7 +680,7 @@ body.shownav .hint{animation:pulse 3s ease infinite}
   <div class="grid"></div>
 </div>
 
-<div class="badge" id="badge">01 / 11</div>
+<div class="badge" id="badge">01 / 12</div>
 <div class="dots" id="dots"></div>
 
 <div class="deck" id="deck">
@@ -447,8 +745,76 @@ body.shownav .hint{animation:pulse 3s ease infinite}
   </div>
 </div>
 
-<!-- ③ FOUNDATION -->
+<!-- ③ MINIGAME -->
 <div class="slide" data-i="2">
+  <div class="inner" style="max-width:1160px">
+    <div class="lbl ai d1">Khởi động · Minigame</div>
+    <div class="h1 ai d2">MINIGAME KHỞI ĐỘNG: ĐI TÌM TỪ KHÓA</div>
+    <div class="divline ai d3"></div>
+    <div class="mg-container ai d4">
+      <!-- Left side: Question Card -->
+      <div class="card mg-card" id="mg-card-container">
+        <div class="mg-qheader">
+          <span class="mg-qnum" id="mg-qnum">Câu hỏi 1 / 8</span>
+          <span class="mg-score" id="mg-score">Đúng: 0/8</span>
+        </div>
+        <div class="mg-question" id="mg-question">Đang tải câu hỏi...</div>
+        <div class="mg-options" id="mg-options">
+          <!-- Options will be rendered dynamically -->
+        </div>
+      </div>
+      
+      <!-- Right side: Letter Board -->
+      <div class="card mg-board">
+        <div>
+          <div class="mg-title-sub">Chữ cái đã thu thập (Xáo trộn)</div>
+          <div class="mg-pool-wrapper">
+            <div class="mg-letters-pool" id="mg-letters-pool">
+              <!-- Collected letters will appear here -->
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <div class="mg-title-sub" style="margin-bottom: 0;">Ghép từ khóa bí ẩn</div>
+            <button id="mg-keyword-hint-btn" style="background: none; border: none; color: var(--blue2); font-size: 11px; font-weight: 700; cursor: pointer; text-decoration: underline; outline: none;">💡 Xem gợi ý</button>
+          </div>
+          <div id="mg-keyword-hint-text" style="display: none; font-size: 11.5px; color: var(--sub); font-style: italic; margin-bottom: 8px; text-align: center; background: rgba(37, 99, 235, 0.05); padding: 6px; border-radius: 8px; line-height: 1.4;">
+            Gợi ý: Nhân tố quyết định thắng lợi của cách mạng; Bác Hồ khẳng định: "Vô luận việc gì, đều do ... làm ra, và từ nhỏ đến to, từ gần đến xa, đều thế cả" (2 từ, 8 chữ cái).
+          </div>
+          <div class="mg-word-slots">
+            <!-- Word 1: CON (3 letters) -->
+            <div class="mg-word-row" id="mg-word-row-1">
+              <div class="mg-slot" data-slot-idx="0">?</div>
+              <div class="mg-slot" data-slot-idx="1">?</div>
+              <div class="mg-slot" data-slot-idx="2">?</div>
+            </div>
+            <!-- Word 2: NGƯỜI (5 letters) -->
+            <div class="mg-word-row" id="mg-word-row-2" style="margin-top: 6px;">
+              <div class="mg-slot" data-slot-idx="3">?</div>
+              <div class="mg-slot" data-slot-idx="4">?</div>
+              <div class="mg-slot" data-slot-idx="5">?</div>
+              <div class="mg-slot" data-slot-idx="6">?</div>
+              <div class="mg-slot" data-slot-idx="7">?</div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="display:flex; justify-content:space-between; align-items:center; gap: 8px;">
+          <span id="mg-hint-msg" style="font-size:11px; color:var(--sub);">Chọn đáp án đúng để nhận chữ cái</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="mg-reset-btn" id="mg-clear-btn" style="display:none; padding:6px 14px; font-size:11px;">Xóa chữ</button>
+            <button class="mg-reset-btn" id="mg-solve-btn" style="display:none; padding:6px 14px; font-size:11px; background: linear-gradient(135deg, var(--amber), var(--gold));">Xem đáp án</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ④ FOUNDATION -->
+<div class="slide" data-i="3">
   <div class="inner" style="max-width:1160px">
     <div class="lbl ai d1">Phần 1 · Cơ sở lý luận</div>
     <div class="h1 ai d2">CƠ SỞ HÌNH THÀNH TƯ TƯỞNG</div>
@@ -485,8 +851,8 @@ body.shownav .hint{animation:pulse 3s ease infinite}
   </div>
 </div>
 
-<!-- ④ HISTORICAL PERSON -->
-<div class="slide" data-i="3">
+<!-- ⑤ HISTORICAL PERSON -->
+<div class="slide" data-i="4">
   <div class="inner" style="max-width:1160px">
     <div class="lbl ai d1">Phần 2 · Quan niệm con người</div>
     <div class="h1 ai d2">CON NGƯỜI LỊCH SỬ – CỤ THỂ</div>
@@ -523,8 +889,8 @@ body.shownav .hint{animation:pulse 3s ease infinite}
   </div>
 </div>
 
-<!-- ⑤ NATURE GOOD/EVIL -->
-<div class="slide" data-i="4">
+<!-- ⑥ NATURE GOOD/EVIL -->
+<div class="slide" data-i="5">
   <div class="inner" style="max-width:1160px;gap:15px">
     <div class="lbl ai d1">Phần 2 · Bản chất con người</div>
     <div class="h1 ai d2">BẢN CHẤT CON NGƯỜI &amp;<br>TÍNH ĐA DẠNG THIỆN – ÁC</div>
@@ -555,8 +921,8 @@ body.shownav .hint{animation:pulse 3s ease infinite}
   </div>
 </div>
 
-<!-- ⑥ ROLE IN REVOLUTION -->
-<div class="slide" data-i="5">
+<!-- ⑦ ROLE IN REVOLUTION -->
+<div class="slide" data-i="6">
   <div class="inner" style="max-width:1160px;gap:15px">
     <div class="lbl ai d1">Phần 2 · Vai trò con người</div>
     <div class="h1 ai d2">VAI TRÒ CỦA CON NGƯỜI<br>ĐỐI VỚI CÁCH MẠNG</div>
@@ -589,8 +955,8 @@ body.shownav .hint{animation:pulse 3s ease infinite}
   </div>
 </div>
 
-<!-- ⑦ STRATEGY CONTENT -->
-<div class="slide" data-i="6">
+<!-- ⑧ STRATEGY CONTENT -->
+<div class="slide" data-i="7">
   <div class="inner" style="max-width:1160px;gap:15px">
     <div class="lbl ai d1">Phần 3 · Nội dung chiến lược</div>
     <div class="h1 ai d2">NỘI DUNG CHIẾN LƯỢC "TRỒNG NGƯỜI"</div>
@@ -639,8 +1005,8 @@ body.shownav .hint{animation:pulse 3s ease infinite}
   </div>
 </div>
 
-<!-- ⑧ METHODS -->
-<div class="slide" data-i="7">
+<!-- ⑨ METHODS -->
+<div class="slide" data-i="8">
   <div class="inner">
     <div class="lbl ai d1">Phần 3 · Phương pháp</div>
     <div class="h1 ai d2">PHƯƠNG PHÁP CHIẾN LƯỢC "TRỒNG NGƯỜI"</div>
@@ -670,8 +1036,8 @@ body.shownav .hint{animation:pulse 3s ease infinite}
   </div>
 </div>
 
-<!-- ⑨ STUDENT APPLICATION -->
-<div class="slide" data-i="8">
+<!-- ⑩ STUDENT APPLICATION -->
+<div class="slide" data-i="9">
   <div class="inner">
     <div class="lbl ai d1">Phần 4 · Vận dụng thực tiễn</div>
     <div class="h1 ai d2">VẬN DỤNG THỰC TIỄN CHO SINH VIÊN</div>
@@ -699,8 +1065,8 @@ body.shownav .hint{animation:pulse 3s ease infinite}
   </div>
 </div>
 
-<!-- ⑩ LASTING VALUES -->
-<div class="slide" data-i="9">
+<!-- ⑪ LASTING VALUES -->
+<div class="slide" data-i="10">
   <div class="inner">
     <div class="lbl ai d1">Phần 4 · Kết luận</div>
     <div class="h1 ai d2">GIÁ TRỊ TRƯỜNG TỒN CỦA TƯ TƯỞNG</div>
@@ -731,8 +1097,8 @@ body.shownav .hint{animation:pulse 3s ease infinite}
   </div>
 </div>
 
-<!-- ⑪ OUTRO + Q&A -->
-<div class="slide" data-i="10">
+<!-- ⑫ OUTRO + Q&A -->
+<div class="slide" data-i="11">
   <svg class="dc dc-tl" width="190" height="180" viewBox="0 0 190 180" fill="none">
     <rect x="0" y="18" width="130" height="11" rx="4" fill="#60a5fa" opacity=".55"/>
     <rect x="0" y="39" width="90"  height="11" rx="4" fill="#60a5fa" opacity=".4"/>
@@ -761,7 +1127,7 @@ body.shownav .hint{animation:pulse 3s ease infinite}
 
 <div class="nav">
   <button class="nbtn" id="prev">&#8592;</button>
-  <span class="ctr" id="ctr">1 / 11</span>
+  <span class="ctr" id="ctr">1 / 12</span>
   <button class="nbtn" id="next">&#8594;</button>
 </div>
 
@@ -769,7 +1135,7 @@ body.shownav .hint{animation:pulse 3s ease infinite}
 <div class="pbar"><div class="pfill" id="pfill"></div></div>
 
 <script>
-const TOTAL = 11;
+const TOTAL = 12;
 let cur = 0, busy = false;
 const slides = [...document.querySelectorAll('.slide')];
 const dotsEl = document.getElementById('dots');
@@ -851,6 +1217,458 @@ document.addEventListener('touchend',e=>{
     }
   });
   window.addEventListener('mouseleave',()=>document.body.classList.remove('shownav'));
+})();
+
+/* ===== MINIGAME JS LOGIC ===== */
+(function initMinigame() {
+  const targetWord = ['C', 'O', 'N', 'N', 'G', 'U', 'O', 'I'];
+  const questions = [
+    {
+      q: "Gợi ý: Thuật ngữ dùng để chỉ con người là một khối thống nhất toàn diện về cả thể xác, tinh thần, nhu cầu và lợi ích.",
+      scrambled: "H Ể H N Ỉ T C H",
+      correct: "CHỈNH THỂ"
+    },
+    {
+      q: "Gợi ý: Lực lượng cốt lõi quyết định thắng lợi của cách mạng; Bác Hồ viết: 'Bao nhiêu lợi ích đều vì..., bao nhiêu quyền hạn đều của...'",
+      scrambled: "Â N D N Â H N",
+      correct: "NHÂN DÂN"
+    },
+    {
+      q: "Gợi ý: Vai trò của con người khi đóng vai trò là chủ thể sáng tạo ra lịch sử, lực lượng quyết định sự thành bại của cách mạng.",
+      scrambled: "Ự C G Ộ L N Đ",
+      correct: "ĐỘNG LỰC"
+    },
+    {
+      q: "Gợi ý: Tính chất bản chất của con người theo Hồ Chí Minh; con người không tồn tại biệt lập mà là sản phẩm của các quan hệ...",
+      scrambled: "Ộ Ã H I X",
+      correct: "XÃ HỘI"
+    },
+    {
+      q: "Gợi ý: Từ khóa nằm trong chiến lược lâu dài của Hồ Chí Minh: \"Vì lợi ích trăm năm thì phải...\"",
+      scrambled: "Ồ N G G Ư T I Ờ R N",
+      correct: "TRỒNG NGƯỜI"
+    },
+    {
+      q: "Gợi ý: Con đường cốt lõi và cơ bản nhất để hình thành tri thức, năng lực và kỹ năng làm việc cho con người mới.",
+      scrambled: "Ụ Á G I C O D",
+      correct: "GIÁO DỤC"
+    },
+    {
+      q: "Gợi ý: Phương châm rèn luyện con người mới: Khuyến khích cái tốt, cái tiến bộ đi đôi với loại bỏ cái xấu, cái lạc hậu.",
+      scrambled: "Ố Â À G N C X Y V H",
+      correct: "XÂY VÀ CHỐNG"
+    },
+    {
+      q: "Gợi ý: Một trong những động lực thúc đẩy hoạt động của con người; các chính sách cách mạng phải luôn chú trọng đến quyền lợi thiết thân này.",
+      scrambled: "Ợ H Í L C I",
+      correct: "LỢI ÍCH"
+    }
+  ];
+
+  let currentQ = 0;
+  let correctAnswers = 0;
+  let revealOrder = [0, 1, 2, 3, 4, 5, 6, 7];
+  
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  let unlockedLetters = [];
+  let slots = Array(8).fill(null);
+  
+  const cardContainer = document.getElementById('mg-card-container');
+  const poolEl = document.getElementById('mg-letters-pool');
+  const clearBtn = document.getElementById('mg-clear-btn');
+  const hintMsgEl = document.getElementById('mg-hint-msg');
+  const slotEls = document.querySelectorAll('.mg-slot');
+
+  function initGame() {
+    currentQ = 0;
+    correctAnswers = 0;
+    unlockedLetters = [];
+    slots.fill(null);
+    revealOrder = [0, 1, 2, 3, 4, 5, 6, 7];
+    shuffle(revealOrder);
+    
+    poolEl.innerHTML = '';
+    
+    slotEls.forEach(slot => {
+      slot.textContent = '?';
+      slot.classList.remove('filled');
+    });
+    
+    clearBtn.style.display = 'none';
+    document.getElementById('mg-solve-btn').style.display = 'none';
+    hintMsgEl.textContent = 'Giải mã từ xáo trộn để nhận chữ cái';
+    
+    cardContainer.innerHTML = `
+      <div class="mg-qheader">
+        <span class="mg-qnum" id="mg-qnum">Câu đố 1 / 8</span>
+        <span class="mg-score" id="mg-score">Giải mã: 0/8</span>
+      </div>
+      <div id="mg-question-wrapper" style="min-height: 48px; display: flex; align-items: center; justify-content: center; text-align: center; margin-bottom: 12px; width: 100%;">
+        <div class="mg-question" id="mg-question" style="display: none; margin-bottom: 0; font-size: 14.5px;"></div>
+        <button class="mg-reset-btn" id="mg-hint-btn" style="background: rgba(30, 58, 138, 0.06); color: var(--navy); border: 1px dashed rgba(30, 58, 138, 0.25); box-shadow: none; font-size: 11.5px; padding: 6px 16px; text-transform: none; border-radius: 20px;">💡 Xem gợi ý</button>
+      </div>
+      <div class="mg-anagram-board" id="mg-anagram-board"></div>
+      <div style="display: flex; justify-content: center; margin-top: 12px;">
+        <button class="mg-reset-btn" id="mg-submit-btn" style="border-radius: 10px; padding: 10px 24px; min-width: 150px;">Xem đáp án</button>
+      </div>
+    `;
+    
+    showQuestion();
+  }
+
+  function showQuestion() {
+    const qData = questions[currentQ];
+    
+    document.getElementById('mg-qnum').textContent = `Câu đố ${currentQ + 1} / 8`;
+    document.getElementById('mg-score').textContent = `Giải mã: ${correctAnswers}/8`;
+    
+    const questionEl = document.getElementById('mg-question');
+    const hintBtn = document.getElementById('mg-hint-btn');
+    
+    questionEl.textContent = qData.q;
+    questionEl.style.display = 'none';
+    hintBtn.style.display = 'inline-block';
+    
+    const newHintBtn = hintBtn.cloneNode(true);
+    hintBtn.parentNode.replaceChild(newHintBtn, hintBtn);
+    newHintBtn.addEventListener('click', () => {
+      newHintBtn.style.display = 'none';
+      questionEl.style.display = 'block';
+    });
+    
+    const boardEl = document.getElementById('mg-anagram-board');
+    boardEl.innerHTML = '';
+    
+    const scrambledArray = qData.scrambled.split(' ');
+    const correctWithSpaces = qData.correct.split('');
+    const L = correctWithSpaces.length;
+    const S = scrambledArray.length;
+    
+    // Render placeholders (bottom row)
+    correctWithSpaces.forEach((char, j) => {
+      if (char !== ' ') {
+        const ph = document.createElement('div');
+        ph.className = 'mg-anagram-placeholder';
+        ph.style.left = ((j + 0.5) / L) * 100 + '%';
+        ph.textContent = '?';
+        boardEl.appendChild(ph);
+      }
+    });
+    
+    // Render scrambled letters (top row)
+    const badges = [];
+    scrambledArray.forEach((char, i) => {
+      const badge = document.createElement('div');
+      badge.className = 'mg-anagram-badge';
+      badge.textContent = char;
+      badge.style.left = ((i + 0.5) / S) * 100 + '%';
+      boardEl.appendChild(badge);
+      badges.push(badge);
+    });
+    
+    // Store references for animation
+    qData.badges = badges;
+    
+    const submitBtn = document.getElementById('mg-submit-btn');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Xem đáp án';
+    
+    const newSubmitBtn = submitBtn.cloneNode(true);
+    submitBtn.parentNode.replaceChild(newSubmitBtn, submitBtn);
+    newSubmitBtn.addEventListener('click', handleShowAnswer);
+  }
+
+  function handleShowAnswer() {
+    const qData = questions[currentQ];
+    const submitBtn = document.getElementById('mg-submit-btn');
+    submitBtn.disabled = true;
+    
+    const scrambledArray = qData.scrambled.split(' ');
+    const correctWithSpaces = qData.correct.split('');
+    const L = correctWithSpaces.length;
+    
+    // Compute mapping
+    const mapping = [];
+    const used = Array(correctWithSpaces.length).fill(false);
+    for (let i = 0; i < scrambledArray.length; i++) {
+      const char = scrambledArray[i];
+      let matchIdx = -1;
+      for (let j = 0; j < correctWithSpaces.length; j++) {
+        if (correctWithSpaces[j] === char && !used[j]) {
+          matchIdx = j;
+          break;
+        }
+      }
+      used[matchIdx] = true;
+      mapping.push(matchIdx);
+    }
+    
+    // Animate each badge to its target slot
+    qData.badges.forEach((badge, i) => {
+      const targetSlotIdx = mapping[i];
+      const targetLeft = ((targetSlotIdx + 0.5) / L) * 100 + '%';
+      
+      // Delay slightly for staggered animation effect
+      setTimeout(() => {
+        badge.style.left = targetLeft;
+        badge.style.top = '70px';
+        badge.classList.add('assembled');
+      }, i * 50);
+    });
+    
+    correctAnswers++;
+    
+    // After animation finishes, unlock letter
+    setTimeout(() => {
+      const targetCharIdx = revealOrder[currentQ];
+      const letterChar = targetWord[targetCharIdx];
+      const letterObj = { char: letterChar, origIdx: targetCharIdx, placed: false, slotIdx: -1 };
+      unlockedLetters.push(letterObj);
+      
+      renderPoolBadge(letterObj);
+      
+      hintMsgEl.textContent = `Đáp án: "${qData.correct}". Nhận chữ cái: "${letterChar}"`;
+      hintMsgEl.style.color = '#15803d';
+      hintMsgEl.style.fontWeight = 'bold';
+      
+      // Re-enable button for manual progression
+      submitBtn.disabled = false;
+      
+      const newSubmitBtn = submitBtn.cloneNode(true);
+      submitBtn.parentNode.replaceChild(newSubmitBtn, submitBtn);
+      
+      if (currentQ < 7) {
+        newSubmitBtn.textContent = 'Câu tiếp theo';
+        newSubmitBtn.addEventListener('click', handleNextQuestion);
+      } else {
+        newSubmitBtn.textContent = 'Bước tiếp theo (Ghép từ)';
+        newSubmitBtn.addEventListener('click', () => {
+          hintMsgEl.style.color = '';
+          hintMsgEl.style.fontWeight = '';
+          showAssemblyScreen();
+        });
+      }
+    }, scrambledArray.length * 50 + 900);
+  }
+
+  function handleNextQuestion() {
+    hintMsgEl.style.color = '';
+    hintMsgEl.style.fontWeight = '';
+    currentQ++;
+    showQuestion();
+    hintMsgEl.textContent = 'Giải mã từ xáo trộn để nhận chữ cái';
+  }
+
+  function renderPoolBadge(letterObj) {
+    const badge = document.createElement('div');
+    badge.className = 'mg-letter-badge';
+    badge.textContent = letterObj.char;
+    badge.addEventListener('click', () => {
+      if (letterObj.placed) return;
+      const emptySlotIdx = slots.indexOf(null);
+      if (emptySlotIdx !== -1) {
+        slots[emptySlotIdx] = letterObj;
+        letterObj.placed = true;
+        letterObj.slotIdx = emptySlotIdx;
+        
+        badge.style.opacity = '0.3';
+        badge.style.pointerEvents = 'none';
+        
+        const slotEl = document.querySelector(`.mg-slot[data-slot-idx="${emptySlotIdx}"]`);
+        slotEl.textContent = letterObj.char;
+        slotEl.classList.add('filled');
+        
+        checkWinCondition();
+      }
+    });
+    
+    letterObj.badgeEl = badge;
+    poolEl.appendChild(badge);
+  }
+
+  function showAssemblyScreen() {
+    clearBtn.style.display = 'inline-block';
+    const solveBtn = document.getElementById('mg-solve-btn');
+    solveBtn.style.display = 'inline-block';
+    const newSolveBtn = solveBtn.cloneNode(true);
+    solveBtn.parentNode.replaceChild(newSolveBtn, solveBtn);
+    newSolveBtn.addEventListener('click', solveKeyword);
+    hintMsgEl.textContent = 'Hãy ghép các chữ cái thu thập được thành từ khóa có nghĩa!';
+    hintMsgEl.style.color = 'var(--violet)';
+    hintMsgEl.style.fontWeight = 'bold';
+    
+    cardContainer.innerHTML = `
+      <div class="mg-success-card" style="animation: scaleUpIn 0.5s both;">
+        <div class="mg-success-icon">🧩</div>
+        <div class="mg-success-title" style="color:var(--navy);">BƯỚC VÀO GHÉP CHỮ</div>
+        <div class="mg-success-desc">
+          Chúc mừng bạn đã hoàn thành xuất sắc 8 câu hỏi khởi động và thu thập đầy đủ các mảnh ghép chữ cái!
+          <br><br>
+          Bây giờ, hãy <strong>nhấp vào các chữ cái hình tròn</strong> để đưa chúng vào các ô trống thích hợp nhằm ghép thành từ khóa bí ẩn của ngày hôm nay.
+        </div>
+        <div style="font-size: 12px; color: var(--sub); font-style: italic;">
+          Gợi ý: Từ khóa gồm 2 từ, chỉ thực thể trung tâm của chiến lược phát triển cách mạng.
+        </div>
+      </div>
+    `;
+    
+    const newSlotEls = document.querySelectorAll('.mg-slot');
+    newSlotEls.forEach(slotEl => {
+      const newSlot = slotEl.cloneNode(true);
+      slotEl.parentNode.replaceChild(newSlot, slotEl);
+    });
+    
+    const reboundSlotEls = document.querySelectorAll('.mg-slot');
+    reboundSlotEls.forEach(slotEl => {
+      slotEl.addEventListener('click', () => {
+        const slotIdx = parseInt(slotEl.getAttribute('data-slot-idx'));
+        const letterObj = slots[slotIdx];
+        if (letterObj) {
+          slots[slotIdx] = null;
+          letterObj.placed = false;
+          letterObj.slotIdx = -1;
+          
+          slotEl.textContent = '?';
+          slotEl.classList.remove('filled');
+          
+          if (letterObj.badgeEl) {
+            letterObj.badgeEl.style.opacity = '1';
+            letterObj.badgeEl.style.pointerEvents = 'auto';
+          }
+        }
+      });
+    });
+  }
+
+  function solveKeyword() {
+    clearBtn.click();
+    unlockedLetters.forEach((letterObj, i) => {
+      setTimeout(() => {
+        const targetIdx = letterObj.origIdx;
+        slots[targetIdx] = letterObj;
+        letterObj.placed = true;
+        letterObj.slotIdx = targetIdx;
+        
+        if (letterObj.badgeEl) {
+          letterObj.badgeEl.style.opacity = '0.3';
+          letterObj.badgeEl.style.pointerEvents = 'none';
+        }
+        
+        const slotEl = document.querySelector(`.mg-slot[data-slot-idx="${targetIdx}"]`);
+        slotEl.textContent = letterObj.char;
+        slotEl.classList.add('filled');
+        
+        if (i === unlockedLetters.length - 1) {
+          setTimeout(checkWinCondition, 200);
+        }
+      }, i * 150);
+    });
+  }
+
+  function checkWinCondition() {
+    if (slots.includes(null)) return;
+    
+    const spelled = slots.map(obj => obj.char).join('');
+    const correctWord = 'CONNGUOI';
+    
+    if (spelled === correctWord) {
+      showVictoryScreen();
+    }
+  }
+
+  function showVictoryScreen() {
+    createConfetti();
+    
+    clearBtn.style.display = 'none';
+    document.getElementById('mg-solve-btn').style.display = 'none';
+    hintMsgEl.textContent = 'Từ khóa chính xác! 🎉';
+    hintMsgEl.style.color = '#15803d';
+    
+    document.querySelectorAll('.mg-slot').forEach(s => {
+      s.style.borderColor = '#22c55e';
+      s.style.background = '#dcfce7';
+      s.style.color = '#15803d';
+      s.style.boxShadow = '0 0 12px rgba(34, 197, 94, 0.4)';
+    });
+
+    cardContainer.innerHTML = `
+      <div class="mg-success-card" style="animation: scaleUpIn 0.5s both;">
+        <div class="mg-success-icon">🎉</div>
+        <div class="mg-success-title">TỪ KHÓA: CON NGƯỜI</div>
+        <div class="mg-success-desc" style="font-size: 12.5px; text-align: justify;">
+          Chính xác! Chủ tịch Hồ Chí Minh đã khẳng định: <em>"Vô luận việc gì, đều do con người làm ra, và từ nhỏ đến to, từ gần đến xa, đều thế cả."</em> 
+          <br><br>
+          Trong tư tưởng của Người, <strong>"Con Người"</strong> vừa là mục tiêu tối cao của sự nghiệp giải phóng, vừa là động lực quyết định để xây dựng một xã hội mới tự do, ấm no và hạnh phúc.
+        </div>
+        <button class="mg-reset-btn" id="mg-reset-btn">Chơi lại</button>
+      </div>
+    `;
+    
+    document.getElementById('mg-reset-btn').addEventListener('click', () => {
+      document.querySelectorAll('.mg-slot').forEach(s => {
+        s.style.borderColor = '';
+        s.style.background = '';
+        s.style.color = '';
+        s.style.boxShadow = '';
+      });
+      initGame();
+    });
+  }
+
+  function createConfetti() {
+    const parent = document.getElementById('mg-card-container');
+    const colors = ['#f59e0b', '#3b82f6', '#7c3aed', '#10b981', '#ef4444'];
+    for (let i = 0; i < 40; i++) {
+      const p = document.createElement('div');
+      p.className = 'confetti';
+      p.style.left = (Math.random() * 90) + '%';
+      p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      p.style.animationDelay = (Math.random() * 1.5) + 's';
+      p.style.width = (6 + Math.random() * 6) + 'px';
+      p.style.height = p.style.width;
+      parent.appendChild(p);
+      
+      setTimeout(() => p.remove(), 4000);
+    }
+  }
+
+  clearBtn.addEventListener('click', () => {
+    slots.fill(null);
+    unlockedLetters.forEach(letterObj => {
+      letterObj.placed = false;
+      letterObj.slotIdx = -1;
+      if (letterObj.badgeEl) {
+        letterObj.badgeEl.style.opacity = '1';
+        letterObj.badgeEl.style.pointerEvents = 'auto';
+      }
+    });
+    
+    document.querySelectorAll('.mg-slot').forEach(slot => {
+      slot.textContent = '?';
+      slot.classList.remove('filled');
+    });
+  });
+
+  // Toggle keyword hint
+  const kwHintBtn = document.getElementById('mg-keyword-hint-btn');
+  const kwHintText = document.getElementById('mg-keyword-hint-text');
+  kwHintBtn.addEventListener('click', () => {
+    if (kwHintText.style.display === 'none') {
+      kwHintText.style.display = 'block';
+      kwHintBtn.textContent = '🙈 Ẩn gợi ý';
+    } else {
+      kwHintText.style.display = 'none';
+      kwHintBtn.textContent = '💡 Xem gợi ý';
+    }
+  });
+
+  initGame();
 })();
 
 ui();

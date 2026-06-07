@@ -16,18 +16,19 @@ Mở file [`index.html`](index.html) bằng trình duyệt (Chrome/Edge). Không
 
 Có thể bấm các chấm tròn bên phải để nhảy nhanh tới slide bất kỳ; vuốt trái/phải trên điện thoại.
 
-## Nội dung (11 slide)
+## Nội dung (12 slide)
 1. Tiêu đề
 2. Thành viên & Lộ trình bài học
-3. Cơ sở hình thành tư tưởng
-4. Con người lịch sử – cụ thể
-5. Bản chất con người & tính đa dạng thiện – ác
-6. Vai trò của con người với cách mạng (Mục tiêu & Động lực)
-7. Nội dung chiến lược "Trồng người" (Đức – Trí – Thể – Mỹ)
-8. Phương pháp chiến lược "Trồng người"
-9. Vận dụng thực tiễn cho sinh viên
-10. Giá trị trường tồn của tư tưởng
-11. Cảm ơn & Q&A
+3. Minigame Khởi động: Đi tìm từ khóa
+4. Cơ sở hình thành tư tưởng
+5. Con người lịch sử – cụ thể
+6. Bản chất con người & tính đa dạng thiện – ác
+7. Vai trò của con người với cách mạng (Mục tiêu & Động lực)
+8. Nội dung chiến lược "Trồng người" (Đức – Trí – Thể – Mỹ)
+9. Phương pháp chiến lược "Trồng người"
+10. Vận dụng thực tiễn cho sinh viên
+11. Giá trị trường tồn của tư tưởng
+12. Cảm ơn & Q&A
 
 ---
 *Môn HCM202 · Nhóm C2.3 · 2025–2026*
