@@ -276,6 +276,21 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
 .s4card .cbody{font-size:12.5px;line-height:1.6}
 @media(max-width:768px){.s4img{height:180px}}
 
+/* slide 5 — ảnh triptych + 3 thẻ + trích dẫn */
+.s5grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+.s5img{position:relative;margin:0;border-radius:18px;overflow:hidden;min-height:300px;
+  box-shadow:var(--shadow);border:1px solid var(--cardb);
+  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13))}
+.s5img::before{content:'🖼️  Lưu ảnh tên  ban-chat-con-nguoi.png';position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;
+  font-size:12px;letter-spacing:.5px;color:var(--sub);font-weight:700}
+.s5img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.s5side{display:flex;flex-direction:column;gap:12px;justify-content:space-between}
+.s5card{padding:14px 17px}
+.s5card .ctitle{font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.s5card .cbody{font-size:12.5px;line-height:1.6}
+@media(max-width:768px){.s5grid{grid-template-columns:1fr}.s5img{min-height:200px}}
+
 /* progress */
 .pbar{position:fixed;bottom:0;left:0;right:0;z-index:200;height:3px;background:rgba(30,58,138,.1)}
 .pfill{height:100%;width:0;background:linear-gradient(90deg,#2563eb,#f59e0b);
@@ -463,36 +478,32 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
 
 <!-- ⑤ NATURE GOOD/EVIL -->
 <div class="slide" data-i="4">
-  <div class="inner">
+  <div class="inner" style="max-width:1160px;gap:18px">
     <div class="lbl ai d1">Phần 2 · Bản chất con người</div>
     <div class="h1 ai d2">BẢN CHẤT CON NGƯỜI &amp;<br>TÍNH ĐA DẠNG THIỆN – ÁC</div>
     <div class="divline ai d3"></div>
-    <div class="g2 ai d4">
-      <div style="display:flex;flex-direction:column;gap:13px">
-        <div class="card">
-          <div class="ctitle">Tổng hòa các quan hệ xã hội</div>
-          <div class="cbody">Bản chất hình thành qua gia đình, bè bạn, đồng chí, giai cấp, dân tộc — không bất biến mà thay đổi qua thực tiễn.</div>
+    <div class="s5grid ai d4">
+      <figure class="s5img">
+        <img src="ban-chat-con-nguoi.png" alt="Bản chất con người: tổng hòa các quan hệ xã hội, tính đa dạng thiện – ác và niềm tin vào khả năng hướng thiện qua giáo dục">
+      </figure>
+      <div class="s5side">
+        <div class="card s5card">
+          <div class="ctitle"><span>🌐</span> Tổng hòa các quan hệ xã hội</div>
+          <div class="cbody">Hình thành qua gia đình, bè bạn, đồng chí, giai cấp, dân tộc — thay đổi qua thực tiễn, không bất biến.</div>
         </div>
-        <div class="card">
-          <div class="ctitle">Tính đa dạng Thiện – Ác</div>
+        <div class="card s5card">
+          <div class="ctitle"><span>⚖️</span> Tính đa dạng Thiện – Ác</div>
           <div class="cbody">Mỗi người luôn có hai mặt tốt – xấu, thiện – ác đan xen, đấu tranh lẫn nhau.</div>
         </div>
-        <div class="card">
-          <div class="ctitle">Niềm tin vào con người</div>
+        <div class="card s5card">
+          <div class="ctitle"><span>🔥</span> Niềm tin vào con người</div>
           <div class="cbody">Còn một "đốm lửa thiện" thì giáo dục đúng đắn sẽ giúp con người tự cải tạo, hướng thiện.</div>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:14px;justify-content:center">
-        <div class="imgframe" style="min-height:140px"></div>
-        <div class="quote" style="width:100%">
-          <div class="femoji" style="font-size:38px;text-align:center;margin-bottom:14px">💬</div>
-          <div style="font-size:16px;line-height:1.85;text-align:center">
-            "Hiền, dữ đâu phải là tính sẵn,<br>
-            <strong style="color:#b45309">Phần nhiều do giáo dục mà nên.</strong>"
-          </div>
-          <div class="attr" style="text-align:center">— Hồ Chí Minh (Nhật ký trong tù)</div>
-        </div>
-      </div>
+    </div>
+    <div class="quote ai d5" style="text-align:center;font-size:15px;padding:13px 24px;border-radius:14px;border-left:none;border-top:4px solid var(--amber)">
+      "Hiền, dữ đâu phải là tính sẵn, <strong style="color:#b45309">Phần nhiều do giáo dục mà nên.</strong>"
+      <span style="color:var(--sub);font-style:normal;font-family:var(--font)"> — Hồ Chí Minh (Nhật ký trong tù)</span>
     </div>
   </div>
 </div>
