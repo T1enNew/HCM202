@@ -994,11 +994,17 @@
         }
       }
 
-      /* slide 4 — banner ảnh triptych + 3 thẻ thẳng hàng */
+      /* slide 4 — ảnh lớn bên trái + 3 thẻ xếp dọc bên phải */
+      .s4grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.9fr;
+        gap: 22px;
+        align-items: stretch;
+      }
       .s4img {
         position: relative;
         margin: 0;
-        height: 250px;
+        min-height: 340px;
         border-radius: 18px;
         overflow: hidden;
         box-shadow: var(--shadow);
@@ -1029,29 +1035,43 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center 40%;
+        object-position: center;
         display: block;
       }
+      .s4side {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: space-between;
+      }
       .s4card {
-        padding: 16px 18px;
+        padding: 14px 16px;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
       }
       .s4card .cnum {
         width: 38px;
         height: 38px;
         border-radius: 11px;
         font-size: 15px;
-        margin-bottom: 10px;
+        margin-bottom: 0;
+        flex-shrink: 0;
       }
       .s4card .ctitle {
         font-size: 14px;
+        margin-bottom: 5px;
       }
       .s4card .cbody {
         font-size: 12.5px;
-        line-height: 1.6;
+        line-height: 1.55;
       }
       @media (max-width: 768px) {
+        .s4grid {
+          grid-template-columns: 1fr;
+        }
         .s4img {
-          height: 180px;
+          min-height: 200px;
         }
       }
 
@@ -1102,22 +1122,25 @@
       .s5side {
         display: flex;
         flex-direction: column;
-        gap: 12px;
-        justify-content: space-between;
+        gap: 14px;
       }
       .s5card {
-        padding: 14px 17px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 20px;
       }
       .s5card .ctitle {
-        font-size: 14px;
-        margin-bottom: 6px;
+        font-size: 15px;
+        margin-bottom: 8px;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 9px;
       }
       .s5card .cbody {
-        font-size: 12.5px;
-        line-height: 1.6;
+        font-size: 13px;
+        line-height: 1.65;
       }
       @media (max-width: 768px) {
         .s5grid {
@@ -1277,14 +1300,17 @@
         align-items: stretch;
       }
       .s8grid .cardimg {
-        height: 238px;
+        height: 256px;
       }
       .s8grid .cardimg img {
+        object-position: center 38%;
+      }
+      .s8grid .card:nth-child(2) .cardimg img {
         object-position: center top;
       }
       @media (max-width: 768px) {
         .s8grid .cardimg {
-          height: 175px;
+          height: 180px;
         }
       }
 
@@ -2179,48 +2205,53 @@
           <div class="lbl ai d1">Phần 2 · Quan niệm con người</div>
           <div class="h1 ai d2">CON NGƯỜI LỊCH SỬ – CỤ THỂ</div>
           <div class="divline ai d3"></div>
-          <figure class="s4img ai d4">
-            <img
-              src="images/con-nguoi-lich-su.jpg"
-              alt="Con người lịch sử – cụ thể trong tư tưởng Hồ Chí Minh: từ con người trừu tượng đến con người gắn với giai cấp, dân tộc và đối tượng yêu thương cụ thể"
-            />
-          </figure>
-          <div class="g3 ai d5">
-            <div class="card s4card">
-              <div class="cnum">01</div>
-              <div class="ctitle">
-                Không trừu tượng,<br />không thần thánh hóa
+          <div class="s4grid ai d4">
+            <figure class="s4img">
+              <img
+                src="images/con-nguoi-lich-su.jpg"
+                alt="Con người lịch sử – cụ thể trong tư tưởng Hồ Chí Minh: từ con người trừu tượng đến con người gắn với giai cấp, dân tộc và đối tượng yêu thương cụ thể"
+              />
+            </figure>
+            <div class="s4side">
+              <div class="card s4card">
+                <div class="cnum">01</div>
+                <div>
+                  <div class="ctitle">Không trừu tượng, không thần thánh hóa</div>
+                  <div class="cbody">
+                    <ul>
+                      <li>Không bàn "con người" chung chung, xa rời thực tế.</li>
+                      <li>
+                        Là cá thể bằng xương bằng thịt, đang sống, lao động, học tập.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div class="cbody">
-                <ul>
-                  <li>Không bàn "con người" chung chung, xa rời thực tế.</li>
-                  <li>
-                    Là cá thể bằng xương bằng thịt, đang sống, lao động, học
-                    tập.
-                  </li>
-                </ul>
+              <div class="card s4card">
+                <div class="cnum">02</div>
+                <div>
+                  <div class="ctitle">Thực thể tự nhiên &amp; xã hội</div>
+                  <div class="cbody">
+                    <ul>
+                      <li>
+                        Gắn với một giai cấp, dân tộc, hoàn cảnh lịch sử cụ thể.
+                      </li>
+                      <li>Đang sống, lao động, sản xuất và đấu tranh hằng ngày.</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="card s4card">
-              <div class="cnum">02</div>
-              <div class="ctitle">Thực thể tự nhiên<br />&amp; xã hội</div>
-              <div class="cbody">
-                <ul>
-                  <li>
-                    Gắn với một giai cấp, dân tộc, hoàn cảnh lịch sử cụ thể.
-                  </li>
-                  <li>Đang sống, lao động, sản xuất và đấu tranh hằng ngày.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="card s4card">
-              <div class="cnum">03</div>
-              <div class="ctitle">Đối tượng yêu thương<br />cụ thể</div>
-              <div class="cbody">
-                <ul>
-                  <li>Người nông dân nghèo, công nhân bị bóc lột.</li>
-                  <li>Đồng bào lầm than, chịu cảnh xiềng xích, áp bức.</li>
-                </ul>
+              <div class="card s4card">
+                <div class="cnum">03</div>
+                <div>
+                  <div class="ctitle">Đối tượng yêu thương cụ thể</div>
+                  <div class="cbody">
+                    <ul>
+                      <li>Người nông dân nghèo, công nhân bị bóc lột.</li>
+                      <li>Đồng bào lầm than, chịu cảnh xiềng xích, áp bức.</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
