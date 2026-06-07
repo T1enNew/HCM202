@@ -291,6 +291,19 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--fon
 .s5card .cbody{font-size:12.5px;line-height:1.6}
 @media(max-width:768px){.s5grid{grid-template-columns:1fr}.s5img{min-height:200px}}
 
+/* slide 6 — ảnh trung tâm + 2 thẻ Mục tiêu / Động lực */
+.s6grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:22px;align-items:stretch}
+.s6img{position:relative;margin:0;border-radius:18px;overflow:hidden;min-height:330px;
+  box-shadow:var(--shadow);border:1px solid var(--cardb);
+  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13))}
+.s6img::before{content:'🖼️  Lưu ảnh tên  vai-tro-cua-con-nguoi-voi-cach-mang.png';position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;
+  font-size:12px;letter-spacing:.5px;color:var(--sub);font-weight:700}
+.s6img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.s6side{display:flex;flex-direction:column;gap:14px;justify-content:space-between}
+.s6card .cbody{font-size:12.5px;line-height:1.6}
+@media(max-width:768px){.s6grid{grid-template-columns:1fr}.s6img{min-height:220px}}
+
 /* slide 7 — ảnh "trồng người" + 3 thẻ Đức/Trí-Mỹ/Thể */
 .s7grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:22px;align-items:stretch}
 .s7img{position:relative;margin:0;border-radius:18px;overflow:hidden;min-height:300px;
@@ -544,30 +557,33 @@ body.shownav .hint{animation:pulse 3s ease infinite}
 
 <!-- ⑥ ROLE IN REVOLUTION -->
 <div class="slide" data-i="5">
-  <div class="inner">
+  <div class="inner" style="max-width:1160px;gap:15px">
     <div class="lbl ai d1">Phần 2 · Vai trò con người</div>
     <div class="h1 ai d2">VAI TRÒ CỦA CON NGƯỜI<br>ĐỐI VỚI CÁCH MẠNG</div>
     <div class="divline ai d3"></div>
-    <div class="g2 ai d4">
-      <div class="card" style="display:flex;flex-direction:column;gap:12px">
-        <div class="cardimg"></div>
-        <div class="colhead">🎯 Con người là Mục tiêu</div>
-        <div class="cbody"><ul>
-          <li>Giải phóng dân tộc suy cho cùng là để giải phóng con người.</li>
-          <li>Mọi chính sách hướng tới tự do, cơm no, áo ấm, hạnh phúc cho dân.</li>
-        </ul></div>
-        <div class="quote" style="font-size:14px">
-          "Nếu nước độc lập mà dân không hưởng hạnh phúc tự do, thì độc lập ấy cũng chẳng có ý nghĩa gì."
+    <div class="s6grid ai d4">
+      <figure class="s6img">
+        <img src="vai-tro-cua-con-nguoi-voi-cach-mang.png" alt="Vai trò của con người đối với cách mạng: con người vừa là mục tiêu vừa là động lực; Bác Hồ cùng các tầng lớp nhân dân">
+      </figure>
+      <div class="s6side">
+        <div class="card s6card" style="display:flex;flex-direction:column;gap:11px">
+          <div class="colhead">🎯 Con người là Mục tiêu</div>
+          <div class="cbody"><ul>
+            <li>Giải phóng dân tộc suy cho cùng là để giải phóng con người.</li>
+            <li>Mọi chính sách hướng tới tự do, cơm no, áo ấm, hạnh phúc cho dân.</li>
+          </ul></div>
+          <div class="quote" style="font-size:13.5px">
+            "Nếu nước độc lập mà dân không hưởng hạnh phúc tự do, thì độc lập ấy cũng chẳng có ý nghĩa gì."
+          </div>
         </div>
-      </div>
-      <div class="card" style="display:flex;flex-direction:column;gap:12px">
-        <div class="cardimg"></div>
-        <div class="colhead">⚡ Con người là Động lực</div>
-        <div class="cbody"><ul>
-          <li>Cách mạng là sự nghiệp của quần chúng nhân dân.</li>
-          <li><strong>"Dân là gốc của nước"</strong> — sức mạnh nằm ở tinh thần làm chủ của dân.</li>
-          <li>Khơi dậy lòng yêu nước, tiềm năng sáng tạo của mọi tầng lớp nhân dân.</li>
-        </ul></div>
+        <div class="card s6card" style="display:flex;flex-direction:column;gap:11px">
+          <div class="colhead">⚡ Con người là Động lực</div>
+          <div class="cbody"><ul>
+            <li>Cách mạng là sự nghiệp của quần chúng nhân dân.</li>
+            <li><strong>"Dân là gốc của nước"</strong> — sức mạnh nằm ở tinh thần làm chủ của dân.</li>
+            <li>Khơi dậy lòng yêu nước, tiềm năng sáng tạo của mọi tầng lớp nhân dân.</li>
+          </ul></div>
+        </div>
       </div>
     </div>
   </div>
@@ -740,7 +756,7 @@ body.shownav .hint{animation:pulse 3s ease infinite}
   <div class="outro">
     <div class="big">CẢM ƠN THẦY<br>VÀ CÁC BẠN<br>ĐÃ LẮNG NGHE!</div>
     <div class="qa">💬 Q&amp;A — Mời Thầy và các bạn đặt câu hỏi &amp; góp ý</div>
-    <div class="sub">HCM202 · TƯ TƯỞNG HỒ CHÍ MINH · 2025–2026</div>
+    <div class="sub">HCM202 · TƯ TƯỞNG HỒ CHÍ MINH · C2.3</div>
   </div>
 </div>
 
