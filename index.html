@@ -1,1310 +1,2979 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tư Tưởng Hồ Chí Minh – Con Người & Chiến Lược "Trồng Người"</title>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#eef3fc;
-  --ink:#16233f;--ink2:#334155;--sub:#64748b;
-  --navy:#1e3a8a;--blue:#2563eb;--blue2:#3b82f6;--violet:#7c3aed;
-  --amber:#f59e0b;--amberD:#b45309;--gold:#d97706;
-  --card:rgba(255,255,255,.72);--cardb:rgba(255,255,255,.92);
-  --shadow:0 12px 38px rgba(30,58,138,.12);
-  --font:'Be Vietnam Pro','Segoe UI',sans-serif;
-  --serif:'Noto Serif',Georgia,'Times New Roman',serif;
-  --dur:650ms;--ease:cubic-bezier(.4,0,.2,1)
-}
-html,body{height:100%;overflow:hidden;background:var(--bg);font-family:var(--font);color:var(--ink2)}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tư Tưởng Hồ Chí Minh – Con Người & Chiến Lược "Trồng Người"</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #eef3fc;
+        --ink: #16233f;
+        --ink2: #334155;
+        --sub: #64748b;
+        --navy: #1e3a8a;
+        --blue: #2563eb;
+        --blue2: #3b82f6;
+        --violet: #7c3aed;
+        --amber: #f59e0b;
+        --amberD: #b45309;
+        --gold: #d97706;
+        --card: rgba(255, 255, 255, 0.72);
+        --cardb: rgba(255, 255, 255, 0.92);
+        --shadow: 0 12px 38px rgba(30, 58, 138, 0.12);
+        --font: "Be Vietnam Pro", "Segoe UI", sans-serif;
+        --serif: "Noto Serif", Georgia, "Times New Roman", serif;
+        --dur: 650ms;
+        --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+        background: var(--bg);
+        font-family: var(--font);
+        color: var(--ink2);
+      }
 
-/* ===== BRIGHT BACKGROUND (drifting blobs) ===== */
-#bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;
-  background:linear-gradient(160deg,#eaeff8 0%,#e6ecf6 50%,#ece9f5 100%)}
-.blob{position:absolute;border-radius:50%;filter:blur(82px);opacity:.32;will-change:transform}
-.b1{width:520px;height:520px;background:#b4ccf1;top:-120px;left:-100px;animation:drift1 26s var(--ease) infinite}
-.b2{width:460px;height:460px;background:#f4e3b2;top:-80px;right:-110px;animation:drift2 30s var(--ease) infinite}
-.b3{width:480px;height:480px;background:#b8e6d0;bottom:-140px;left:-90px;animation:drift3 28s var(--ease) infinite}
-.b4{width:500px;height:500px;background:#d5c9ec;bottom:-150px;right:-120px;animation:drift4 32s var(--ease) infinite}
-.b5{width:360px;height:360px;background:#eed3e2;top:38%;left:42%;opacity:.22;animation:drift5 34s var(--ease) infinite}
-@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,50px) scale(1.12)}}
-@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-50px,40px) scale(1.08)}}
-@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,-40px) scale(1.1)}}
-@keyframes drift4{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-45px,-50px) scale(1.14)}}
-@keyframes drift5{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-42%,-58%) scale(1.18)}}
-.grid{position:absolute;inset:0;opacity:.32;
-  background-image:linear-gradient(#1e3a8a0a 1px,transparent 1px),linear-gradient(90deg,#1e3a8a0a 1px,transparent 1px);
-  background-size:74px 74px}
-/* lá trôi nhẹ — gợi ý "trồng người" */
-.leaf{position:absolute;top:-14vh;will-change:transform;
-  animation-name:fall;animation-timing-function:linear;animation-iteration-count:infinite}
-.leaf>svg{display:block;filter:drop-shadow(0 4px 6px rgba(30,58,138,.08));
-  animation-name:sway;animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-direction:alternate}
-@keyframes fall{to{transform:translateY(132vh)}}
-@keyframes sway{from{transform:translateX(-16px) rotate(-22deg)}to{transform:translateX(16px) rotate(22deg)}}
+      /* ===== BRIGHT BACKGROUND (drifting blobs) ===== */
+      #bg {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        pointer-events: none;
+        background: linear-gradient(
+          160deg,
+          #eaeff8 0%,
+          #e6ecf6 50%,
+          #ece9f5 100%
+        );
+      }
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(82px);
+        opacity: 0.32;
+        will-change: transform;
+      }
+      .b1 {
+        width: 520px;
+        height: 520px;
+        background: #b4ccf1;
+        top: -120px;
+        left: -100px;
+        animation: drift1 26s var(--ease) infinite;
+      }
+      .b2 {
+        width: 460px;
+        height: 460px;
+        background: #f4e3b2;
+        top: -80px;
+        right: -110px;
+        animation: drift2 30s var(--ease) infinite;
+      }
+      .b3 {
+        width: 480px;
+        height: 480px;
+        background: #b8e6d0;
+        bottom: -140px;
+        left: -90px;
+        animation: drift3 28s var(--ease) infinite;
+      }
+      .b4 {
+        width: 500px;
+        height: 500px;
+        background: #d5c9ec;
+        bottom: -150px;
+        right: -120px;
+        animation: drift4 32s var(--ease) infinite;
+      }
+      .b5 {
+        width: 360px;
+        height: 360px;
+        background: #eed3e2;
+        top: 38%;
+        left: 42%;
+        opacity: 0.22;
+        animation: drift5 34s var(--ease) infinite;
+      }
+      @keyframes drift1 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(60px, 50px) scale(1.12);
+        }
+      }
+      @keyframes drift2 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(-50px, 40px) scale(1.08);
+        }
+      }
+      @keyframes drift3 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(50px, -40px) scale(1.1);
+        }
+      }
+      @keyframes drift4 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(-45px, -50px) scale(1.14);
+        }
+      }
+      @keyframes drift5 {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          transform: translate(-42%, -58%) scale(1.18);
+        }
+      }
+      .grid {
+        position: absolute;
+        inset: 0;
+        opacity: 0.32;
+        background-image:
+          linear-gradient(#1e3a8a0a 1px, transparent 1px),
+          linear-gradient(90deg, #1e3a8a0a 1px, transparent 1px);
+        background-size: 74px 74px;
+      }
+      /* lá trôi nhẹ — gợi ý "trồng người" */
+      .leaf {
+        position: absolute;
+        top: -14vh;
+        will-change: transform;
+        animation-name: fall;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      .leaf > svg {
+        display: block;
+        filter: drop-shadow(0 4px 6px rgba(30, 58, 138, 0.08));
+        animation-name: sway;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(132vh);
+        }
+      }
+      @keyframes sway {
+        from {
+          transform: translateX(-16px) rotate(-22deg);
+        }
+        to {
+          transform: translateX(16px) rotate(22deg);
+        }
+      }
 
-/* ===== DECK ===== */
-.deck{position:fixed;inset:0;z-index:1}
-.slide{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  padding:42px 54px 74px;opacity:0;pointer-events:none;
-  transform:translateY(28px) scale(.97);
-  transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease)
-}
-.slide.active{opacity:1;pointer-events:auto;transform:none}
-.slide.exit{opacity:0;transform:translateY(-18px) scale(1.01)}
+      /* ===== DECK ===== */
+      .deck {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+      }
+      .slide {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 42px 54px 74px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(28px) scale(0.97);
+        transition:
+          opacity var(--dur) var(--ease),
+          transform var(--dur) var(--ease);
+      }
+      .slide.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+      .slide.exit {
+        opacity: 0;
+        transform: translateY(-18px) scale(1.01);
+      }
 
-/* anim items */
-.ai{opacity:0;transform:translateY(22px)}
-.slide.active .ai{animation:fadeUp .55s var(--ease) forwards}
-.ai.d1{animation-delay:.08s}.ai.d2{animation-delay:.18s}
-.ai.d3{animation-delay:.28s}.ai.d4{animation-delay:.38s}
-.ai.d5{animation-delay:.48s}.ai.d6{animation-delay:.56s}
-@keyframes fadeUp{to{opacity:1;transform:none}}
-@keyframes heroIn{from{opacity:0;transform:translateY(36px) scale(.95)}to{opacity:1;transform:none}}
-@keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
-/* ===== AMBIENT — luôn chuyển động khi đứng yên trên slide ===== */
-@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-@keyframes flowGrad{0%{background-position:0% 0}100%{background-position:200% 0}}
-@keyframes breathe{0%,100%{box-shadow:0 6px 16px rgba(37,99,235,.3);transform:translateY(0)}50%{box-shadow:0 12px 26px rgba(124,58,237,.5);transform:translateY(-4px)}}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+      /* anim items */
+      .ai {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      .slide.active .ai {
+        animation: fadeUp 0.55s var(--ease) forwards;
+      }
+      .ai.d1 {
+        animation-delay: 0.08s;
+      }
+      .ai.d2 {
+        animation-delay: 0.18s;
+      }
+      .ai.d3 {
+        animation-delay: 0.28s;
+      }
+      .ai.d4 {
+        animation-delay: 0.38s;
+      }
+      .ai.d5 {
+        animation-delay: 0.48s;
+      }
+      .ai.d6 {
+        animation-delay: 0.56s;
+      }
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes heroIn {
+        from {
+          opacity: 0;
+          transform: translateY(36px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.55;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      /* ===== AMBIENT — luôn chuyển động khi đứng yên trên slide ===== */
+      @keyframes shimmer {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+      @keyframes flowGrad {
+        0% {
+          background-position: 0% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+      @keyframes breathe {
+        0%,
+        100% {
+          box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+          transform: translateY(0);
+        }
+        50% {
+          box-shadow: 0 12px 26px rgba(124, 58, 237, 0.5);
+          transform: translateY(-4px);
+        }
+      }
+      @keyframes bob {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-7px);
+        }
+      }
+      @keyframes floaty {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
 
-.inner{width:100%;max-width:1180px;display:flex;flex-direction:column;gap:24px;zoom:1.1}
+      .inner {
+        width: 100%;
+        max-width: 1180px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        zoom: 1.1;
+      }
 
-/* deco */
-.dc{position:absolute;pointer-events:none}
-.dc-tl{top:0;left:0}.dc-tr{top:0;right:0}.dc-bl{bottom:0;left:0}.dc-br{bottom:0;right:0}
+      /* deco */
+      .dc {
+        position: absolute;
+        pointer-events: none;
+      }
+      .dc-tl {
+        top: 0;
+        left: 0;
+      }
+      .dc-tr {
+        top: 0;
+        right: 0;
+      }
+      .dc-bl {
+        bottom: 0;
+        left: 0;
+      }
+      .dc-br {
+        bottom: 0;
+        right: 0;
+      }
 
-/* type */
-.lbl{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--amberD)}
-.h1{font-family:var(--serif);font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.18;letter-spacing:.2px;
-  background:linear-gradient(120deg,#1e3a8a 0%,#2563eb 35%,#7c3aed 55%,#2563eb 75%,#1e3a8a 100%);
-  background-size:220% auto;
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.slide.active .h1.ai{animation:fadeUp .55s var(--ease) .18s both, shimmer 9s ease-in-out 1s infinite}
-.divline{height:2px;border-radius:2px;max-width:340px;
-  background:linear-gradient(90deg,#f59e0b,#3b82f6,#7c3aed,#3b82f6,#f59e0b);
-  background-size:200% 100%;animation:flowGrad 5s linear infinite}
+      /* type */
+      .lbl {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--amberD);
+      }
+      .h1 {
+        font-family: var(--serif);
+        font-size: clamp(28px, 4vw, 52px);
+        font-weight: 700;
+        line-height: 1.18;
+        letter-spacing: 0.2px;
+        background: linear-gradient(
+          120deg,
+          #1e3a8a 0%,
+          #2563eb 35%,
+          #7c3aed 55%,
+          #2563eb 75%,
+          #1e3a8a 100%
+        );
+        background-size: 220% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .slide.active .h1.ai {
+        animation:
+          fadeUp 0.55s var(--ease) 0.18s both,
+          shimmer 9s ease-in-out 1s infinite;
+      }
+      .divline {
+        height: 2px;
+        border-radius: 2px;
+        max-width: 340px;
+        background: linear-gradient(
+          90deg,
+          #f59e0b,
+          #3b82f6,
+          #7c3aed,
+          #3b82f6,
+          #f59e0b
+        );
+        background-size: 200% 100%;
+        animation: flowGrad 5s linear infinite;
+      }
 
-/* grids */
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+      /* grids */
+      .g3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .g2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
 
-/* card */
-.card{
-  background:var(--card);border:1px solid var(--cardb);border-radius:18px;
-  padding:22px;position:relative;overflow:hidden;
-  box-shadow:var(--shadow);backdrop-filter:blur(10px) saturate(1.25);
-  transition:transform .25s,box-shadow .25s
-}
-.card::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;
-  background:linear-gradient(90deg,#2563eb,#7c3aed,#f59e0b,#7c3aed,#2563eb);
-  background-size:200% 100%;animation:flowGrad 6s linear infinite}
-.card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(30,58,138,.18)}
-.cnum{
-  width:44px;height:44px;border-radius:13px;
-  background:linear-gradient(135deg,#2563eb,#7c3aed);
-  display:flex;align-items:center;justify-content:center;
-  font-size:17px;font-weight:800;color:#fff;margin-bottom:13px;
-  box-shadow:0 6px 16px rgba(37,99,235,.35);
-  animation:breathe 4.5s ease-in-out infinite
-}
-.g3 .card:nth-child(2) .cnum,.g3 .card:nth-child(2) .femoji{animation-delay:.7s}
-.g3 .card:nth-child(3) .cnum,.g3 .card:nth-child(3) .femoji{animation-delay:1.4s}
-.femoji{animation:bob 4.5s ease-in-out infinite}
-.ctitle{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:9px;line-height:1.3}
-.cbody{font-size:13px;line-height:1.72;color:var(--ink2)}
-.cbody ul{list-style:none}
-.cbody li{padding-left:17px;position:relative;margin-bottom:6px}
-.cbody li::before{content:'▸';position:absolute;left:0;color:var(--amber);font-weight:700}
-.cbody strong{color:var(--navy);font-weight:700}
+      /* card */
+      .card {
+        background: var(--card);
+        border: 1px solid var(--cardb);
+        border-radius: 18px;
+        padding: 22px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px) saturate(1.25);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+      .card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          #2563eb,
+          #7c3aed,
+          #f59e0b,
+          #7c3aed,
+          #2563eb
+        );
+        background-size: 200% 100%;
+        animation: flowGrad 6s linear infinite;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 44px rgba(30, 58, 138, 0.18);
+      }
+      .cnum {
+        width: 44px;
+        height: 44px;
+        border-radius: 13px;
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 13px;
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+        animation: breathe 4.5s ease-in-out infinite;
+      }
+      .g3 .card:nth-child(2) .cnum,
+      .g3 .card:nth-child(2) .femoji {
+        animation-delay: 0.7s;
+      }
+      .g3 .card:nth-child(3) .cnum,
+      .g3 .card:nth-child(3) .femoji {
+        animation-delay: 1.4s;
+      }
+      .femoji {
+        animation: bob 4.5s ease-in-out infinite;
+      }
+      .ctitle {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 9px;
+        line-height: 1.3;
+      }
+      .cbody {
+        font-size: 13px;
+        line-height: 1.72;
+        color: var(--ink2);
+      }
+      .cbody ul {
+        list-style: none;
+      }
+      .cbody li {
+        padding-left: 17px;
+        position: relative;
+        margin-bottom: 6px;
+      }
+      .cbody li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--amber);
+        font-weight: 700;
+      }
+      .cbody strong {
+        color: var(--navy);
+        font-weight: 700;
+      }
 
-/* quote */
-.quote{
-  background:linear-gradient(135deg,#fff7e6,#fffdf7);
-  border-left:4px solid var(--amber);border-radius:0 14px 14px 0;
-  padding:18px 22px;font-family:var(--serif);font-style:italic;
-  font-size:16px;line-height:1.7;color:#92400e;box-shadow:var(--shadow)
-}
-.quote .attr{font-family:var(--font);font-style:normal;font-size:12px;color:var(--sub);margin-top:8px;letter-spacing:.3px}
+      /* quote */
+      .quote {
+        background: linear-gradient(135deg, #fff7e6, #fffdf7);
+        border-left: 4px solid var(--amber);
+        border-radius: 0 14px 14px 0;
+        padding: 18px 22px;
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #92400e;
+        box-shadow: var(--shadow);
+      }
+      .quote .attr {
+        font-family: var(--font);
+        font-style: normal;
+        font-size: 12px;
+        color: var(--sub);
+        margin-top: 8px;
+        letter-spacing: 0.3px;
+      }
 
-/* two-col head */
-.colhead{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--blue);margin-bottom:12px;padding-bottom:8px;
-  border-bottom:2px solid rgba(245,158,11,.4)}
+      /* two-col head */
+      .colhead {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--blue);
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid rgba(245, 158, 11, 0.4);
+      }
 
-/* stacks */
-.stacks{display:flex;flex-direction:column;gap:14px}
-.scard{
-  background:var(--card);border:1px solid var(--cardb);border-radius:14px;
-  padding:17px 22px;display:flex;gap:16px;align-items:flex-start;
-  box-shadow:var(--shadow);backdrop-filter:blur(10px) saturate(1.2);
-  transition:transform .25s,box-shadow .25s
-}
-.scard:hover{transform:translateX(7px);box-shadow:0 16px 40px rgba(30,58,138,.16)}
-.sicon{width:46px;height:46px;border-radius:13px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-size:22px;
-  box-shadow:0 6px 16px rgba(30,58,138,.2);animation:floaty 4.5s ease-in-out infinite}
-.scard:nth-child(2) .sicon{animation-delay:.6s}
-.scard:nth-child(3) .sicon{animation-delay:1.2s}
-.sbody h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
-.sbody p{font-size:13px;color:var(--ink2);line-height:1.65}
+      /* stacks */
+      .stacks {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .scard {
+        background: var(--card);
+        border: 1px solid var(--cardb);
+        border-radius: 14px;
+        padding: 17px 22px;
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px) saturate(1.2);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+      .scard:hover {
+        transform: translateX(7px);
+        box-shadow: 0 16px 40px rgba(30, 58, 138, 0.16);
+      }
+      .sicon {
+        width: 46px;
+        height: 46px;
+        border-radius: 13px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        box-shadow: 0 6px 16px rgba(30, 58, 138, 0.2);
+        animation: floaty 4.5s ease-in-out infinite;
+      }
+      .scard:nth-child(2) .sicon {
+        animation-delay: 0.6s;
+      }
+      .scard:nth-child(3) .sicon {
+        animation-delay: 1.2s;
+      }
+      .sbody h4 {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 4px;
+      }
+      .sbody p {
+        font-size: 13px;
+        color: var(--ink2);
+        line-height: 1.65;
+      }
 
-/* roadmap */
-.rmap{display:flex;flex-direction:column;gap:10px}
-.rstep{display:flex;align-items:center;gap:14px;
-  background:var(--card);border:1px solid var(--cardb);border-radius:13px;
-  padding:13px 18px;font-size:14px;color:var(--ink);font-weight:600;
-  box-shadow:var(--shadow);backdrop-filter:blur(8px);
-  transition:transform .25s,box-shadow .25s}
-.rstep:hover{transform:translateX(7px);box-shadow:0 14px 34px rgba(30,58,138,.16)}
-.rnum{width:32px;height:32px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,#2563eb,#7c3aed);
-  display:flex;align-items:center;justify-content:center;
-  font-size:14px;font-weight:800;color:#fff;box-shadow:0 4px 12px rgba(37,99,235,.3);
-  animation:breathe 4s ease-in-out infinite}
-.rstep:nth-child(2) .rnum{animation-delay:.5s}
-.rstep:nth-child(3) .rnum{animation-delay:1s}
-.rstep:nth-child(4) .rnum{animation-delay:1.5s}
+      /* roadmap */
+      .rmap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .rstep {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: var(--card);
+        border: 1px solid var(--cardb);
+        border-radius: 13px;
+        padding: 13px 18px;
+        font-size: 14px;
+        color: var(--ink);
+        font-weight: 600;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(8px);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+      .rstep:hover {
+        transform: translateX(7px);
+        box-shadow: 0 14px 34px rgba(30, 58, 138, 0.16);
+      }
+      .rnum {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 800;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        animation: breathe 4s ease-in-out infinite;
+      }
+      .rstep:nth-child(2) .rnum {
+        animation-delay: 0.5s;
+      }
+      .rstep:nth-child(3) .rnum {
+        animation-delay: 1s;
+      }
+      .rstep:nth-child(4) .rnum {
+        animation-delay: 1.5s;
+      }
 
-/* title slide */
-.ts{text-align:center;max-width:880px;margin:auto;zoom:1.1}
-.ts .big{
-  font-family:var(--serif);
-  font-size:clamp(32px,5vw,62px);font-weight:700;line-height:1.16;letter-spacing:.3px;
-  background:linear-gradient(120deg,#1e3a8a 0%,#3b82f6 30%,#8b5cf6 50%,#3b82f6 70%,#1e3a8a 100%);
-  background-size:220% auto;
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  margin-bottom:24px;animation:heroIn .8s var(--ease) .25s both, shimmer 10s ease-in-out 1.2s infinite
-}
-.ts .tag{display:inline-block;background:rgba(255,255,255,.7);border:1px solid var(--cardb);
-  border-radius:100px;padding:10px 28px;font-size:13.5px;color:var(--ink2);
-  letter-spacing:.4px;box-shadow:var(--shadow);backdrop-filter:blur(8px);
-  animation:heroIn .8s var(--ease) .55s both}
+      /* title slide */
+      .ts {
+        text-align: center;
+        max-width: 880px;
+        margin: auto;
+        zoom: 1.1;
+      }
+      .ts .big {
+        font-family: var(--serif);
+        font-size: clamp(32px, 5vw, 62px);
+        font-weight: 700;
+        line-height: 1.16;
+        letter-spacing: 0.3px;
+        background: linear-gradient(
+          120deg,
+          #1e3a8a 0%,
+          #3b82f6 30%,
+          #8b5cf6 50%,
+          #3b82f6 70%,
+          #1e3a8a 100%
+        );
+        background-size: 220% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 24px;
+        animation:
+          heroIn 0.8s var(--ease) 0.25s both,
+          shimmer 10s ease-in-out 1.2s infinite;
+      }
+      .ts .tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid var(--cardb);
+        border-radius: 100px;
+        padding: 10px 28px;
+        font-size: 13.5px;
+        color: var(--ink2);
+        letter-spacing: 0.4px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(8px);
+        animation: heroIn 0.8s var(--ease) 0.55s both;
+      }
 
-/* outro */
-.outro{text-align:center;max-width:880px;margin:auto;zoom:1.1}
-.outro .big{
-  font-family:var(--serif);
-  font-size:clamp(36px,5.6vw,70px);font-weight:700;line-height:1.18;letter-spacing:.3px;
-  background:linear-gradient(120deg,#1e3a8a 0%,#3b82f6 30%,#8b5cf6 50%,#3b82f6 70%,#1e3a8a 100%);
-  background-size:220% auto;
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  animation:heroIn .85s var(--ease) .2s both, shimmer 10s ease-in-out 1.2s infinite
-}
-.qa{display:inline-block;margin-top:30px;background:rgba(255,255,255,.7);
-  border:1px solid var(--cardb);border-radius:100px;padding:11px 30px;
-  font-size:14.5px;color:var(--ink2);letter-spacing:.3px;font-weight:500;
-  box-shadow:var(--shadow);backdrop-filter:blur(8px);
-  animation:heroIn .85s var(--ease) .55s both}
-.outro .sub{margin-top:16px;font-size:13px;letter-spacing:2.5px;color:var(--sub);
-  animation:heroIn .85s var(--ease) .75s both}
+      /* outro */
+      .outro {
+        text-align: center;
+        max-width: 880px;
+        margin: auto;
+        zoom: 1.1;
+      }
+      .outro .big {
+        font-family: var(--serif);
+        font-size: clamp(36px, 5.6vw, 70px);
+        font-weight: 700;
+        line-height: 1.18;
+        letter-spacing: 0.3px;
+        background: linear-gradient(
+          120deg,
+          #1e3a8a 0%,
+          #3b82f6 30%,
+          #8b5cf6 50%,
+          #3b82f6 70%,
+          #1e3a8a 100%
+        );
+        background-size: 220% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation:
+          heroIn 0.85s var(--ease) 0.2s both,
+          shimmer 10s ease-in-out 1.2s infinite;
+      }
+      .qa {
+        display: inline-block;
+        margin-top: 30px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid var(--cardb);
+        border-radius: 100px;
+        padding: 11px 30px;
+        font-size: 14.5px;
+        color: var(--ink2);
+        letter-spacing: 0.3px;
+        font-weight: 500;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(8px);
+        animation: heroIn 0.85s var(--ease) 0.55s both;
+      }
+      .outro .sub {
+        margin-top: 16px;
+        font-size: 13px;
+        letter-spacing: 2.5px;
+        color: var(--sub);
+        animation: heroIn 0.85s var(--ease) 0.75s both;
+      }
 
-/* member box */
-.mbox{background:rgba(255,255,255,.55);border:2px dashed #b9c6e0;border-radius:18px;
-  min-height:175px;display:flex;align-items:center;justify-content:center;
-  font-size:14px;color:var(--sub);letter-spacing:1.5px;text-align:center;padding:16px}
-/* danh sách thành viên — gọn, không avatar */
-.mlist{display:flex;flex-direction:column;gap:8px}
-.member{display:flex;align-items:center;justify-content:space-between;gap:12px;
-  background:var(--card);border:1px solid var(--cardb);border-left:3px solid #2563eb;
-  border-radius:10px;padding:10px 16px;box-shadow:var(--shadow);backdrop-filter:blur(8px);
-  transition:transform .22s,box-shadow .22s}
-.member:hover{transform:translateX(5px);box-shadow:0 12px 26px rgba(30,58,138,.14)}
-.mname{font-size:14px;font-weight:600;color:var(--ink);line-height:1.2}
-.mid{font-size:12px;color:var(--sub);letter-spacing:.5px;font-weight:600;flex-shrink:0}
+      /* member box */
+      .mbox {
+        background: rgba(255, 255, 255, 0.55);
+        border: 2px dashed #b9c6e0;
+        border-radius: 18px;
+        min-height: 175px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: var(--sub);
+        letter-spacing: 1.5px;
+        text-align: center;
+        padding: 16px;
+      }
+      /* danh sách thành viên — gọn, không avatar */
+      .mlist {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .member {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        background: var(--card);
+        border: 1px solid var(--cardb);
+        border-left: 3px solid #2563eb;
+        border-radius: 10px;
+        padding: 10px 16px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(8px);
+        transition:
+          transform 0.22s,
+          box-shadow 0.22s;
+      }
+      .member:hover {
+        transform: translateX(5px);
+        box-shadow: 0 12px 26px rgba(30, 58, 138, 0.14);
+      }
+      .mname {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--ink);
+        line-height: 1.2;
+      }
+      .mid {
+        font-size: 12px;
+        color: var(--sub);
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        flex-shrink: 0;
+      }
 
-/* ===== KHUNG ẢNH — chèn ảnh minh hoạ =====
+      /* ===== KHUNG ẢNH — chèn ảnh minh hoạ =====
    Cách dùng: thay <div class="cardimg"></div>
    bằng       <div class="cardimg"><img src="link-hoặc-tên-file.jpg" alt=""></div> */
-.cardimg{margin:-22px -22px 15px;height:108px;position:relative;overflow:hidden;
-  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13));
-  display:flex;align-items:center;justify-content:center}
-.cardimg.sm{height:80px}
-.cardimg::before{content:'🖼️  Chèn ảnh';position:absolute;font-size:11px;letter-spacing:1px;
-  color:var(--sub);font-weight:700;opacity:.85}
-.cardimg img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+      .cardimg {
+        margin: -22px -22px 15px;
+        height: 108px;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          rgba(96, 165, 250, 0.16),
+          rgba(124, 58, 237, 0.13)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cardimg.sm {
+        height: 80px;
+      }
+      .cardimg::before {
+        content: "🖼️  Chèn ảnh";
+        position: absolute;
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: var(--sub);
+        font-weight: 700;
+        opacity: 0.85;
+      }
+      .cardimg img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
 
-.imgframe{position:relative;border-radius:14px;overflow:hidden;min-height:150px;
-  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13));
-  border:1px solid var(--cardb);box-shadow:var(--shadow);
-  display:flex;align-items:center;justify-content:center}
-.imgframe::before{content:'🖼️  Chèn ảnh minh hoạ';position:absolute;font-size:12px;
-  letter-spacing:1px;color:var(--sub);font-weight:700;opacity:.85}
-.imgframe img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+      .imgframe {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        min-height: 150px;
+        background: linear-gradient(
+          135deg,
+          rgba(96, 165, 250, 0.16),
+          rgba(124, 58, 237, 0.13)
+        );
+        border: 1px solid var(--cardb);
+        box-shadow: var(--shadow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .imgframe::before {
+        content: "🖼️  Chèn ảnh minh hoạ";
+        position: absolute;
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: var(--sub);
+        font-weight: 700;
+        opacity: 0.85;
+      }
+      .imgframe img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
 
-.sthumb{width:86px;height:86px;border-radius:12px;flex-shrink:0;overflow:hidden;position:relative;
-  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13));
-  box-shadow:0 6px 16px rgba(30,58,138,.16)}
-.sthumb::before{content:'🖼️';position:absolute;inset:0;display:flex;align-items:center;
-  justify-content:center;font-size:22px;opacity:.5}
-.sthumb img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+      .sthumb {
+        width: 86px;
+        height: 86px;
+        border-radius: 12px;
+        flex-shrink: 0;
+        overflow: hidden;
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          rgba(96, 165, 250, 0.16),
+          rgba(124, 58, 237, 0.13)
+        );
+        box-shadow: 0 6px 16px rgba(30, 58, 138, 0.16);
+      }
+      .sthumb::before {
+        content: "🖼️";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        opacity: 0.5;
+      }
+      .sthumb img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
 
-/* slide 3 — ảnh lớn + 3 thẻ gọn */
-.s3grid{display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:stretch}
-.s3img{position:relative;border-radius:18px;overflow:hidden;margin:0;min-height:340px;
-  box-shadow:var(--shadow);border:1px solid var(--cardb);
-  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13))}
-.s3img::before{content:'🖼️  Lưu ảnh tên  co-so-hinh-thanh.jpg';position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;
-  font-size:12px;letter-spacing:.5px;color:var(--sub);font-weight:700}
-.s3img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
-.s3img figcaption{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:24px 18px 12px;
-  font-size:12px;color:#fff;font-weight:600;letter-spacing:.2px;
-  background:linear-gradient(to top,rgba(15,23,42,.82),transparent)}
-.s3cards{display:flex;flex-direction:column;gap:13px;justify-content:space-between}
-.s3card{padding:15px 18px}
-.s3card .ctitle{font-size:15px;margin-bottom:7px;display:flex;align-items:center;gap:8px}
-.s3card .ce{font-size:20px}
-.s3card .cbody{font-size:12.5px;line-height:1.62}
-@media(max-width:768px){.s3grid{grid-template-columns:1fr}.s3img{min-height:220px}}
+      /* slide 3 — ảnh lớn + 3 thẻ gọn */
+      .s3grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 22px;
+        align-items: stretch;
+      }
+      .s3img {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        margin: 0;
+        min-height: 340px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--cardb);
+        background: linear-gradient(
+          135deg,
+          rgba(96, 165, 250, 0.16),
+          rgba(124, 58, 237, 0.13)
+        );
+      }
+      .s3img::before {
+        content: "🖼️  Lưu ảnh tên  co-so-hinh-thanh.jpg";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        color: var(--sub);
+        font-weight: 700;
+      }
+      .s3img img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .s3img figcaption {
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 24px 18px 12px;
+        font-size: 12px;
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        background: linear-gradient(
+          to top,
+          rgba(15, 23, 42, 0.82),
+          transparent
+        );
+      }
+      .s3cards {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        justify-content: space-between;
+      }
+      .s3card {
+        padding: 15px 18px;
+      }
+      .s3card .ctitle {
+        font-size: 15px;
+        margin-bottom: 7px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .s3card .ce {
+        font-size: 20px;
+      }
+      .s3card .cbody {
+        font-size: 12.5px;
+        line-height: 1.62;
+      }
+      @media (max-width: 768px) {
+        .s3grid {
+          grid-template-columns: 1fr;
+        }
+        .s3img {
+          min-height: 220px;
+        }
+      }
 
-/* slide 4 — banner ảnh triptych + 3 thẻ thẳng hàng */
-.s4img{position:relative;margin:0;height:250px;border-radius:18px;overflow:hidden;
-  box-shadow:var(--shadow);border:1px solid var(--cardb);
-  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13))}
-.s4img::before{content:'🖼️  Lưu ảnh tên  con-nguoi-lich-su.png';position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;
-  font-size:12px;letter-spacing:.5px;color:var(--sub);font-weight:700}
-.s4img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
-.s4card{padding:16px 18px}
-.s4card .cnum{width:38px;height:38px;border-radius:11px;font-size:15px;margin-bottom:10px}
-.s4card .ctitle{font-size:14px}
-.s4card .cbody{font-size:12.5px;line-height:1.6}
-@media(max-width:768px){.s4img{height:180px}}
+      /* slide 4 — banner ảnh triptych + 3 thẻ thẳng hàng */
+      .s4img {
+        position: relative;
+        margin: 0;
+        height: 250px;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--cardb);
+        background: linear-gradient(
+          135deg,
+          rgba(96, 165, 250, 0.16),
+          rgba(124, 58, 237, 0.13)
+        );
+      }
+      .s4img::before {
+        content: "🖼️  Lưu ảnh tên  con-nguoi-lich-su.jpg";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        color: var(--sub);
+        font-weight: 700;
+      }
+      .s4img img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+        display: block;
+      }
+      .s4card {
+        padding: 16px 18px;
+      }
+      .s4card .cnum {
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+      .s4card .ctitle {
+        font-size: 14px;
+      }
+      .s4card .cbody {
+        font-size: 12.5px;
+        line-height: 1.6;
+      }
+      @media (max-width: 768px) {
+        .s4img {
+          height: 180px;
+        }
+      }
 
-/* slide 5 — ảnh triptych + 3 thẻ + trích dẫn */
-.s5grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
-.s5img{position:relative;margin:0;border-radius:18px;overflow:hidden;min-height:252px;
-  box-shadow:var(--shadow);border:1px solid var(--cardb);
-  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13))}
-.s5img::before{content:'🖼️  Lưu ảnh tên  ban-chat-con-nguoi.png';position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;
-  font-size:12px;letter-spacing:.5px;color:var(--sub);font-weight:700}
-.s5img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.s5side{display:flex;flex-direction:column;gap:12px;justify-content:space-between}
-.s5card{padding:14px 17px}
-.s5card .ctitle{font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.s5card .cbody{font-size:12.5px;line-height:1.6}
-@media(max-width:768px){.s5grid{grid-template-columns:1fr}.s5img{min-height:200px}}
+      /* slide 5 — ảnh triptych + 3 thẻ + trích dẫn */
+      .s5grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 22px;
+        align-items: stretch;
+      }
+      .s5img {
+        position: relative;
+        margin: 0;
+        border-radius: 18px;
+        overflow: hidden;
+        min-height: 252px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--cardb);
+        background: linear-gradient(
+          135deg,
+          rgba(96, 165, 250, 0.16),
+          rgba(124, 58, 237, 0.13)
+        );
+      }
+      .s5img::before {
+        content: "🖼️  Lưu ảnh tên  ban-chat-con-nguoi.png";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        color: var(--sub);
+        font-weight: 700;
+      }
+      .s5img img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
+      .s5side {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: space-between;
+      }
+      .s5card {
+        padding: 14px 17px;
+      }
+      .s5card .ctitle {
+        font-size: 14px;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .s5card .cbody {
+        font-size: 12.5px;
+        line-height: 1.6;
+      }
+      @media (max-width: 768px) {
+        .s5grid {
+          grid-template-columns: 1fr;
+        }
+        .s5img {
+          min-height: 200px;
+        }
+      }
 
-/* slide 6 — ảnh trung tâm + 2 thẻ Mục tiêu / Động lực */
-.s6grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:22px;align-items:stretch}
-.s6img{position:relative;margin:0;border-radius:18px;overflow:hidden;min-height:330px;
-  box-shadow:var(--shadow);border:1px solid var(--cardb);
-  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13))}
-.s6img::before{content:'🖼️  Lưu ảnh tên  vai-tro-cua-con-nguoi-voi-cach-mang.png';position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;
-  font-size:12px;letter-spacing:.5px;color:var(--sub);font-weight:700}
-.s6img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.s6side{display:flex;flex-direction:column;gap:14px;justify-content:space-between}
-.s6card .cbody{font-size:12.5px;line-height:1.6}
-@media(max-width:768px){.s6grid{grid-template-columns:1fr}.s6img{min-height:220px}}
+      /* slide 6 — ảnh trung tâm + 2 thẻ Mục tiêu / Động lực */
+      .s6grid {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 22px;
+        align-items: stretch;
+      }
+      .s6img {
+        position: relative;
+        margin: 0;
+        border-radius: 18px;
+        overflow: hidden;
+        min-height: 330px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--cardb);
+        background: linear-gradient(
+          135deg,
+          rgba(96, 165, 250, 0.16),
+          rgba(124, 58, 237, 0.13)
+        );
+      }
+      .s6img::before {
+        content: "🖼️  Lưu ảnh tên  vai-tro-cua-con-nguoi-voi-cach-mang.png";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        color: var(--sub);
+        font-weight: 700;
+      }
+      .s6img img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+      }
+      .s6side {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        justify-content: space-between;
+      }
+      .s6card .cbody {
+        font-size: 12.5px;
+        line-height: 1.6;
+      }
+      @media (max-width: 768px) {
+        .s6grid {
+          grid-template-columns: 1fr;
+        }
+        .s6img {
+          min-height: 220px;
+        }
+      }
 
-/* slide 7 — ảnh "trồng người" + 3 thẻ Đức/Trí-Mỹ/Thể */
-.s7grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:22px;align-items:stretch}
-.s7img{position:relative;margin:0;border-radius:18px;overflow:hidden;min-height:300px;
-  box-shadow:var(--shadow);border:1px solid var(--cardb);
-  background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(124,58,237,.13))}
-.s7img::before{content:'🖼️  Lưu ảnh tên  chien-luoc-trong-nguoi.png';position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;
-  font-size:12px;letter-spacing:.5px;color:var(--sub);font-weight:700}
-.s7img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.s7side{display:flex;flex-direction:column;gap:11px;justify-content:space-between}
-.s7card{padding:13px 16px;display:flex;gap:14px;align-items:flex-start}
-.s7card .cnum{margin-bottom:0;width:38px;height:38px;border-radius:11px;font-size:15px;flex-shrink:0}
-.s7card .ctitle{font-size:14px;margin-bottom:5px}
-.s7card .cbody{font-size:12.5px;line-height:1.55}
-@media(max-width:768px){.s7grid{grid-template-columns:1fr}.s7img{min-height:200px}}
+      /* slide 7 — ảnh "trồng người" + 3 thẻ Đức/Trí-Mỹ/Thể */
+      .s7grid {
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 22px;
+        align-items: stretch;
+      }
+      .s7img {
+        position: relative;
+        margin: 0;
+        border-radius: 18px;
+        overflow: hidden;
+        min-height: 300px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--cardb);
+        background: linear-gradient(
+          135deg,
+          rgba(96, 165, 250, 0.16),
+          rgba(124, 58, 237, 0.13)
+        );
+      }
+      .s7img::before {
+        content: "🖼️  Lưu ảnh tên  chien-luoc-trong-nguoi.png";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        color: var(--sub);
+        font-weight: 700;
+      }
+      .s7img img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
+      .s7side {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        justify-content: space-between;
+      }
+      .s7card {
+        padding: 13px 16px;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      .s7card .cnum {
+        margin-bottom: 0;
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+        font-size: 15px;
+        flex-shrink: 0;
+      }
+      .s7card .ctitle {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      .s7card .cbody {
+        font-size: 12.5px;
+        line-height: 1.55;
+      }
+      @media (max-width: 768px) {
+        .s7grid {
+          grid-template-columns: 1fr;
+        }
+        .s7img {
+          min-height: 200px;
+        }
+      }
 
-/* slide 8 — 2 thẻ có ảnh lớn 2 bên */
-.s8grid{align-items:stretch}
-.s8grid .cardimg{height:238px}
-.s8grid .cardimg img{object-position:center top}
-@media(max-width:768px){.s8grid .cardimg{height:175px}}
+      /* slide 8 — 2 thẻ có ảnh lớn 2 bên */
+      .s8grid {
+        align-items: stretch;
+      }
+      .s8grid .cardimg {
+        height: 238px;
+      }
+      .s8grid .cardimg img {
+        object-position: center top;
+      }
+      @media (max-width: 768px) {
+        .s8grid .cardimg {
+          height: 175px;
+        }
+      }
 
-/* slide 9 — 2 thẻ có ảnh lớn 2 bên (Trí / Đức) */
-.s9grid{align-items:stretch}
-.s9grid .cardimg{height:230px}
-@media(max-width:768px){.s9grid .cardimg{height:175px}}
+      /* slide 9 — 2 thẻ có ảnh lớn 2 bên (Trí / Đức) */
+      .s9grid {
+        align-items: stretch;
+      }
+      .s9grid .cardimg {
+        height: 230px;
+      }
+      @media (max-width: 768px) {
+        .s9grid .cardimg {
+          height: 175px;
+        }
+      }
 
-/* progress */
-.pbar{position:fixed;bottom:0;left:0;right:0;z-index:200;height:3px;background:rgba(30,58,138,.1)}
-.pfill{height:100%;width:0;background:linear-gradient(90deg,#2563eb,#f59e0b);
-  transition:width .5s var(--ease);box-shadow:0 0 10px rgba(37,99,235,.5)}
+      /* progress */
+      .pbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        height: 3px;
+        background: rgba(30, 58, 138, 0.1);
+      }
+      .pfill {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, #2563eb, #f59e0b);
+        transition: width 0.5s var(--ease);
+        box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+      }
 
-/* nav */
-.nav{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:200;
-  display:flex;align-items:center;gap:10px}
-.nbtn{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.8);
-  border:1px solid var(--cardb);color:var(--navy);font-size:17px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);
-  transition:transform .2s,background .2s;backdrop-filter:blur(10px)}
-.nbtn:hover{background:#fff;transform:scale(1.1)}
-.nbtn:disabled{opacity:.35;cursor:not-allowed;transform:none}
-.ctr{font-size:13px;color:var(--ink2);font-weight:700;min-width:56px;text-align:center;letter-spacing:1px}
+      /* nav */
+      .nav {
+        position: fixed;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .nbtn {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid var(--cardb);
+        color: var(--navy);
+        font-size: 17px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.2s,
+          background 0.2s;
+        backdrop-filter: blur(10px);
+      }
+      .nbtn:hover {
+        background: #fff;
+        transform: scale(1.1);
+      }
+      .nbtn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+        transform: none;
+      }
+      .ctr {
+        font-size: 13px;
+        color: var(--ink2);
+        font-weight: 700;
+        min-width: 56px;
+        text-align: center;
+        letter-spacing: 1px;
+      }
 
-/* dots */
-.dots{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:200;
-  display:flex;flex-direction:column;gap:8px}
-.dot{width:8px;height:8px;border-radius:50%;background:rgba(30,58,138,.22);
-  cursor:pointer;transition:all .3s;border:1px solid rgba(30,58,138,.12)}
-.dot.on{background:var(--amber);box-shadow:0 0 8px rgba(245,158,11,.6);transform:scale(1.4)}
-.dot:hover{background:rgba(30,58,138,.45)}
+      /* dots */
+      .dots {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(30, 58, 138, 0.22);
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 1px solid rgba(30, 58, 138, 0.12);
+      }
+      .dot.on {
+        background: var(--amber);
+        box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+        transform: scale(1.4);
+      }
+      .dot:hover {
+        background: rgba(30, 58, 138, 0.45);
+      }
 
-/* badge + hint */
-.badge{position:fixed;top:20px;right:22px;z-index:200;font-size:11px;color:var(--sub);font-weight:800;letter-spacing:2px}
-.hint{position:fixed;bottom:64px;left:50%;transform:translateX(-50%);z-index:200;
-  font-size:11px;color:rgba(30,58,138,.32);letter-spacing:1px}
+      /* badge + hint */
+      .badge {
+        position: fixed;
+        top: 20px;
+        right: 22px;
+        z-index: 200;
+        font-size: 11px;
+        color: var(--sub);
+        font-weight: 800;
+        letter-spacing: 2px;
+      }
+      .hint {
+        position: fixed;
+        bottom: 64px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 200;
+        font-size: 11px;
+        color: rgba(30, 58, 138, 0.32);
+        letter-spacing: 1px;
+      }
 
-@media(max-width:768px){
-  .slide{padding:36px 20px 74px}
-  .g3,.g2{grid-template-columns:1fr}
-  .dots{display:none}
-}
+      @media (max-width: 768px) {
+        .slide {
+          padding: 36px 20px 74px;
+        }
+        .g3,
+        .g2 {
+          grid-template-columns: 1fr;
+        }
+        .dots {
+          display: none;
+        }
+      }
 
-/* ẩn nav + hint — chỉ hiện khi rê chuột xuống sát đáy */
-.nav,.hint{opacity:0;pointer-events:none;
-  transform:translateX(-50%) translateY(14px);
-  transition:opacity .35s var(--ease),transform .35s var(--ease)}
-body.shownav .nav,body.shownav .hint{opacity:1;transform:translateX(-50%);pointer-events:auto}
-body.shownav .hint{animation:pulse 3s ease infinite}
+      /* ẩn nav + hint — chỉ hiện khi rê chuột xuống sát đáy */
+      .nav,
+      .hint {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-50%) translateY(14px);
+        transition:
+          opacity 0.35s var(--ease),
+          transform 0.35s var(--ease);
+      }
+      body.shownav .nav,
+      body.shownav .hint {
+        opacity: 1;
+        transform: translateX(-50%);
+        pointer-events: auto;
+      }
+      body.shownav .hint {
+        animation: pulse 3s ease infinite;
+      }
 
-/* ===== MINIGAME STYLE ===== */
-.mg-container {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 22px;
-  align-items: stretch;
-  width: 100%;
-}
-@media(max-width: 768px) {
-  .mg-container {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-.mg-card {
-  min-height: 340px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 22px;
-}
-.mg-qheader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-  border-bottom: 1px solid rgba(30, 58, 138, 0.08);
-  padding-bottom: 8px;
-}
-.mg-qnum {
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--amberD);
-  background: rgba(245, 158, 11, 0.12);
-  padding: 4px 10px;
-  border-radius: 20px;
-}
-.mg-score {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--blue2);
-}
-.mg-question {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 14px;
-  line-height: 1.4;
-  flex-grow: 1;
-}
-.mg-anagram-board {
-  position: relative;
-  height: 120px;
-  width: 100%;
-  margin: 15px 0;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  border: 1px solid rgba(30, 58, 138, 0.05);
-  overflow: hidden;
-}
-.mg-anagram-placeholder {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1.5px dashed rgba(30, 58, 138, 0.15);
-  background: rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 70px;
-  transform: translateX(-50%);
-}
-.mg-anagram-badge {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--blue), var(--violet));
-  color: #fff;
-  font-size: 14px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
-  cursor: default;
-  user-select: none;
-  top: 15px;
-  transform: translateX(-50%);
-  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-  z-index: 2;
-}
-.mg-anagram-badge.assembled {
-  background: linear-gradient(135deg, #22c55e, #16a34a) !important;
-  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.35);
-  transform: translateX(-50%) scale(1.08);
-}
-.mg-option {
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(30, 58, 138, 0.1);
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 13.5px;
-  font-weight: 500;
-  color: var(--ink2);
-  cursor: pointer;
-  transition: all 0.22s var(--ease);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.mg-option:hover {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: var(--blue2);
-  transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.08);
-}
-.mg-option.correct {
-  background: #dcfce7 !important;
-  border-color: #22c55e !important;
-  color: #15803d !important;
-  font-weight: 600;
-}
-.mg-option.incorrect {
-  background: #fee2e2 !important;
-  border-color: #ef4444 !important;
-  color: #b91c1c !important;
-  animation: shake 0.4s ease;
-}
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-6px); }
-  75% { transform: translateX(6px); }
-}
+      /* ===== MINIGAME STYLE ===== */
+      .mg-container {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 22px;
+        align-items: stretch;
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+        .mg-container {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+      }
+      .mg-card {
+        min-height: 340px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 22px;
+      }
+      .mg-qheader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        border-bottom: 1px solid rgba(30, 58, 138, 0.08);
+        padding-bottom: 8px;
+      }
+      .mg-qnum {
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--amberD);
+        background: rgba(245, 158, 11, 0.12);
+        padding: 4px 10px;
+        border-radius: 20px;
+      }
+      .mg-score {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--blue2);
+      }
+      .mg-question {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 14px;
+        line-height: 1.4;
+        flex-grow: 1;
+      }
+      .mg-anagram-board {
+        position: relative;
+        height: 120px;
+        width: 100%;
+        margin: 15px 0;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        border: 1px solid rgba(30, 58, 138, 0.05);
+        overflow: hidden;
+      }
+      .mg-anagram-placeholder {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1.5px dashed rgba(30, 58, 138, 0.15);
+        background: rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 70px;
+        transform: translateX(-50%);
+      }
+      .mg-anagram-badge {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--blue), var(--violet));
+        color: #fff;
+        font-size: 14px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
+        cursor: default;
+        user-select: none;
+        top: 15px;
+        transform: translateX(-50%);
+        transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        z-index: 2;
+      }
+      .mg-anagram-badge.assembled {
+        background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+        box-shadow: 0 4px 10px rgba(34, 197, 94, 0.35);
+        transform: translateX(-50%) scale(1.08);
+      }
+      .mg-option {
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(30, 58, 138, 0.1);
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 13.5px;
+        font-weight: 500;
+        color: var(--ink2);
+        cursor: pointer;
+        transition: all 0.22s var(--ease);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .mg-option:hover {
+        background: rgba(255, 255, 255, 0.95);
+        border-color: var(--blue2);
+        transform: translateX(5px);
+        box-shadow: 0 4px 12px rgba(30, 58, 138, 0.08);
+      }
+      .mg-option.correct {
+        background: #dcfce7 !important;
+        border-color: #22c55e !important;
+        color: #15803d !important;
+        font-weight: 600;
+      }
+      .mg-option.incorrect {
+        background: #fee2e2 !important;
+        border-color: #ef4444 !important;
+        color: #b91c1c !important;
+        animation: shake 0.4s ease;
+      }
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-6px);
+        }
+        75% {
+          transform: translateX(6px);
+        }
+      }
 
-/* Right Panel: Word Board */
-.mg-board {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  justify-content: space-between;
-}
-.mg-title-sub {
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--navy);
-  margin-bottom: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.mg-pool-wrapper {
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px dashed rgba(30, 58, 138, 0.2);
-  border-radius: 14px;
-  padding: 12px;
-  min-height: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.mg-letters-pool {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-}
-.mg-letter-badge {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--blue), var(--violet));
-  color: #fff;
-  font-size: 16px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.22s var(--ease);
-  animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-}
-.mg-letter-badge:hover {
-  transform: scale(1.15) rotate(5deg);
-  box-shadow: 0 6px 14px rgba(124, 58, 237, 0.4);
-}
-@keyframes popIn {
-  0% { transform: scale(0); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
+      /* Right Panel: Word Board */
+      .mg-board {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        justify-content: space-between;
+      }
+      .mg-title-sub {
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .mg-pool-wrapper {
+        background: rgba(255, 255, 255, 0.45);
+        border: 1px dashed rgba(30, 58, 138, 0.2);
+        border-radius: 14px;
+        padding: 12px;
+        min-height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .mg-letters-pool {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+      }
+      .mg-letter-badge {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--blue), var(--violet));
+        color: #fff;
+        font-size: 16px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.22s var(--ease);
+        animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+      .mg-letter-badge:hover {
+        transform: scale(1.15) rotate(5deg);
+        box-shadow: 0 6px 14px rgba(124, 58, 237, 0.4);
+      }
+      @keyframes popIn {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
 
-/* Word Assembly Slots */
-.mg-word-slots {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  margin-top: 6px;
-}
-.mg-word-row {
-  display: flex;
-  gap: 6px;
-}
-.mg-slot {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  border: 2px solid rgba(30, 58, 138, 0.15);
-  background: rgba(255, 255, 255, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--navy);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.mg-slot.filled {
-  background: #fff;
-  border-color: var(--amber);
-  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.2);
-}
-.mg-slot:hover {
-  border-color: var(--blue2);
-}
+      /* Word Assembly Slots */
+      .mg-word-slots {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        margin-top: 6px;
+      }
+      .mg-word-row {
+        display: flex;
+        gap: 6px;
+      }
+      .mg-slot {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        border: 2px solid rgba(30, 58, 138, 0.15);
+        background: rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--navy);
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .mg-slot.filled {
+        background: #fff;
+        border-color: var(--amber);
+        box-shadow: 0 4px 10px rgba(245, 158, 11, 0.2);
+      }
+      .mg-slot:hover {
+        border-color: var(--blue2);
+      }
 
-/* Success Card */
-.mg-success-card {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  animation: scaleUpIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-  min-height: 340px;
-}
-@keyframes scaleUpIn {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-.mg-success-icon {
-  font-size: 48px;
-  margin-bottom: 12px;
-  animation: bounce 2s infinite;
-}
-.mg-success-title {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 700;
-  color: #15803d;
-  margin-bottom: 10px;
-}
-.mg-success-desc {
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--ink2);
-  margin-bottom: 18px;
-  max-width: 480px;
-}
-.mg-reset-btn {
-  background: linear-gradient(135deg, var(--blue), var(--violet));
-  color: white;
-  border: none;
-  border-radius: 30px;
-  padding: 8px 20px;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-  transition: all 0.2s;
-  text-transform: uppercase;
-}
-.mg-reset-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
-}
+      /* Success Card */
+      .mg-success-card {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        animation: scaleUpIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+        min-height: 340px;
+      }
+      @keyframes scaleUpIn {
+        from {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .mg-success-icon {
+        font-size: 48px;
+        margin-bottom: 12px;
+        animation: bounce 2s infinite;
+      }
+      .mg-success-title {
+        font-family: var(--serif);
+        font-size: 22px;
+        font-weight: 700;
+        color: #15803d;
+        margin-bottom: 10px;
+      }
+      .mg-success-desc {
+        font-size: 13px;
+        line-height: 1.6;
+        color: var(--ink2);
+        margin-bottom: 18px;
+        max-width: 480px;
+      }
+      .mg-reset-btn {
+        background: linear-gradient(135deg, var(--blue), var(--violet));
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 8px 20px;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        transition: all 0.2s;
+        text-transform: uppercase;
+      }
+      .mg-reset-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+      }
 
-/* Confetti particles */
-.confetti {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 100;
-  animation: confettiFall 2.5s linear infinite;
-}
-@keyframes confettiFall {
-  0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(420px) rotate(360deg); opacity: 0; }
-}
-</style>
-</head>
-<body>
-
-<div id="bg">
-  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-  <div class="blob b4"></div><div class="blob b5"></div>
-  <div class="grid"></div>
-</div>
-
-<div class="badge" id="badge">01 / 12</div>
-<div class="dots" id="dots"></div>
-
-<div class="deck" id="deck">
-
-<!-- ① TITLE -->
-<div class="slide active" data-i="0">
-  <svg class="dc dc-tl" width="190" height="180" viewBox="0 0 190 180" fill="none">
-    <rect x="0" y="18" width="130" height="11" rx="4" fill="#60a5fa" opacity=".55"/>
-    <rect x="0" y="39" width="90"  height="11" rx="4" fill="#60a5fa" opacity=".4"/>
-    <rect x="0" y="60" width="62"  height="11" rx="4" fill="#fbbf24" opacity=".5"/>
-    <rect x="0" y="81" width="40"  height="11" rx="4" fill="#fbbf24" opacity=".35"/>
-  </svg>
-  <svg class="dc dc-tr" width="130" height="130" viewBox="0 0 130 130" fill="none">
-    <circle cx="130" cy="0" r="78" fill="#93c5fd" opacity=".45"/>
-    <circle cx="130" cy="0" r="48" fill="#c4b5fd" opacity=".4"/>
-  </svg>
-  <svg class="dc dc-bl" width="110" height="110" viewBox="0 0 110 110" fill="none">
-    <circle cx="0" cy="110" r="70" fill="#a7f3d0" opacity=".4"/>
-  </svg>
-  <svg class="dc dc-br" width="210" height="80" viewBox="0 0 210 80" fill="none">
-    <rect x="10" y="8"  width="200" height="10" rx="4" fill="#60a5fa" opacity=".4"/>
-    <rect x="50" y="28" width="160" height="10" rx="4" fill="#fbbf24" opacity=".45"/>
-    <rect x="85" y="48" width="125" height="10" rx="4" fill="#60a5fa" opacity=".3"/>
-  </svg>
-  <div class="ts">
-    <div style="font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--amberD);margin-bottom:18px;animation:heroIn .7s ease .05s both">
-      Môn HCM202 — Bài thuyết trình học thuật
+      /* Confetti particles */
+      .confetti {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 100;
+        animation: confettiFall 2.5s linear infinite;
+      }
+      @keyframes confettiFall {
+        0% {
+          transform: translateY(-10px) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(420px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bg">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="blob b3"></div>
+      <div class="blob b4"></div>
+      <div class="blob b5"></div>
+      <div class="grid"></div>
     </div>
-    <div class="big">TƯ TƯỞNG HỒ CHÍ MINH<br>VỀ CON NGƯỜI &amp;<br>CHIẾN LƯỢC "TRỒNG NGƯỜI"</div>
-    <div class="tag">🎓 Nhóm thực hiện · C2.3 · HCM202 </div>
-  </div>
-</div>
 
-<!-- ② MEMBERS + ROADMAP -->
-<div class="slide" data-i="1">
-  <div class="inner">
-    <div class="lbl ai d1">Nhóm thực hiện · Lộ trình</div>
-    <div class="h1 ai d2">THÀNH VIÊN &amp; LỘ TRÌNH BÀI HỌC</div>
-    <div class="divline ai d3"></div>
-    <div class="g2 ai d4">
-      <div style="display:flex;flex-direction:column;gap:13px">
-        <div class="colhead">👥 Thành viên nhóm — 6 thành viên</div>
-        <div class="mlist">
-          <div class="member"><span class="mname">Huỳnh Phước Thiện</span><span class="mid">SE172095</span></div>
-          <div class="member"><span class="mname">Ngô Trí Vinh</span><span class="mid">SE180738</span></div>
-          <div class="member"><span class="mname">Phạm Công Minh</span><span class="mid">SE180071</span></div>
-          <div class="member"><span class="mname">Nguyễn Thanh Minh Nhật</span><span class="mid">SE171539</span></div>
-          <div class="member"><span class="mname">Thái Tấn Tiến</span><span class="mid">SE172575</span></div>
-          <div class="member"><span class="mname">Ngô Phạm Nhựt Duy</span><span class="mid">SE161783</span></div>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:13px">
-        <div class="colhead">🗺️ Lộ trình bài học</div>
-        <div class="rmap">
-          <div class="rstep"><span class="rnum">1</span> Cơ sở hình thành tư tưởng</div>
-          <div class="rstep"><span class="rnum">2</span> Quan điểm cơ bản về con người</div>
-          <div class="rstep"><span class="rnum">3</span> Chiến lược "Trồng người"</div>
-          <div class="rstep"><span class="rnum">4</span> Vận dụng thực tiễn cho sinh viên</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    <div class="badge" id="badge">01 / 12</div>
+    <div class="dots" id="dots"></div>
 
-<!-- ③ MINIGAME -->
-<div class="slide" data-i="2">
-  <div class="inner" style="max-width:1160px">
-    <div class="lbl ai d1">Khởi động · Minigame</div>
-    <div class="h1 ai d2">MINIGAME KHỞI ĐỘNG: ĐI TÌM TỪ KHÓA</div>
-    <div class="divline ai d3"></div>
-    <div class="mg-container ai d4">
-      <!-- Left side: Question Card -->
-      <div class="card mg-card" id="mg-card-container">
-        <div class="mg-qheader">
-          <span class="mg-qnum" id="mg-qnum">Câu hỏi 1 / 8</span>
-          <span class="mg-score" id="mg-score">Đúng: 0/8</span>
-        </div>
-        <div class="mg-question" id="mg-question">Đang tải câu hỏi...</div>
-        <div class="mg-options" id="mg-options">
-          <!-- Options will be rendered dynamically -->
+    <div class="deck" id="deck">
+      <!-- ① TITLE -->
+      <div class="slide active" data-i="0">
+        <svg
+          class="dc dc-tl"
+          width="190"
+          height="180"
+          viewBox="0 0 190 180"
+          fill="none"
+        >
+          <rect
+            x="0"
+            y="18"
+            width="130"
+            height="11"
+            rx="4"
+            fill="#60a5fa"
+            opacity=".55"
+          />
+          <rect
+            x="0"
+            y="39"
+            width="90"
+            height="11"
+            rx="4"
+            fill="#60a5fa"
+            opacity=".4"
+          />
+          <rect
+            x="0"
+            y="60"
+            width="62"
+            height="11"
+            rx="4"
+            fill="#fbbf24"
+            opacity=".5"
+          />
+          <rect
+            x="0"
+            y="81"
+            width="40"
+            height="11"
+            rx="4"
+            fill="#fbbf24"
+            opacity=".35"
+          />
+        </svg>
+        <svg
+          class="dc dc-tr"
+          width="130"
+          height="130"
+          viewBox="0 0 130 130"
+          fill="none"
+        >
+          <circle cx="130" cy="0" r="78" fill="#93c5fd" opacity=".45" />
+          <circle cx="130" cy="0" r="48" fill="#c4b5fd" opacity=".4" />
+        </svg>
+        <svg
+          class="dc dc-bl"
+          width="110"
+          height="110"
+          viewBox="0 0 110 110"
+          fill="none"
+        >
+          <circle cx="0" cy="110" r="70" fill="#a7f3d0" opacity=".4" />
+        </svg>
+        <svg
+          class="dc dc-br"
+          width="210"
+          height="80"
+          viewBox="0 0 210 80"
+          fill="none"
+        >
+          <rect
+            x="10"
+            y="8"
+            width="200"
+            height="10"
+            rx="4"
+            fill="#60a5fa"
+            opacity=".4"
+          />
+          <rect
+            x="50"
+            y="28"
+            width="160"
+            height="10"
+            rx="4"
+            fill="#fbbf24"
+            opacity=".45"
+          />
+          <rect
+            x="85"
+            y="48"
+            width="125"
+            height="10"
+            rx="4"
+            fill="#60a5fa"
+            opacity=".3"
+          />
+        </svg>
+        <div class="ts">
+          <div
+            style="
+              font-size: 11px;
+              font-weight: 800;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              color: var(--amberD);
+              margin-bottom: 18px;
+              animation: heroIn 0.7s ease 0.05s both;
+            "
+          >
+            Môn HCM202 — Bài thuyết trình học thuật
+          </div>
+          <div class="big">
+            TƯ TƯỞNG HỒ CHÍ MINH<br />VỀ CON NGƯỜI &amp;<br />CHIẾN LƯỢC "TRỒNG
+            NGƯỜI"
+          </div>
+          <div class="tag">🎓 Nhóm thực hiện · C2.3 · HCM202</div>
         </div>
       </div>
-      
-      <!-- Right side: Letter Board -->
-      <div class="card mg-board">
-        <div>
-          <div class="mg-title-sub">Chữ cái đã thu thập (Xáo trộn)</div>
-          <div class="mg-pool-wrapper">
-            <div class="mg-letters-pool" id="mg-letters-pool">
-              <!-- Collected letters will appear here -->
+
+      <!-- ② MEMBERS + ROADMAP -->
+      <div class="slide" data-i="1">
+        <div class="inner">
+          <div class="lbl ai d1">Nhóm thực hiện · Lộ trình</div>
+          <div class="h1 ai d2">THÀNH VIÊN &amp; LỘ TRÌNH BÀI HỌC</div>
+          <div class="divline ai d3"></div>
+          <div class="g2 ai d4">
+            <div style="display: flex; flex-direction: column; gap: 13px">
+              <div class="colhead">👥 Thành viên nhóm — 6 thành viên</div>
+              <div class="mlist">
+                <div class="member">
+                  <span class="mname">Huỳnh Phước Thiện</span
+                  ><span class="mid">SE172095</span>
+                </div>
+                <div class="member">
+                  <span class="mname">Ngô Trí Vinh</span
+                  ><span class="mid">SE180738</span>
+                </div>
+                <div class="member">
+                  <span class="mname">Phạm Công Minh</span
+                  ><span class="mid">SE180071</span>
+                </div>
+                <div class="member">
+                  <span class="mname">Nguyễn Thanh Minh Nhật</span
+                  ><span class="mid">SE171539</span>
+                </div>
+                <div class="member">
+                  <span class="mname">Thái Tấn Tiến</span
+                  ><span class="mid">SE172575</span>
+                </div>
+                <div class="member">
+                  <span class="mname">Ngô Phạm Nhựt Duy</span
+                  ><span class="mid">SE161783</span>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 13px">
+              <div class="colhead">🗺️ Lộ trình bài học</div>
+              <div class="rmap">
+                <div class="rstep">
+                  <span class="rnum">1</span> Cơ sở hình thành tư tưởng
+                </div>
+                <div class="rstep">
+                  <span class="rnum">2</span> Quan điểm cơ bản về con người
+                </div>
+                <div class="rstep">
+                  <span class="rnum">3</span> Chiến lược "Trồng người"
+                </div>
+                <div class="rstep">
+                  <span class="rnum">4</span> Vận dụng thực tiễn cho sinh viên
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        
-        <div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-            <div class="mg-title-sub" style="margin-bottom: 0;">Ghép từ khóa bí ẩn</div>
-            <button id="mg-keyword-hint-btn" style="background: none; border: none; color: var(--blue2); font-size: 11px; font-weight: 700; cursor: pointer; text-decoration: underline; outline: none;">💡 Xem gợi ý</button>
-          </div>
-          <div id="mg-keyword-hint-text" style="display: none; font-size: 11.5px; color: var(--sub); font-style: italic; margin-bottom: 8px; text-align: center; background: rgba(37, 99, 235, 0.05); padding: 6px; border-radius: 8px; line-height: 1.4;">
-            Gợi ý: Nhân tố quyết định thắng lợi của cách mạng; Bác Hồ khẳng định: "Vô luận việc gì, đều do ... làm ra, và từ nhỏ đến to, từ gần đến xa, đều thế cả" (2 từ, 8 chữ cái).
-          </div>
-          <div class="mg-word-slots">
-            <!-- Word 1: CON (3 letters) -->
-            <div class="mg-word-row" id="mg-word-row-1">
-              <div class="mg-slot" data-slot-idx="0">?</div>
-              <div class="mg-slot" data-slot-idx="1">?</div>
-              <div class="mg-slot" data-slot-idx="2">?</div>
+      </div>
+
+      <!-- ③ MINIGAME -->
+      <div class="slide" data-i="2">
+        <div class="inner" style="max-width: 1160px">
+          <div class="lbl ai d1">Khởi động · Minigame</div>
+          <div class="h1 ai d2">MINIGAME KHỞI ĐỘNG: ĐI TÌM TỪ KHÓA</div>
+          <div class="divline ai d3"></div>
+          <div class="mg-container ai d4">
+            <!-- Left side: Question Card -->
+            <div class="card mg-card" id="mg-card-container">
+              <div class="mg-qheader">
+                <span class="mg-qnum" id="mg-qnum">Câu hỏi 1 / 8</span>
+                <span class="mg-score" id="mg-score">Đúng: 0/8</span>
+              </div>
+              <div class="mg-question" id="mg-question">
+                Đang tải câu hỏi...
+              </div>
+              <div class="mg-options" id="mg-options">
+                <!-- Options will be rendered dynamically -->
+              </div>
             </div>
-            <!-- Word 2: NGƯỜI (5 letters) -->
-            <div class="mg-word-row" id="mg-word-row-2" style="margin-top: 6px;">
-              <div class="mg-slot" data-slot-idx="3">?</div>
-              <div class="mg-slot" data-slot-idx="4">?</div>
-              <div class="mg-slot" data-slot-idx="5">?</div>
-              <div class="mg-slot" data-slot-idx="6">?</div>
-              <div class="mg-slot" data-slot-idx="7">?</div>
+
+            <!-- Right side: Letter Board -->
+            <div class="card mg-board">
+              <div>
+                <div class="mg-title-sub">Chữ cái đã thu thập (Xáo trộn)</div>
+                <div class="mg-pool-wrapper">
+                  <div class="mg-letters-pool" id="mg-letters-pool">
+                    <!-- Collected letters will appear here -->
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 6px;
+                  "
+                >
+                  <div class="mg-title-sub" style="margin-bottom: 0">
+                    Ghép từ khóa bí ẩn
+                  </div>
+                  <button
+                    id="mg-keyword-hint-btn"
+                    style="
+                      background: none;
+                      border: none;
+                      color: var(--blue2);
+                      font-size: 11px;
+                      font-weight: 700;
+                      cursor: pointer;
+                      text-decoration: underline;
+                      outline: none;
+                    "
+                  >
+                    💡 Xem gợi ý
+                  </button>
+                </div>
+                <div
+                  id="mg-keyword-hint-text"
+                  style="
+                    display: none;
+                    font-size: 11.5px;
+                    color: var(--sub);
+                    font-style: italic;
+                    margin-bottom: 8px;
+                    text-align: center;
+                    background: rgba(37, 99, 235, 0.05);
+                    padding: 6px;
+                    border-radius: 8px;
+                    line-height: 1.4;
+                  "
+                >
+                  Gợi ý: Nhân tố quyết định thắng lợi của cách mạng; Bác Hồ
+                  khẳng định: "Vô luận việc gì, đều do ... làm ra, và từ nhỏ đến
+                  to, từ gần đến xa, đều thế cả" (2 từ, 8 chữ cái).
+                </div>
+                <div class="mg-word-slots">
+                  <!-- Word 1: CON (3 letters) -->
+                  <div class="mg-word-row" id="mg-word-row-1">
+                    <div class="mg-slot" data-slot-idx="0">?</div>
+                    <div class="mg-slot" data-slot-idx="1">?</div>
+                    <div class="mg-slot" data-slot-idx="2">?</div>
+                  </div>
+                  <!-- Word 2: NGƯỜI (5 letters) -->
+                  <div
+                    class="mg-word-row"
+                    id="mg-word-row-2"
+                    style="margin-top: 6px"
+                  >
+                    <div class="mg-slot" data-slot-idx="3">?</div>
+                    <div class="mg-slot" data-slot-idx="4">?</div>
+                    <div class="mg-slot" data-slot-idx="5">?</div>
+                    <div class="mg-slot" data-slot-idx="6">?</div>
+                    <div class="mg-slot" data-slot-idx="7">?</div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  gap: 8px;
+                "
+              >
+                <span
+                  id="mg-hint-msg"
+                  style="font-size: 11px; color: var(--sub)"
+                  >Chọn đáp án đúng để nhận chữ cái</span
+                >
+                <div style="display: flex; gap: 6px">
+                  <button
+                    class="mg-reset-btn"
+                    id="mg-clear-btn"
+                    style="display: none; padding: 6px 14px; font-size: 11px"
+                  >
+                    Xóa chữ
+                  </button>
+                  <button
+                    class="mg-reset-btn"
+                    id="mg-solve-btn"
+                    style="
+                      display: none;
+                      padding: 6px 14px;
+                      font-size: 11px;
+                      background: linear-gradient(
+                        135deg,
+                        var(--amber),
+                        var(--gold)
+                      );
+                    "
+                  >
+                    Xem đáp án
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        
-        <div style="display:flex; justify-content:space-between; align-items:center; gap: 8px;">
-          <span id="mg-hint-msg" style="font-size:11px; color:var(--sub);">Chọn đáp án đúng để nhận chữ cái</span>
-          <div style="display: flex; gap: 6px;">
-            <button class="mg-reset-btn" id="mg-clear-btn" style="display:none; padding:6px 14px; font-size:11px;">Xóa chữ</button>
-            <button class="mg-reset-btn" id="mg-solve-btn" style="display:none; padding:6px 14px; font-size:11px; background: linear-gradient(135deg, var(--amber), var(--gold));">Xem đáp án</button>
+      </div>
+
+      <!-- ④ FOUNDATION -->
+      <div class="slide" data-i="3">
+        <div class="inner" style="max-width: 1160px">
+          <div class="lbl ai d1">Phần 1 · Cơ sở lý luận</div>
+          <div class="h1 ai d2">CƠ SỞ HÌNH THÀNH TƯ TƯỞNG</div>
+          <div class="divline ai d3"></div>
+          <div class="s3grid ai d4">
+            <figure class="s3img">
+              <img
+                src="images/co-so-hinh-thanh.jpg"
+                alt="Cơ sở hình thành tư tưởng Hồ Chí Minh: tinh hoa phương Đông, tư tưởng phương Tây và chủ nghĩa Mác – Lênin"
+              />
+              <figcaption>
+                Ba nguồn gốc hội tụ trong hành trình tìm đường cứu nước của
+                Người
+              </figcaption>
+            </figure>
+            <div class="s3cards">
+              <div class="card s3card">
+                <div class="ctitle">
+                  <span class="ce">🏮</span> Tinh hoa Phương Đông
+                </div>
+                <div class="cbody">
+                  <ul>
+                    <li>Nho giáo: lòng nhân ái, triết lý tu thân</li>
+                    <li>
+                      Phật giáo: từ bi, "thương người như thể thương thân"
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card s3card">
+                <div class="ctitle">
+                  <span class="ce">🗽</span> Tư tưởng Phương Tây
+                </div>
+                <div class="cbody">
+                  <ul>
+                    <li>Tự do – Bình đẳng – Bác ái (CM Pháp, Mỹ)</li>
+                    <li>Tư tưởng các nhà Khai sáng phương Tây</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card s3card">
+                <div class="ctitle">
+                  <span class="ce">⚙️</span> Chủ nghĩa Mác – Lênin
+                </div>
+                <div class="cbody">
+                  <ul>
+                    <li>
+                      <strong>Bước ngoặt quyết định</strong> — soi đường giải
+                      phóng con người triệt để
+                    </li>
+                    <li>Con người là chủ thể sáng tạo lịch sử</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
-<!-- ④ FOUNDATION -->
-<div class="slide" data-i="3">
-  <div class="inner" style="max-width:1160px">
-    <div class="lbl ai d1">Phần 1 · Cơ sở lý luận</div>
-    <div class="h1 ai d2">CƠ SỞ HÌNH THÀNH TƯ TƯỞNG</div>
-    <div class="divline ai d3"></div>
-    <div class="s3grid ai d4">
-      <figure class="s3img">
-        <img src="images/co-so-hinh-thanh.jpg" alt="Cơ sở hình thành tư tưởng Hồ Chí Minh: tinh hoa phương Đông, tư tưởng phương Tây và chủ nghĩa Mác – Lênin">
-        <figcaption>Ba nguồn gốc hội tụ trong hành trình tìm đường cứu nước của Người</figcaption>
-      </figure>
-      <div class="s3cards">
-        <div class="card s3card">
-          <div class="ctitle"><span class="ce">🏮</span> Tinh hoa Phương Đông</div>
-          <div class="cbody"><ul>
-            <li>Nho giáo: lòng nhân ái, triết lý tu thân</li>
-            <li>Phật giáo: từ bi, "thương người như thể thương thân"</li>
-          </ul></div>
-        </div>
-        <div class="card s3card">
-          <div class="ctitle"><span class="ce">🗽</span> Tư tưởng Phương Tây</div>
-          <div class="cbody"><ul>
-            <li>Tự do – Bình đẳng – Bác ái (CM Pháp, Mỹ)</li>
-            <li>Tư tưởng các nhà Khai sáng phương Tây</li>
-          </ul></div>
-        </div>
-        <div class="card s3card">
-          <div class="ctitle"><span class="ce">⚙️</span> Chủ nghĩa Mác – Lênin</div>
-          <div class="cbody"><ul>
-            <li><strong>Bước ngoặt quyết định</strong> — soi đường giải phóng con người triệt để</li>
-            <li>Con người là chủ thể sáng tạo lịch sử</li>
-          </ul></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ⑤ HISTORICAL PERSON -->
-<div class="slide" data-i="4">
-  <div class="inner" style="max-width:1160px">
-    <div class="lbl ai d1">Phần 2 · Quan niệm con người</div>
-    <div class="h1 ai d2">CON NGƯỜI LỊCH SỬ – CỤ THỂ</div>
-    <div class="divline ai d3"></div>
-    <figure class="s4img ai d4">
-      <img src="images/con-nguoi-lich-su.png" alt="Con người lịch sử – cụ thể trong tư tưởng Hồ Chí Minh: từ con người trừu tượng đến con người gắn với giai cấp, dân tộc và đối tượng yêu thương cụ thể">
-    </figure>
-    <div class="g3 ai d5">
-      <div class="card s4card">
-        <div class="cnum">01</div>
-        <div class="ctitle">Không trừu tượng,<br>không thần thánh hóa</div>
-        <div class="cbody"><ul>
-          <li>Không bàn "con người" chung chung, xa rời thực tế.</li>
-          <li>Là cá thể bằng xương bằng thịt, đang sống, lao động, học tập.</li>
-        </ul></div>
-      </div>
-      <div class="card s4card">
-        <div class="cnum">02</div>
-        <div class="ctitle">Thực thể tự nhiên<br>&amp; xã hội</div>
-        <div class="cbody"><ul>
-          <li>Gắn với một giai cấp, dân tộc, hoàn cảnh lịch sử cụ thể.</li>
-          <li>Đang sống, lao động, sản xuất và đấu tranh hằng ngày.</li>
-        </ul></div>
-      </div>
-      <div class="card s4card">
-        <div class="cnum">03</div>
-        <div class="ctitle">Đối tượng yêu thương<br>cụ thể</div>
-        <div class="cbody"><ul>
-          <li>Người nông dân nghèo, công nhân bị bóc lột.</li>
-          <li>Đồng bào lầm than, chịu cảnh xiềng xích, áp bức.</li>
-        </ul></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ⑥ NATURE GOOD/EVIL -->
-<div class="slide" data-i="5">
-  <div class="inner" style="max-width:1160px;gap:15px">
-    <div class="lbl ai d1">Phần 2 · Bản chất con người</div>
-    <div class="h1 ai d2">BẢN CHẤT CON NGƯỜI &amp;<br>TÍNH ĐA DẠNG THIỆN – ÁC</div>
-    <div class="divline ai d3"></div>
-    <div class="s5grid ai d4">
-      <figure class="s5img">
-        <img src="images/ban-chat-con-nguoi.png" alt="Bản chất con người: tổng hòa các quan hệ xã hội, tính đa dạng thiện – ác và niềm tin vào khả năng hướng thiện qua giáo dục">
-      </figure>
-      <div class="s5side">
-        <div class="card s5card">
-          <div class="ctitle"><span>🌐</span> Tổng hòa các quan hệ xã hội</div>
-          <div class="cbody">Hình thành qua gia đình, bè bạn, đồng chí, giai cấp, dân tộc — thay đổi qua thực tiễn, không bất biến.</div>
-        </div>
-        <div class="card s5card">
-          <div class="ctitle"><span>⚖️</span> Tính đa dạng Thiện – Ác</div>
-          <div class="cbody">Mỗi người luôn có hai mặt tốt – xấu, thiện – ác đan xen, đấu tranh lẫn nhau.</div>
-        </div>
-        <div class="card s5card">
-          <div class="ctitle"><span>🔥</span> Niềm tin vào con người</div>
-          <div class="cbody">Còn một "đốm lửa thiện" thì giáo dục đúng đắn sẽ giúp con người tự cải tạo, hướng thiện.</div>
-        </div>
-      </div>
-    </div>
-    <div class="quote ai d5" style="text-align:center;padding:13px 26px;border-radius:14px;border-left:none;border-top:4px solid var(--amber)">
-      <div style="font-size:15px;line-height:1.5">"Hiền, dữ đâu phải là tính sẵn, <strong style="color:#b45309">Phần nhiều do giáo dục mà nên.</strong>"</div>
-      <div style="font-size:12px;color:var(--sub);font-style:normal;font-family:var(--font);margin-top:5px;letter-spacing:.3px">— Hồ Chí Minh (Nhật ký trong tù)</div>
-    </div>
-  </div>
-</div>
-
-<!-- ⑦ ROLE IN REVOLUTION -->
-<div class="slide" data-i="6">
-  <div class="inner" style="max-width:1160px;gap:15px">
-    <div class="lbl ai d1">Phần 2 · Vai trò con người</div>
-    <div class="h1 ai d2">VAI TRÒ CỦA CON NGƯỜI<br>ĐỐI VỚI CÁCH MẠNG</div>
-    <div class="divline ai d3"></div>
-    <div class="s6grid ai d4">
-      <figure class="s6img">
-        <img src="images/vai-tro-cua-con-nguoi-voi-cach-mang.png" alt="Vai trò của con người đối với cách mạng: con người vừa là mục tiêu vừa là động lực; Bác Hồ cùng các tầng lớp nhân dân">
-      </figure>
-      <div class="s6side">
-        <div class="card s6card" style="display:flex;flex-direction:column;gap:11px">
-          <div class="colhead">🎯 Con người là Mục tiêu</div>
-          <div class="cbody"><ul>
-            <li>Giải phóng dân tộc suy cho cùng là để giải phóng con người.</li>
-            <li>Mọi chính sách hướng tới tự do, cơm no, áo ấm, hạnh phúc cho dân.</li>
-          </ul></div>
-          <div class="quote" style="font-size:13.5px">
-            "Nếu nước độc lập mà dân không hưởng hạnh phúc tự do, thì độc lập ấy cũng chẳng có ý nghĩa gì."
-          </div>
-        </div>
-        <div class="card s6card" style="display:flex;flex-direction:column;gap:11px">
-          <div class="colhead">⚡ Con người là Động lực</div>
-          <div class="cbody"><ul>
-            <li>Cách mạng là sự nghiệp của quần chúng nhân dân.</li>
-            <li><strong>"Dân là gốc của nước"</strong> — sức mạnh nằm ở tinh thần làm chủ của dân.</li>
-            <li>Khơi dậy lòng yêu nước, tiềm năng sáng tạo của mọi tầng lớp nhân dân.</li>
-          </ul></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ⑧ STRATEGY CONTENT -->
-<div class="slide" data-i="7">
-  <div class="inner" style="max-width:1160px;gap:15px">
-    <div class="lbl ai d1">Phần 3 · Nội dung chiến lược</div>
-    <div class="h1 ai d2">NỘI DUNG CHIẾN LƯỢC "TRỒNG NGƯỜI"</div>
-    <div class="divline ai d3"></div>
-    <div class="quote ai d4" style="text-align:center;font-size:15px;padding:11px 24px;border-radius:14px;border-left:none;border-top:4px solid var(--amber)">
-      "Vì lợi ích mười năm thì phải trồng cây, vì lợi ích trăm năm thì phải trồng người."
-      <span style="color:var(--sub);font-style:normal;font-family:var(--font)"> — Hồ Chí Minh</span>
-    </div>
-    <div class="s7grid ai d5">
-      <figure class="s7img">
-        <img src="images/chien-luoc-trong-nguoi.png" alt="Chiến lược trồng người: Bác Hồ chăm dưỡng thế hệ tương lai trên ba trụ cột Đức – Trí &amp; Mỹ – Thể">
-      </figure>
-      <div class="s7side">
-        <div class="card s7card">
-          <div class="cnum">01</div>
-          <div>
-            <div class="ctitle">Giáo dục Đạo đức (Đức)</div>
-            <div class="cbody"><ul>
-              <li>Bồi dưỡng lý tưởng cách mạng, lòng yêu nước, thương dân.</li>
-              <li>Rèn trung thực, liêm khiết, "chí công vô tư" — gốc rễ của con người mới.</li>
-            </ul></div>
-          </div>
-        </div>
-        <div class="card s7card">
-          <div class="cnum">02</div>
-          <div>
-            <div class="ctitle">Trí tuệ &amp; Văn hóa (Trí – Mỹ)</div>
-            <div class="cbody"><ul>
-              <li><strong>Trí:</strong> nâng cao học vấn, học đi đôi với hành.</li>
-              <li><strong>Mỹ:</strong> giáo dục thẩm mỹ, giữ bản sắc &amp; tiếp thu tinh hoa nhân loại.</li>
-            </ul></div>
-          </div>
-        </div>
-        <div class="card s7card">
-          <div class="cnum">03</div>
-          <div>
-            <div class="ctitle">Thể chất &amp; Tinh thần (Thể)</div>
-            <div class="cbody"><ul>
-              <li>Sức khỏe là vốn quý nhất — "Dân cường thì nước thịnh".</li>
-              <li>Thể lực bền bỉ, tôi luyện ý chí kiên cường vượt khó.</li>
-            </ul></div>
+      <!-- ⑤ HISTORICAL PERSON -->
+      <div class="slide" data-i="4">
+        <div class="inner" style="max-width: 1160px">
+          <div class="lbl ai d1">Phần 2 · Quan niệm con người</div>
+          <div class="h1 ai d2">CON NGƯỜI LỊCH SỬ – CỤ THỂ</div>
+          <div class="divline ai d3"></div>
+          <figure class="s4img ai d4">
+            <img
+              src="images/con-nguoi-lich-su.jpg"
+              alt="Con người lịch sử – cụ thể trong tư tưởng Hồ Chí Minh: từ con người trừu tượng đến con người gắn với giai cấp, dân tộc và đối tượng yêu thương cụ thể"
+            />
+          </figure>
+          <div class="g3 ai d5">
+            <div class="card s4card">
+              <div class="cnum">01</div>
+              <div class="ctitle">
+                Không trừu tượng,<br />không thần thánh hóa
+              </div>
+              <div class="cbody">
+                <ul>
+                  <li>Không bàn "con người" chung chung, xa rời thực tế.</li>
+                  <li>
+                    Là cá thể bằng xương bằng thịt, đang sống, lao động, học
+                    tập.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card s4card">
+              <div class="cnum">02</div>
+              <div class="ctitle">Thực thể tự nhiên<br />&amp; xã hội</div>
+              <div class="cbody">
+                <ul>
+                  <li>
+                    Gắn với một giai cấp, dân tộc, hoàn cảnh lịch sử cụ thể.
+                  </li>
+                  <li>Đang sống, lao động, sản xuất và đấu tranh hằng ngày.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card s4card">
+              <div class="cnum">03</div>
+              <div class="ctitle">Đối tượng yêu thương<br />cụ thể</div>
+              <div class="cbody">
+                <ul>
+                  <li>Người nông dân nghèo, công nhân bị bóc lột.</li>
+                  <li>Đồng bào lầm than, chịu cảnh xiềng xích, áp bức.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
-<!-- ⑨ METHODS -->
-<div class="slide" data-i="8">
-  <div class="inner">
-    <div class="lbl ai d1">Phần 3 · Phương pháp</div>
-    <div class="h1 ai d2">PHƯƠNG PHÁP CHIẾN LƯỢC "TRỒNG NGƯỜI"</div>
-    <div class="divline ai d3"></div>
-    <div class="g2 s8grid ai d4">
-      <div class="card" style="display:flex;flex-direction:column;gap:13px">
-        <div class="cardimg"><img src="images/phuongphapneuguong.png" alt="Phương pháp nêu gương: Bác Hồ và những tấm gương người tốt, việc tốt"></div>
-        <div class="colhead">💡 Phương pháp "Nêu gương"</div>
-        <div class="cbody"><ul>
-          <li>Lấy gương người tốt, việc tốt để giáo dục lẫn nhau.</li>
-          <li>Cán bộ, đảng viên, người lớn làm gương trước; lấy cái đẹp dẹp cái xấu.</li>
-        </ul></div>
-        <div class="quote" style="font-size:14px">
-          "Một tấm gương sống còn có giá trị hơn một trăm bài diễn văn tuyên truyền."
+      <!-- ⑥ NATURE GOOD/EVIL -->
+      <div class="slide" data-i="5">
+        <div class="inner" style="max-width: 1160px; gap: 15px">
+          <div class="lbl ai d1">Phần 2 · Bản chất con người</div>
+          <div class="h1 ai d2">
+            BẢN CHẤT CON NGƯỜI &amp;<br />TÍNH ĐA DẠNG THIỆN – ÁC
+          </div>
+          <div class="divline ai d3"></div>
+          <div class="s5grid ai d4">
+            <figure class="s5img">
+              <img
+                src="images/ban-chat-con-nguoi.png"
+                alt="Bản chất con người: tổng hòa các quan hệ xã hội, tính đa dạng thiện – ác và niềm tin vào khả năng hướng thiện qua giáo dục"
+              />
+            </figure>
+            <div class="s5side">
+              <div class="card s5card">
+                <div class="ctitle">
+                  <span>🌐</span> Tổng hòa các quan hệ xã hội
+                </div>
+                <div class="cbody">
+                  Hình thành qua gia đình, bè bạn, đồng chí, giai cấp, dân tộc —
+                  thay đổi qua thực tiễn, không bất biến.
+                </div>
+              </div>
+              <div class="card s5card">
+                <div class="ctitle">
+                  <span>⚖️</span> Tính đa dạng Thiện – Ác
+                </div>
+                <div class="cbody">
+                  Mỗi người luôn có hai mặt tốt – xấu, thiện – ác đan xen, đấu
+                  tranh lẫn nhau.
+                </div>
+              </div>
+              <div class="card s5card">
+                <div class="ctitle"><span>🔥</span> Niềm tin vào con người</div>
+                <div class="cbody">
+                  Còn một "đốm lửa thiện" thì giáo dục đúng đắn sẽ giúp con
+                  người tự cải tạo, hướng thiện.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="quote ai d5"
+            style="
+              text-align: center;
+              padding: 13px 26px;
+              border-radius: 14px;
+              border-left: none;
+              border-top: 4px solid var(--amber);
+            "
+          >
+            <div style="font-size: 15px; line-height: 1.5">
+              "Hiền, dữ đâu phải là tính sẵn,
+              <strong style="color: #b45309"
+                >Phần nhiều do giáo dục mà nên.</strong
+              >"
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                color: var(--sub);
+                font-style: normal;
+                font-family: var(--font);
+                margin-top: 5px;
+                letter-spacing: 0.3px;
+              "
+            >
+              — Hồ Chí Minh (Nhật ký trong tù)
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card" style="display:flex;flex-direction:column;gap:13px">
-        <div class="cardimg"><img src="images/turenluyen.png" alt="Tự rèn luyện và tu dưỡng: sinh viên tự học, tự soi mình, rèn luyện suốt đời"></div>
-        <div class="colhead">🌱 Tự rèn luyện &amp; Tu dưỡng</div>
-        <div class="cbody"><ul>
-          <li>Giáo dục phải đi đôi với tự giáo dục, tự ý thức.</li>
-          <li>Tu dưỡng đạo đức như "mài ngọc" — bền bỉ, suốt đời.</li>
-          <li>Rèn qua thực tiễn lao động, chiến đấu, học tập hằng ngày.</li>
-        </ul></div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- ⑩ STUDENT APPLICATION -->
-<div class="slide" data-i="9">
-  <div class="inner">
-    <div class="lbl ai d1">Phần 4 · Vận dụng thực tiễn</div>
-    <div class="h1 ai d2">VẬN DỤNG THỰC TIỄN CHO SINH VIÊN</div>
-    <div class="divline ai d3"></div>
-    <div class="g2 s9grid ai d4">
-      <div class="card" style="display:flex;flex-direction:column;gap:13px">
-        <div class="cardimg"><img src="images/tri.png" alt="Hành trình học tập: sinh viên cùng nhau học, rèn tư duy, tự học suốt đời"></div>
-        <div class="colhead">📚 Hành trình Học tập (Trí)</div>
-        <div class="cbody"><ul>
-          <li>"Học đi đôi với hành" — đưa lý luận vào thực tế.</li>
-          <li>Rèn tư duy phản biện, tinh thần tự học, tự tu dưỡng suốt đời.</li>
-          <li>Góp phần xây môi trường học thuật dân chủ, nhân văn, sáng tạo.</li>
-        </ul></div>
-      </div>
-      <div class="card" style="display:flex;flex-direction:column;gap:13px">
-        <div class="cardimg"><img src="images/duc.png" alt="Phát triển bản thân: cân bằng Đức và Tài, sống trung thực, trách nhiệm, giữ bản sắc"></div>
-        <div class="colhead">🌟 Phát triển bản thân (Đức)</div>
-        <div class="cbody"><ul>
-          <li>Phấn đấu "vừa hồng vừa chuyên" — song hành Đức &amp; Tài.</li>
-          <li>Sống trung thực, có trách nhiệm với bản thân, gia đình, xã hội.</li>
-          <li>Hội nhập quốc tế nhưng giữ vững bản sắc, lòng yêu nước.</li>
-        </ul></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ⑪ LASTING VALUES -->
-<div class="slide" data-i="10">
-  <div class="inner">
-    <div class="lbl ai d1">Phần 4 · Kết luận</div>
-    <div class="h1 ai d2">GIÁ TRỊ TRƯỜNG TỒN CỦA TƯ TƯỞNG</div>
-    <div class="divline ai d3"></div>
-    <div class="stacks ai d4">
-      <div class="scard">
-        <div class="sicon" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">🏛️</div>
-        <div class="sbody">
-          <h4>Nền tảng chiến lược bền vững</h4>
-          <p>Kim chỉ nam cho mọi chính sách phát triển con người — đặt con người vào vị trí trung tâm của sự nghiệp đổi mới.</p>
+      <!-- ⑦ ROLE IN REVOLUTION -->
+      <div class="slide" data-i="6">
+        <div class="inner" style="max-width: 1160px; gap: 15px">
+          <div class="lbl ai d1">Phần 2 · Vai trò con người</div>
+          <div class="h1 ai d2">
+            VAI TRÒ CỦA CON NGƯỜI<br />ĐỐI VỚI CÁCH MẠNG
+          </div>
+          <div class="divline ai d3"></div>
+          <div class="s6grid ai d4">
+            <figure class="s6img">
+              <img
+                src="images/vai-tro-cua-con-nguoi-voi-cach-mang.png"
+                alt="Vai trò của con người đối với cách mạng: con người vừa là mục tiêu vừa là động lực; Bác Hồ cùng các tầng lớp nhân dân"
+              />
+            </figure>
+            <div class="s6side">
+              <div
+                class="card s6card"
+                style="display: flex; flex-direction: column; gap: 11px"
+              >
+                <div class="colhead">🎯 Con người là Mục tiêu</div>
+                <div class="cbody">
+                  <ul>
+                    <li>
+                      Giải phóng dân tộc suy cho cùng là để giải phóng con
+                      người.
+                    </li>
+                    <li>
+                      Mọi chính sách hướng tới tự do, cơm no, áo ấm, hạnh phúc
+                      cho dân.
+                    </li>
+                  </ul>
+                </div>
+                <div class="quote" style="font-size: 13.5px">
+                  "Nếu nước độc lập mà dân không hưởng hạnh phúc tự do, thì độc
+                  lập ấy cũng chẳng có ý nghĩa gì."
+                </div>
+              </div>
+              <div
+                class="card s6card"
+                style="display: flex; flex-direction: column; gap: 11px"
+              >
+                <div class="colhead">⚡ Con người là Động lực</div>
+                <div class="cbody">
+                  <ul>
+                    <li>Cách mạng là sự nghiệp của quần chúng nhân dân.</li>
+                    <li>
+                      <strong>"Dân là gốc của nước"</strong> — sức mạnh nằm ở
+                      tinh thần làm chủ của dân.
+                    </li>
+                    <li>
+                      Khơi dậy lòng yêu nước, tiềm năng sáng tạo của mọi tầng
+                      lớp nhân dân.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="scard">
-        <div class="sicon" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">🔮</div>
-        <div class="sbody">
-          <h4>Tầm nhìn vượt thời đại</h4>
-          <p>Triết lý giáo dục toàn diện "Đức – Trí – Thể – Mỹ" vẫn còn nguyên giá trị trong kỷ nguyên số 4.0.</p>
+
+      <!-- ⑧ STRATEGY CONTENT -->
+      <div class="slide" data-i="7">
+        <div class="inner" style="max-width: 1160px; gap: 15px">
+          <div class="lbl ai d1">Phần 3 · Nội dung chiến lược</div>
+          <div class="h1 ai d2">NỘI DUNG CHIẾN LƯỢC "TRỒNG NGƯỜI"</div>
+          <div class="divline ai d3"></div>
+          <div
+            class="quote ai d4"
+            style="
+              text-align: center;
+              font-size: 15px;
+              padding: 11px 24px;
+              border-radius: 14px;
+              border-left: none;
+              border-top: 4px solid var(--amber);
+            "
+          >
+            "Vì lợi ích mười năm thì phải trồng cây, vì lợi ích trăm năm thì
+            phải trồng người."
+            <span
+              style="
+                color: var(--sub);
+                font-style: normal;
+                font-family: var(--font);
+              "
+            >
+              — Hồ Chí Minh</span
+            >
+          </div>
+          <div class="s7grid ai d5">
+            <figure class="s7img">
+              <img
+                src="images/chien-luoc-trong-nguoi.png"
+                alt="Chiến lược trồng người: Bác Hồ chăm dưỡng thế hệ tương lai trên ba trụ cột Đức – Trí &amp; Mỹ – Thể"
+              />
+            </figure>
+            <div class="s7side">
+              <div class="card s7card">
+                <div class="cnum">01</div>
+                <div>
+                  <div class="ctitle">Giáo dục Đạo đức (Đức)</div>
+                  <div class="cbody">
+                    <ul>
+                      <li>
+                        Bồi dưỡng lý tưởng cách mạng, lòng yêu nước, thương dân.
+                      </li>
+                      <li>
+                        Rèn trung thực, liêm khiết, "chí công vô tư" — gốc rễ
+                        của con người mới.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card s7card">
+                <div class="cnum">02</div>
+                <div>
+                  <div class="ctitle">Trí tuệ &amp; Văn hóa (Trí – Mỹ)</div>
+                  <div class="cbody">
+                    <ul>
+                      <li>
+                        <strong>Trí:</strong> nâng cao học vấn, học đi đôi với
+                        hành.
+                      </li>
+                      <li>
+                        <strong>Mỹ:</strong> giáo dục thẩm mỹ, giữ bản sắc &amp;
+                        tiếp thu tinh hoa nhân loại.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card s7card">
+                <div class="cnum">03</div>
+                <div>
+                  <div class="ctitle">Thể chất &amp; Tinh thần (Thể)</div>
+                  <div class="cbody">
+                    <ul>
+                      <li>
+                        Sức khỏe là vốn quý nhất — "Dân cường thì nước thịnh".
+                      </li>
+                      <li>
+                        Thể lực bền bỉ, tôi luyện ý chí kiên cường vượt khó.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="scard">
-        <div class="sicon" style="background:linear-gradient(135deg,#d97706,#f59e0b)">🌟</div>
-        <div class="sbody">
-          <h4>Sứ mệnh của thế hệ trẻ</h4>
-          <p>Sinh viên kế thừa, biến tư tưởng thành hành động tự tu dưỡng — góp sức xây dựng Việt Nam hùng cường.</p>
+
+      <!-- ⑨ METHODS -->
+      <div class="slide" data-i="8">
+        <div class="inner">
+          <div class="lbl ai d1">Phần 3 · Phương pháp</div>
+          <div class="h1 ai d2">PHƯƠNG PHÁP CHIẾN LƯỢC "TRỒNG NGƯỜI"</div>
+          <div class="divline ai d3"></div>
+          <div class="g2 s8grid ai d4">
+            <div
+              class="card"
+              style="display: flex; flex-direction: column; gap: 13px"
+            >
+              <div class="cardimg">
+                <img
+                  src="images/phuongphapneuguong.png"
+                  alt="Phương pháp nêu gương: Bác Hồ và những tấm gương người tốt, việc tốt"
+                />
+              </div>
+              <div class="colhead">💡 Phương pháp "Nêu gương"</div>
+              <div class="cbody">
+                <ul>
+                  <li>Lấy gương người tốt, việc tốt để giáo dục lẫn nhau.</li>
+                  <li>
+                    Cán bộ, đảng viên, người lớn làm gương trước; lấy cái đẹp
+                    dẹp cái xấu.
+                  </li>
+                </ul>
+              </div>
+              <div class="quote" style="font-size: 14px">
+                "Một tấm gương sống còn có giá trị hơn một trăm bài diễn văn
+                tuyên truyền."
+              </div>
+            </div>
+            <div
+              class="card"
+              style="display: flex; flex-direction: column; gap: 13px"
+            >
+              <div class="cardimg">
+                <img
+                  src="images/turenluyen.png"
+                  alt="Tự rèn luyện và tu dưỡng: sinh viên tự học, tự soi mình, rèn luyện suốt đời"
+                />
+              </div>
+              <div class="colhead">🌱 Tự rèn luyện &amp; Tu dưỡng</div>
+              <div class="cbody">
+                <ul>
+                  <li>Giáo dục phải đi đôi với tự giáo dục, tự ý thức.</li>
+                  <li>Tu dưỡng đạo đức như "mài ngọc" — bền bỉ, suốt đời.</li>
+                  <li>
+                    Rèn qua thực tiễn lao động, chiến đấu, học tập hằng ngày.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑩ STUDENT APPLICATION -->
+      <div class="slide" data-i="9">
+        <div class="inner">
+          <div class="lbl ai d1">Phần 4 · Vận dụng thực tiễn</div>
+          <div class="h1 ai d2">VẬN DỤNG THỰC TIỄN CHO SINH VIÊN</div>
+          <div class="divline ai d3"></div>
+          <div class="g2 s9grid ai d4">
+            <div
+              class="card"
+              style="display: flex; flex-direction: column; gap: 13px"
+            >
+              <div class="cardimg">
+                <img
+                  src="images/tri.png"
+                  alt="Hành trình học tập: sinh viên cùng nhau học, rèn tư duy, tự học suốt đời"
+                />
+              </div>
+              <div class="colhead">📚 Hành trình Học tập (Trí)</div>
+              <div class="cbody">
+                <ul>
+                  <li>"Học đi đôi với hành" — đưa lý luận vào thực tế.</li>
+                  <li>
+                    Rèn tư duy phản biện, tinh thần tự học, tự tu dưỡng suốt
+                    đời.
+                  </li>
+                  <li>
+                    Góp phần xây môi trường học thuật dân chủ, nhân văn, sáng
+                    tạo.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="card"
+              style="display: flex; flex-direction: column; gap: 13px"
+            >
+              <div class="cardimg">
+                <img
+                  src="images/duc.png"
+                  alt="Phát triển bản thân: cân bằng Đức và Tài, sống trung thực, trách nhiệm, giữ bản sắc"
+                />
+              </div>
+              <div class="colhead">🌟 Phát triển bản thân (Đức)</div>
+              <div class="cbody">
+                <ul>
+                  <li>
+                    Phấn đấu "vừa hồng vừa chuyên" — song hành Đức &amp; Tài.
+                  </li>
+                  <li>
+                    Sống trung thực, có trách nhiệm với bản thân, gia đình, xã
+                    hội.
+                  </li>
+                  <li>
+                    Hội nhập quốc tế nhưng giữ vững bản sắc, lòng yêu nước.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑪ LASTING VALUES -->
+      <div class="slide" data-i="10">
+        <div class="inner">
+          <div class="lbl ai d1">Phần 4 · Kết luận</div>
+          <div class="h1 ai d2">GIÁ TRỊ TRƯỜNG TỒN CỦA TƯ TƯỞNG</div>
+          <div class="divline ai d3"></div>
+          <div class="stacks ai d4">
+            <div class="scard">
+              <div
+                class="sicon"
+                style="background: linear-gradient(135deg, #1e3a8a, #3b82f6)"
+              >
+                🏛️
+              </div>
+              <div class="sbody">
+                <h4>Nền tảng chiến lược bền vững</h4>
+                <p>
+                  Kim chỉ nam cho mọi chính sách phát triển con người — đặt con
+                  người vào vị trí trung tâm của sự nghiệp đổi mới.
+                </p>
+              </div>
+            </div>
+            <div class="scard">
+              <div
+                class="sicon"
+                style="background: linear-gradient(135deg, #7c3aed, #a855f7)"
+              >
+                🔮
+              </div>
+              <div class="sbody">
+                <h4>Tầm nhìn vượt thời đại</h4>
+                <p>
+                  Triết lý giáo dục toàn diện "Đức – Trí – Thể – Mỹ" vẫn còn
+                  nguyên giá trị trong kỷ nguyên số 4.0.
+                </p>
+              </div>
+            </div>
+            <div class="scard">
+              <div
+                class="sicon"
+                style="background: linear-gradient(135deg, #d97706, #f59e0b)"
+              >
+                🌟
+              </div>
+              <div class="sbody">
+                <h4>Sứ mệnh của thế hệ trẻ</h4>
+                <p>
+                  Sinh viên kế thừa, biến tư tưởng thành hành động tự tu dưỡng —
+                  góp sức xây dựng Việt Nam hùng cường.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑫ OUTRO + Q&A -->
+      <div class="slide" data-i="11">
+        <svg
+          class="dc dc-tl"
+          width="190"
+          height="180"
+          viewBox="0 0 190 180"
+          fill="none"
+        >
+          <rect
+            x="0"
+            y="18"
+            width="130"
+            height="11"
+            rx="4"
+            fill="#60a5fa"
+            opacity=".55"
+          />
+          <rect
+            x="0"
+            y="39"
+            width="90"
+            height="11"
+            rx="4"
+            fill="#60a5fa"
+            opacity=".4"
+          />
+          <rect
+            x="0"
+            y="60"
+            width="62"
+            height="11"
+            rx="4"
+            fill="#fbbf24"
+            opacity=".5"
+          />
+          <rect
+            x="0"
+            y="81"
+            width="40"
+            height="11"
+            rx="4"
+            fill="#fbbf24"
+            opacity=".35"
+          />
+        </svg>
+        <svg
+          class="dc dc-tr"
+          width="130"
+          height="130"
+          viewBox="0 0 130 130"
+          fill="none"
+        >
+          <circle cx="130" cy="0" r="78" fill="#93c5fd" opacity=".45" />
+          <circle cx="130" cy="0" r="48" fill="#c4b5fd" opacity=".4" />
+        </svg>
+        <svg
+          class="dc dc-bl"
+          width="110"
+          height="110"
+          viewBox="0 0 110 110"
+          fill="none"
+        >
+          <circle cx="0" cy="110" r="70" fill="#a7f3d0" opacity=".4" />
+        </svg>
+        <svg
+          class="dc dc-br"
+          width="210"
+          height="80"
+          viewBox="0 0 210 80"
+          fill="none"
+        >
+          <rect
+            x="10"
+            y="8"
+            width="200"
+            height="10"
+            rx="4"
+            fill="#60a5fa"
+            opacity=".4"
+          />
+          <rect
+            x="50"
+            y="28"
+            width="160"
+            height="10"
+            rx="4"
+            fill="#fbbf24"
+            opacity=".45"
+          />
+        </svg>
+        <div class="outro">
+          <div class="big">CẢM ƠN THẦY<br />VÀ CÁC BẠN<br />ĐÃ LẮNG NGHE!</div>
+          <div class="qa">
+            💬 Q&amp;A — Mời Thầy và các bạn đặt câu hỏi &amp; góp ý
+          </div>
+          <div class="sub">HCM202 · TƯ TƯỞNG HỒ CHÍ MINH · C2.3</div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+    <!-- /deck -->
 
-<!-- ⑫ OUTRO + Q&A -->
-<div class="slide" data-i="11">
-  <svg class="dc dc-tl" width="190" height="180" viewBox="0 0 190 180" fill="none">
-    <rect x="0" y="18" width="130" height="11" rx="4" fill="#60a5fa" opacity=".55"/>
-    <rect x="0" y="39" width="90"  height="11" rx="4" fill="#60a5fa" opacity=".4"/>
-    <rect x="0" y="60" width="62"  height="11" rx="4" fill="#fbbf24" opacity=".5"/>
-    <rect x="0" y="81" width="40"  height="11" rx="4" fill="#fbbf24" opacity=".35"/>
-  </svg>
-  <svg class="dc dc-tr" width="130" height="130" viewBox="0 0 130 130" fill="none">
-    <circle cx="130" cy="0" r="78" fill="#93c5fd" opacity=".45"/>
-    <circle cx="130" cy="0" r="48" fill="#c4b5fd" opacity=".4"/>
-  </svg>
-  <svg class="dc dc-bl" width="110" height="110" viewBox="0 0 110 110" fill="none">
-    <circle cx="0" cy="110" r="70" fill="#a7f3d0" opacity=".4"/>
-  </svg>
-  <svg class="dc dc-br" width="210" height="80" viewBox="0 0 210 80" fill="none">
-    <rect x="10" y="8"  width="200" height="10" rx="4" fill="#60a5fa" opacity=".4"/>
-    <rect x="50" y="28" width="160" height="10" rx="4" fill="#fbbf24" opacity=".45"/>
-  </svg>
-  <div class="outro">
-    <div class="big">CẢM ƠN THẦY<br>VÀ CÁC BẠN<br>ĐÃ LẮNG NGHE!</div>
-    <div class="qa">💬 Q&amp;A — Mời Thầy và các bạn đặt câu hỏi &amp; góp ý</div>
-    <div class="sub">HCM202 · TƯ TƯỞNG HỒ CHÍ MINH · C2.3</div>
-  </div>
-</div>
+    <div class="nav">
+      <button class="nbtn" id="prev">&#8592;</button>
+      <span class="ctr" id="ctr">1 / 12</span>
+      <button class="nbtn" id="next">&#8594;</button>
+    </div>
 
-</div><!-- /deck -->
+    <div class="hint">← → hoặc Space để chuyển slide · F11 toàn màn hình</div>
+    <div class="pbar"><div class="pfill" id="pfill"></div></div>
 
-<div class="nav">
-  <button class="nbtn" id="prev">&#8592;</button>
-  <span class="ctr" id="ctr">1 / 12</span>
-  <button class="nbtn" id="next">&#8594;</button>
-</div>
+    <script>
+      const TOTAL = 12;
+      let cur = 0,
+        busy = false;
+      const slides = [...document.querySelectorAll(".slide")];
+      const dotsEl = document.getElementById("dots");
+      const pfill = document.getElementById("pfill");
+      const ctr = document.getElementById("ctr");
+      const badge = document.getElementById("badge");
+      const prevB = document.getElementById("prev");
+      const nextB = document.getElementById("next");
 
-<div class="hint">← → hoặc Space để chuyển slide · F11 toàn màn hình</div>
-<div class="pbar"><div class="pfill" id="pfill"></div></div>
+      slides.forEach((_, i) => {
+        const d = document.createElement("div");
+        d.className = "dot" + (i === 0 ? " on" : "");
+        d.addEventListener("click", () => go(i));
+        dotsEl.appendChild(d);
+      });
 
-<script>
-const TOTAL = 12;
-let cur = 0, busy = false;
-const slides = [...document.querySelectorAll('.slide')];
-const dotsEl = document.getElementById('dots');
-const pfill  = document.getElementById('pfill');
-const ctr    = document.getElementById('ctr');
-const badge  = document.getElementById('badge');
-const prevB  = document.getElementById('prev');
-const nextB  = document.getElementById('next');
+      function ui() {
+        pfill.style.width = ((cur + 1) / TOTAL) * 100 + "%";
+        ctr.textContent = `${cur + 1} / ${TOTAL}`;
+        badge.textContent =
+          String(cur + 1).padStart(2, "0") +
+          " / " +
+          String(TOTAL).padStart(2, "0");
+        document
+          .querySelectorAll(".dot")
+          .forEach((d, i) => d.classList.toggle("on", i === cur));
+        prevB.disabled = cur === 0;
+        nextB.disabled = cur === TOTAL - 1;
+      }
+      function resetAnims(s) {
+        s.querySelectorAll(".ai").forEach((el) => {
+          el.style.animation = "none";
+          el.offsetHeight;
+          el.style.animation = "";
+        });
+      }
+      function go(idx) {
+        if (busy || idx === cur || idx < 0 || idx >= TOTAL) return;
+        busy = true;
+        const old = slides[cur],
+          nxt = slides[idx];
+        old.classList.add("exit");
+        old.classList.remove("active");
+        resetAnims(nxt);
+        nxt.classList.add("active");
+        setTimeout(() => {
+          old.classList.remove("exit");
+          cur = idx;
+          ui();
+          busy = false;
+        }, 680);
+      }
+      prevB.addEventListener("click", () => go(cur - 1));
+      nextB.addEventListener("click", () => go(cur + 1));
+      document.addEventListener("keydown", (e) => {
+        if (["ArrowRight", "ArrowDown", " "].includes(e.key)) {
+          e.preventDefault();
+          go(cur + 1);
+        } else if (["ArrowLeft", "ArrowUp"].includes(e.key)) {
+          e.preventDefault();
+          go(cur - 1);
+        }
+      });
+      let tx = 0;
+      document.addEventListener(
+        "touchstart",
+        (e) => {
+          tx = e.touches[0].clientX;
+        },
+        { passive: true },
+      );
+      document.addEventListener(
+        "touchend",
+        (e) => {
+          const dx = e.changedTouches[0].clientX - tx;
+          if (Math.abs(dx) > 55) dx < 0 ? go(cur + 1) : go(cur - 1);
+        },
+        { passive: true },
+      );
 
-slides.forEach((_,i)=>{
-  const d=document.createElement('div');
-  d.className='dot'+(i===0?' on':'');
-  d.addEventListener('click',()=>go(i));
-  dotsEl.appendChild(d);
-});
+      /* ===== Lá trôi nền (gợi ý "trồng người") ===== */
+      (function leaves() {
+        const bg = document.getElementById("bg");
+        const cols = [
+          "#86efac",
+          "#6ee7b7",
+          "#a7f3d0",
+          "#4ade80",
+          "#5eead4",
+          "#fcd34d",
+          "#fbbf24",
+        ];
+        const path =
+          "M6.05 8.05c-2.73 2.73-2.73 7.15-.02 9.88 1.47-3.4 4.09-6.24 7.36-7.93-2.77 2.34-4.71 5.61-5.39 9.32 2.6 1.23 5.8.78 7.95-1.37C19.43 14.47 20 4 20 4S9.53 4.57 6.05 8.05z";
+        for (let i = 0; i < 13; i++) {
+          const leaf = document.createElement("div");
+          leaf.className = "leaf";
+          const size = (14 + Math.random() * 20).toFixed(0);
+          const dur = 16 + Math.random() * 16,
+            sway = 3 + Math.random() * 3;
+          const col = cols[Math.floor(Math.random() * cols.length)];
+          leaf.style.left = Math.random() * 100 + "%";
+          leaf.style.opacity = (0.22 + Math.random() * 0.2).toFixed(2);
+          leaf.style.animationDuration = dur + "s";
+          leaf.style.animationDelay = -Math.random() * dur + "s";
+          leaf.innerHTML =
+            '<svg width="' +
+            size +
+            '" height="' +
+            size +
+            '" viewBox="0 0 24 24" fill="' +
+            col +
+            '"><path d="' +
+            path +
+            '"/></svg>';
+          leaf.firstChild.style.animationDuration = sway + "s";
+          leaf.firstChild.style.animationDelay = -Math.random() * sway + "s";
+          bg.appendChild(leaf);
+        }
+      })();
 
-function ui(){
-  pfill.style.width=((cur+1)/TOTAL)*100+'%';
-  ctr.textContent=`${cur+1} / ${TOTAL}`;
-  badge.textContent=String(cur+1).padStart(2,'0')+' / '+String(TOTAL).padStart(2,'0');
-  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i===cur));
-  prevB.disabled=cur===0;
-  nextB.disabled=cur===TOTAL-1;
-}
-function resetAnims(s){s.querySelectorAll('.ai').forEach(el=>{el.style.animation='none';el.offsetHeight;el.style.animation='';});}
-function go(idx){
-  if(busy||idx===cur||idx<0||idx>=TOTAL)return;
-  busy=true;
-  const old=slides[cur], nxt=slides[idx];
-  old.classList.add('exit');old.classList.remove('active');
-  resetAnims(nxt);nxt.classList.add('active');
-  setTimeout(()=>{old.classList.remove('exit');cur=idx;ui();busy=false;},680);
-}
-prevB.addEventListener('click',()=>go(cur-1));
-nextB.addEventListener('click',()=>go(cur+1));
-document.addEventListener('keydown',e=>{
-  if(['ArrowRight','ArrowDown',' '].includes(e.key)){e.preventDefault();go(cur+1);}
-  else if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();go(cur-1);}
-});
-let tx=0;
-document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
-document.addEventListener('touchend',e=>{
-  const dx=e.changedTouches[0].clientX-tx;
-  if(Math.abs(dx)>55) dx<0?go(cur+1):go(cur-1);
-},{passive:true});
+      /* ===== Hiện nav/hint khi rê chuột xuống đáy màn hình ===== */
+      (function bottomReveal() {
+        const ZONE = 120;
+        let hideT;
+        window.addEventListener("mousemove", (e) => {
+          if (e.clientY > window.innerHeight - ZONE) {
+            clearTimeout(hideT);
+            document.body.classList.add("shownav");
+          } else if (document.body.classList.contains("shownav")) {
+            clearTimeout(hideT);
+            hideT = setTimeout(
+              () => document.body.classList.remove("shownav"),
+              600,
+            );
+          }
+        });
+        window.addEventListener("mouseleave", () =>
+          document.body.classList.remove("shownav"),
+        );
+      })();
 
-/* ===== Lá trôi nền (gợi ý "trồng người") ===== */
-(function leaves(){
-  const bg=document.getElementById('bg');
-  const cols=['#86efac','#6ee7b7','#a7f3d0','#4ade80','#5eead4','#fcd34d','#fbbf24'];
-  const path='M6.05 8.05c-2.73 2.73-2.73 7.15-.02 9.88 1.47-3.4 4.09-6.24 7.36-7.93-2.77 2.34-4.71 5.61-5.39 9.32 2.6 1.23 5.8.78 7.95-1.37C19.43 14.47 20 4 20 4S9.53 4.57 6.05 8.05z';
-  for(let i=0;i<13;i++){
-    const leaf=document.createElement('div');
-    leaf.className='leaf';
-    const size=(14+Math.random()*20).toFixed(0);
-    const dur=16+Math.random()*16, sway=3+Math.random()*3;
-    const col=cols[Math.floor(Math.random()*cols.length)];
-    leaf.style.left=(Math.random()*100)+'%';
-    leaf.style.opacity=(0.22+Math.random()*0.20).toFixed(2);
-    leaf.style.animationDuration=dur+'s';
-    leaf.style.animationDelay=(-Math.random()*dur)+'s';
-    leaf.innerHTML='<svg width="'+size+'" height="'+size+'" viewBox="0 0 24 24" fill="'+col+'"><path d="'+path+'"/></svg>';
-    leaf.firstChild.style.animationDuration=sway+'s';
-    leaf.firstChild.style.animationDelay=(-Math.random()*sway)+'s';
-    bg.appendChild(leaf);
-  }
-})();
+      /* ===== MINIGAME JS LOGIC ===== */
+      (function initMinigame() {
+        const targetWord = ["C", "O", "N", "N", "G", "U", "O", "I"];
+        const questions = [
+          {
+            q: "Gợi ý: Thuật ngữ dùng để chỉ con người là một khối thống nhất toàn diện về cả thể xác, tinh thần, nhu cầu và lợi ích.",
+            scrambled: "H Ể H N Ỉ T C H",
+            correct: "CHỈNH THỂ",
+          },
+          {
+            q: "Gợi ý: Lực lượng cốt lõi quyết định thắng lợi của cách mạng; Bác Hồ viết: 'Bao nhiêu lợi ích đều vì..., bao nhiêu quyền hạn đều của...'",
+            scrambled: "Â N D N Â H N",
+            correct: "NHÂN DÂN",
+          },
+          {
+            q: "Gợi ý: Vai trò của con người khi đóng vai trò là chủ thể sáng tạo ra lịch sử, lực lượng quyết định sự thành bại của cách mạng.",
+            scrambled: "Ự C G Ộ L N Đ",
+            correct: "ĐỘNG LỰC",
+          },
+          {
+            q: "Gợi ý: Tính chất bản chất của con người theo Hồ Chí Minh; con người không tồn tại biệt lập mà là sản phẩm của các quan hệ...",
+            scrambled: "Ộ Ã H I X",
+            correct: "XÃ HỘI",
+          },
+          {
+            q: 'Gợi ý: Từ khóa nằm trong chiến lược lâu dài của Hồ Chí Minh: "Vì lợi ích trăm năm thì phải..."',
+            scrambled: "Ồ N G G Ư T I Ờ R N",
+            correct: "TRỒNG NGƯỜI",
+          },
+          {
+            q: "Gợi ý: Con đường cốt lõi và cơ bản nhất để hình thành tri thức, năng lực và kỹ năng làm việc cho con người mới.",
+            scrambled: "Ụ Á G I C O D",
+            correct: "GIÁO DỤC",
+          },
+          {
+            q: "Gợi ý: Phương châm rèn luyện con người mới: Khuyến khích cái tốt, cái tiến bộ đi đôi với loại bỏ cái xấu, cái lạc hậu.",
+            scrambled: "Ố Â À G N C X Y V H",
+            correct: "XÂY VÀ CHỐNG",
+          },
+          {
+            q: "Gợi ý: Một trong những động lực thúc đẩy hoạt động của con người; các chính sách cách mạng phải luôn chú trọng đến quyền lợi thiết thân này.",
+            scrambled: "Ợ H Í L C I",
+            correct: "LỢI ÍCH",
+          },
+        ];
 
-/* ===== Hiện nav/hint khi rê chuột xuống đáy màn hình ===== */
-(function bottomReveal(){
-  const ZONE=120; let hideT;
-  window.addEventListener('mousemove',e=>{
-    if(e.clientY > window.innerHeight - ZONE){
-      clearTimeout(hideT);
-      document.body.classList.add('shownav');
-    }else if(document.body.classList.contains('shownav')){
-      clearTimeout(hideT);
-      hideT=setTimeout(()=>document.body.classList.remove('shownav'),600);
-    }
-  });
-  window.addEventListener('mouseleave',()=>document.body.classList.remove('shownav'));
-})();
+        let currentQ = 0;
+        let correctAnswers = 0;
+        let revealOrder = [0, 1, 2, 3, 4, 5, 6, 7];
 
-/* ===== MINIGAME JS LOGIC ===== */
-(function initMinigame() {
-  const targetWord = ['C', 'O', 'N', 'N', 'G', 'U', 'O', 'I'];
-  const questions = [
-    {
-      q: "Gợi ý: Thuật ngữ dùng để chỉ con người là một khối thống nhất toàn diện về cả thể xác, tinh thần, nhu cầu và lợi ích.",
-      scrambled: "H Ể H N Ỉ T C H",
-      correct: "CHỈNH THỂ"
-    },
-    {
-      q: "Gợi ý: Lực lượng cốt lõi quyết định thắng lợi của cách mạng; Bác Hồ viết: 'Bao nhiêu lợi ích đều vì..., bao nhiêu quyền hạn đều của...'",
-      scrambled: "Â N D N Â H N",
-      correct: "NHÂN DÂN"
-    },
-    {
-      q: "Gợi ý: Vai trò của con người khi đóng vai trò là chủ thể sáng tạo ra lịch sử, lực lượng quyết định sự thành bại của cách mạng.",
-      scrambled: "Ự C G Ộ L N Đ",
-      correct: "ĐỘNG LỰC"
-    },
-    {
-      q: "Gợi ý: Tính chất bản chất của con người theo Hồ Chí Minh; con người không tồn tại biệt lập mà là sản phẩm của các quan hệ...",
-      scrambled: "Ộ Ã H I X",
-      correct: "XÃ HỘI"
-    },
-    {
-      q: "Gợi ý: Từ khóa nằm trong chiến lược lâu dài của Hồ Chí Minh: \"Vì lợi ích trăm năm thì phải...\"",
-      scrambled: "Ồ N G G Ư T I Ờ R N",
-      correct: "TRỒNG NGƯỜI"
-    },
-    {
-      q: "Gợi ý: Con đường cốt lõi và cơ bản nhất để hình thành tri thức, năng lực và kỹ năng làm việc cho con người mới.",
-      scrambled: "Ụ Á G I C O D",
-      correct: "GIÁO DỤC"
-    },
-    {
-      q: "Gợi ý: Phương châm rèn luyện con người mới: Khuyến khích cái tốt, cái tiến bộ đi đôi với loại bỏ cái xấu, cái lạc hậu.",
-      scrambled: "Ố Â À G N C X Y V H",
-      correct: "XÂY VÀ CHỐNG"
-    },
-    {
-      q: "Gợi ý: Một trong những động lực thúc đẩy hoạt động của con người; các chính sách cách mạng phải luôn chú trọng đến quyền lợi thiết thân này.",
-      scrambled: "Ợ H Í L C I",
-      correct: "LỢI ÍCH"
-    }
-  ];
+        function shuffle(array) {
+          for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+        }
 
-  let currentQ = 0;
-  let correctAnswers = 0;
-  let revealOrder = [0, 1, 2, 3, 4, 5, 6, 7];
-  
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
+        let unlockedLetters = [];
+        let slots = Array(8).fill(null);
 
-  let unlockedLetters = [];
-  let slots = Array(8).fill(null);
-  
-  const cardContainer = document.getElementById('mg-card-container');
-  const poolEl = document.getElementById('mg-letters-pool');
-  const clearBtn = document.getElementById('mg-clear-btn');
-  const hintMsgEl = document.getElementById('mg-hint-msg');
-  const slotEls = document.querySelectorAll('.mg-slot');
+        const cardContainer = document.getElementById("mg-card-container");
+        const poolEl = document.getElementById("mg-letters-pool");
+        const clearBtn = document.getElementById("mg-clear-btn");
+        const hintMsgEl = document.getElementById("mg-hint-msg");
+        const slotEls = document.querySelectorAll(".mg-slot");
 
-  function initGame() {
-    currentQ = 0;
-    correctAnswers = 0;
-    unlockedLetters = [];
-    slots.fill(null);
-    revealOrder = [0, 1, 2, 3, 4, 5, 6, 7];
-    shuffle(revealOrder);
-    
-    poolEl.innerHTML = '';
-    
-    slotEls.forEach(slot => {
-      slot.textContent = '?';
-      slot.classList.remove('filled');
-    });
-    
-    clearBtn.style.display = 'none';
-    document.getElementById('mg-solve-btn').style.display = 'none';
-    hintMsgEl.textContent = 'Giải mã từ xáo trộn để nhận chữ cái';
-    
-    cardContainer.innerHTML = `
+        function initGame() {
+          currentQ = 0;
+          correctAnswers = 0;
+          unlockedLetters = [];
+          slots.fill(null);
+          revealOrder = [0, 1, 2, 3, 4, 5, 6, 7];
+          shuffle(revealOrder);
+
+          poolEl.innerHTML = "";
+
+          slotEls.forEach((slot) => {
+            slot.textContent = "?";
+            slot.classList.remove("filled");
+          });
+
+          clearBtn.style.display = "none";
+          document.getElementById("mg-solve-btn").style.display = "none";
+          hintMsgEl.textContent = "Giải mã từ xáo trộn để nhận chữ cái";
+
+          cardContainer.innerHTML = `
       <div class="mg-qheader">
         <span class="mg-qnum" id="mg-qnum">Câu đố 1 / 8</span>
         <span class="mg-score" id="mg-score">Giải mã: 0/8</span>
@@ -1318,192 +2987,205 @@ document.addEventListener('touchend',e=>{
         <button class="mg-reset-btn" id="mg-submit-btn" style="border-radius: 10px; padding: 10px 24px; min-width: 150px;">Xem đáp án</button>
       </div>
     `;
-    
-    showQuestion();
-  }
 
-  function showQuestion() {
-    const qData = questions[currentQ];
-    
-    document.getElementById('mg-qnum').textContent = `Câu đố ${currentQ + 1} / 8`;
-    document.getElementById('mg-score').textContent = `Giải mã: ${correctAnswers}/8`;
-    
-    const questionEl = document.getElementById('mg-question');
-    const hintBtn = document.getElementById('mg-hint-btn');
-    
-    questionEl.textContent = qData.q;
-    questionEl.style.display = 'none';
-    hintBtn.style.display = 'inline-block';
-    
-    const newHintBtn = hintBtn.cloneNode(true);
-    hintBtn.parentNode.replaceChild(newHintBtn, hintBtn);
-    newHintBtn.addEventListener('click', () => {
-      newHintBtn.style.display = 'none';
-      questionEl.style.display = 'block';
-    });
-    
-    const boardEl = document.getElementById('mg-anagram-board');
-    boardEl.innerHTML = '';
-    
-    const scrambledArray = qData.scrambled.split(' ');
-    const correctWithSpaces = qData.correct.split('');
-    const L = correctWithSpaces.length;
-    const S = scrambledArray.length;
-    
-    // Render placeholders (bottom row)
-    correctWithSpaces.forEach((char, j) => {
-      if (char !== ' ') {
-        const ph = document.createElement('div');
-        ph.className = 'mg-anagram-placeholder';
-        ph.style.left = ((j + 0.5) / L) * 100 + '%';
-        ph.textContent = '?';
-        boardEl.appendChild(ph);
-      }
-    });
-    
-    // Render scrambled letters (top row)
-    const badges = [];
-    scrambledArray.forEach((char, i) => {
-      const badge = document.createElement('div');
-      badge.className = 'mg-anagram-badge';
-      badge.textContent = char;
-      badge.style.left = ((i + 0.5) / S) * 100 + '%';
-      boardEl.appendChild(badge);
-      badges.push(badge);
-    });
-    
-    // Store references for animation
-    qData.badges = badges;
-    
-    const submitBtn = document.getElementById('mg-submit-btn');
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Xem đáp án';
-    
-    const newSubmitBtn = submitBtn.cloneNode(true);
-    submitBtn.parentNode.replaceChild(newSubmitBtn, submitBtn);
-    newSubmitBtn.addEventListener('click', handleShowAnswer);
-  }
-
-  function handleShowAnswer() {
-    const qData = questions[currentQ];
-    const submitBtn = document.getElementById('mg-submit-btn');
-    submitBtn.disabled = true;
-    
-    const scrambledArray = qData.scrambled.split(' ');
-    const correctWithSpaces = qData.correct.split('');
-    const L = correctWithSpaces.length;
-    
-    // Compute mapping
-    const mapping = [];
-    const used = Array(correctWithSpaces.length).fill(false);
-    for (let i = 0; i < scrambledArray.length; i++) {
-      const char = scrambledArray[i];
-      let matchIdx = -1;
-      for (let j = 0; j < correctWithSpaces.length; j++) {
-        if (correctWithSpaces[j] === char && !used[j]) {
-          matchIdx = j;
-          break;
+          showQuestion();
         }
-      }
-      used[matchIdx] = true;
-      mapping.push(matchIdx);
-    }
-    
-    // Animate each badge to its target slot
-    qData.badges.forEach((badge, i) => {
-      const targetSlotIdx = mapping[i];
-      const targetLeft = ((targetSlotIdx + 0.5) / L) * 100 + '%';
-      
-      // Delay slightly for staggered animation effect
-      setTimeout(() => {
-        badge.style.left = targetLeft;
-        badge.style.top = '70px';
-        badge.classList.add('assembled');
-      }, i * 50);
-    });
-    
-    correctAnswers++;
-    
-    // After animation finishes, unlock letter
-    setTimeout(() => {
-      const targetCharIdx = revealOrder[currentQ];
-      const letterChar = targetWord[targetCharIdx];
-      const letterObj = { char: letterChar, origIdx: targetCharIdx, placed: false, slotIdx: -1 };
-      unlockedLetters.push(letterObj);
-      
-      renderPoolBadge(letterObj);
-      
-      hintMsgEl.textContent = `Đáp án: "${qData.correct}". Nhận chữ cái: "${letterChar}"`;
-      hintMsgEl.style.color = '#15803d';
-      hintMsgEl.style.fontWeight = 'bold';
-      
-      // Re-enable button for manual progression
-      submitBtn.disabled = false;
-      
-      const newSubmitBtn = submitBtn.cloneNode(true);
-      submitBtn.parentNode.replaceChild(newSubmitBtn, submitBtn);
-      
-      if (currentQ < 7) {
-        newSubmitBtn.textContent = 'Câu tiếp theo';
-        newSubmitBtn.addEventListener('click', handleNextQuestion);
-      } else {
-        newSubmitBtn.textContent = 'Bước tiếp theo (Ghép từ)';
-        newSubmitBtn.addEventListener('click', () => {
-          hintMsgEl.style.color = '';
-          hintMsgEl.style.fontWeight = '';
-          showAssemblyScreen();
-        });
-      }
-    }, scrambledArray.length * 50 + 900);
-  }
 
-  function handleNextQuestion() {
-    hintMsgEl.style.color = '';
-    hintMsgEl.style.fontWeight = '';
-    currentQ++;
-    showQuestion();
-    hintMsgEl.textContent = 'Giải mã từ xáo trộn để nhận chữ cái';
-  }
+        function showQuestion() {
+          const qData = questions[currentQ];
 
-  function renderPoolBadge(letterObj) {
-    const badge = document.createElement('div');
-    badge.className = 'mg-letter-badge';
-    badge.textContent = letterObj.char;
-    badge.addEventListener('click', () => {
-      if (letterObj.placed) return;
-      const emptySlotIdx = slots.indexOf(null);
-      if (emptySlotIdx !== -1) {
-        slots[emptySlotIdx] = letterObj;
-        letterObj.placed = true;
-        letterObj.slotIdx = emptySlotIdx;
-        
-        badge.style.opacity = '0.3';
-        badge.style.pointerEvents = 'none';
-        
-        const slotEl = document.querySelector(`.mg-slot[data-slot-idx="${emptySlotIdx}"]`);
-        slotEl.textContent = letterObj.char;
-        slotEl.classList.add('filled');
-        
-        checkWinCondition();
-      }
-    });
-    
-    letterObj.badgeEl = badge;
-    poolEl.appendChild(badge);
-  }
+          document.getElementById("mg-qnum").textContent =
+            `Câu đố ${currentQ + 1} / 8`;
+          document.getElementById("mg-score").textContent =
+            `Giải mã: ${correctAnswers}/8`;
 
-  function showAssemblyScreen() {
-    clearBtn.style.display = 'inline-block';
-    const solveBtn = document.getElementById('mg-solve-btn');
-    solveBtn.style.display = 'inline-block';
-    const newSolveBtn = solveBtn.cloneNode(true);
-    solveBtn.parentNode.replaceChild(newSolveBtn, solveBtn);
-    newSolveBtn.addEventListener('click', solveKeyword);
-    hintMsgEl.textContent = 'Hãy ghép các chữ cái thu thập được thành từ khóa có nghĩa!';
-    hintMsgEl.style.color = 'var(--violet)';
-    hintMsgEl.style.fontWeight = 'bold';
-    
-    cardContainer.innerHTML = `
+          const questionEl = document.getElementById("mg-question");
+          const hintBtn = document.getElementById("mg-hint-btn");
+
+          questionEl.textContent = qData.q;
+          questionEl.style.display = "none";
+          hintBtn.style.display = "inline-block";
+
+          const newHintBtn = hintBtn.cloneNode(true);
+          hintBtn.parentNode.replaceChild(newHintBtn, hintBtn);
+          newHintBtn.addEventListener("click", () => {
+            newHintBtn.style.display = "none";
+            questionEl.style.display = "block";
+          });
+
+          const boardEl = document.getElementById("mg-anagram-board");
+          boardEl.innerHTML = "";
+
+          const scrambledArray = qData.scrambled.split(" ");
+          const correctWithSpaces = qData.correct.split("");
+          const L = correctWithSpaces.length;
+          const S = scrambledArray.length;
+
+          // Render placeholders (bottom row)
+          correctWithSpaces.forEach((char, j) => {
+            if (char !== " ") {
+              const ph = document.createElement("div");
+              ph.className = "mg-anagram-placeholder";
+              ph.style.left = ((j + 0.5) / L) * 100 + "%";
+              ph.textContent = "?";
+              boardEl.appendChild(ph);
+            }
+          });
+
+          // Render scrambled letters (top row)
+          const badges = [];
+          scrambledArray.forEach((char, i) => {
+            const badge = document.createElement("div");
+            badge.className = "mg-anagram-badge";
+            badge.textContent = char;
+            badge.style.left = ((i + 0.5) / S) * 100 + "%";
+            boardEl.appendChild(badge);
+            badges.push(badge);
+          });
+
+          // Store references for animation
+          qData.badges = badges;
+
+          const submitBtn = document.getElementById("mg-submit-btn");
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Xem đáp án";
+
+          const newSubmitBtn = submitBtn.cloneNode(true);
+          submitBtn.parentNode.replaceChild(newSubmitBtn, submitBtn);
+          newSubmitBtn.addEventListener("click", handleShowAnswer);
+        }
+
+        function handleShowAnswer() {
+          const qData = questions[currentQ];
+          const submitBtn = document.getElementById("mg-submit-btn");
+          submitBtn.disabled = true;
+
+          const scrambledArray = qData.scrambled.split(" ");
+          const correctWithSpaces = qData.correct.split("");
+          const L = correctWithSpaces.length;
+
+          // Compute mapping
+          const mapping = [];
+          const used = Array(correctWithSpaces.length).fill(false);
+          for (let i = 0; i < scrambledArray.length; i++) {
+            const char = scrambledArray[i];
+            let matchIdx = -1;
+            for (let j = 0; j < correctWithSpaces.length; j++) {
+              if (correctWithSpaces[j] === char && !used[j]) {
+                matchIdx = j;
+                break;
+              }
+            }
+            used[matchIdx] = true;
+            mapping.push(matchIdx);
+          }
+
+          // Animate each badge to its target slot
+          qData.badges.forEach((badge, i) => {
+            const targetSlotIdx = mapping[i];
+            const targetLeft = ((targetSlotIdx + 0.5) / L) * 100 + "%";
+
+            // Delay slightly for staggered animation effect
+            setTimeout(() => {
+              badge.style.left = targetLeft;
+              badge.style.top = "70px";
+              badge.classList.add("assembled");
+            }, i * 50);
+          });
+
+          correctAnswers++;
+
+          // After animation finishes, unlock letter
+          setTimeout(
+            () => {
+              const targetCharIdx = revealOrder[currentQ];
+              const letterChar = targetWord[targetCharIdx];
+              const letterObj = {
+                char: letterChar,
+                origIdx: targetCharIdx,
+                placed: false,
+                slotIdx: -1,
+              };
+              unlockedLetters.push(letterObj);
+
+              renderPoolBadge(letterObj);
+
+              hintMsgEl.textContent = `Đáp án: "${qData.correct}". Nhận chữ cái: "${letterChar}"`;
+              hintMsgEl.style.color = "#15803d";
+              hintMsgEl.style.fontWeight = "bold";
+
+              // Re-enable button for manual progression
+              submitBtn.disabled = false;
+
+              const newSubmitBtn = submitBtn.cloneNode(true);
+              submitBtn.parentNode.replaceChild(newSubmitBtn, submitBtn);
+
+              if (currentQ < 7) {
+                newSubmitBtn.textContent = "Câu tiếp theo";
+                newSubmitBtn.addEventListener("click", handleNextQuestion);
+              } else {
+                newSubmitBtn.textContent = "Bước tiếp theo (Ghép từ)";
+                newSubmitBtn.addEventListener("click", () => {
+                  hintMsgEl.style.color = "";
+                  hintMsgEl.style.fontWeight = "";
+                  showAssemblyScreen();
+                });
+              }
+            },
+            scrambledArray.length * 50 + 900,
+          );
+        }
+
+        function handleNextQuestion() {
+          hintMsgEl.style.color = "";
+          hintMsgEl.style.fontWeight = "";
+          currentQ++;
+          showQuestion();
+          hintMsgEl.textContent = "Giải mã từ xáo trộn để nhận chữ cái";
+        }
+
+        function renderPoolBadge(letterObj) {
+          const badge = document.createElement("div");
+          badge.className = "mg-letter-badge";
+          badge.textContent = letterObj.char;
+          badge.addEventListener("click", () => {
+            if (letterObj.placed) return;
+            const emptySlotIdx = slots.indexOf(null);
+            if (emptySlotIdx !== -1) {
+              slots[emptySlotIdx] = letterObj;
+              letterObj.placed = true;
+              letterObj.slotIdx = emptySlotIdx;
+
+              badge.style.opacity = "0.3";
+              badge.style.pointerEvents = "none";
+
+              const slotEl = document.querySelector(
+                `.mg-slot[data-slot-idx="${emptySlotIdx}"]`,
+              );
+              slotEl.textContent = letterObj.char;
+              slotEl.classList.add("filled");
+
+              checkWinCondition();
+            }
+          });
+
+          letterObj.badgeEl = badge;
+          poolEl.appendChild(badge);
+        }
+
+        function showAssemblyScreen() {
+          clearBtn.style.display = "inline-block";
+          const solveBtn = document.getElementById("mg-solve-btn");
+          solveBtn.style.display = "inline-block";
+          const newSolveBtn = solveBtn.cloneNode(true);
+          solveBtn.parentNode.replaceChild(newSolveBtn, solveBtn);
+          newSolveBtn.addEventListener("click", solveKeyword);
+          hintMsgEl.textContent =
+            "Hãy ghép các chữ cái thu thập được thành từ khóa có nghĩa!";
+          hintMsgEl.style.color = "var(--violet)";
+          hintMsgEl.style.fontWeight = "bold";
+
+          cardContainer.innerHTML = `
       <div class="mg-success-card" style="animation: scaleUpIn 0.5s both;">
         <div class="mg-success-icon">🧩</div>
         <div class="mg-success-title" style="color:var(--navy);">BƯỚC VÀO GHÉP CHỮ</div>
@@ -1517,87 +3199,89 @@ document.addEventListener('touchend',e=>{
         </div>
       </div>
     `;
-    
-    const newSlotEls = document.querySelectorAll('.mg-slot');
-    newSlotEls.forEach(slotEl => {
-      const newSlot = slotEl.cloneNode(true);
-      slotEl.parentNode.replaceChild(newSlot, slotEl);
-    });
-    
-    const reboundSlotEls = document.querySelectorAll('.mg-slot');
-    reboundSlotEls.forEach(slotEl => {
-      slotEl.addEventListener('click', () => {
-        const slotIdx = parseInt(slotEl.getAttribute('data-slot-idx'));
-        const letterObj = slots[slotIdx];
-        if (letterObj) {
-          slots[slotIdx] = null;
-          letterObj.placed = false;
-          letterObj.slotIdx = -1;
-          
-          slotEl.textContent = '?';
-          slotEl.classList.remove('filled');
-          
-          if (letterObj.badgeEl) {
-            letterObj.badgeEl.style.opacity = '1';
-            letterObj.badgeEl.style.pointerEvents = 'auto';
+
+          const newSlotEls = document.querySelectorAll(".mg-slot");
+          newSlotEls.forEach((slotEl) => {
+            const newSlot = slotEl.cloneNode(true);
+            slotEl.parentNode.replaceChild(newSlot, slotEl);
+          });
+
+          const reboundSlotEls = document.querySelectorAll(".mg-slot");
+          reboundSlotEls.forEach((slotEl) => {
+            slotEl.addEventListener("click", () => {
+              const slotIdx = parseInt(slotEl.getAttribute("data-slot-idx"));
+              const letterObj = slots[slotIdx];
+              if (letterObj) {
+                slots[slotIdx] = null;
+                letterObj.placed = false;
+                letterObj.slotIdx = -1;
+
+                slotEl.textContent = "?";
+                slotEl.classList.remove("filled");
+
+                if (letterObj.badgeEl) {
+                  letterObj.badgeEl.style.opacity = "1";
+                  letterObj.badgeEl.style.pointerEvents = "auto";
+                }
+              }
+            });
+          });
+        }
+
+        function solveKeyword() {
+          clearBtn.click();
+          unlockedLetters.forEach((letterObj, i) => {
+            setTimeout(() => {
+              const targetIdx = letterObj.origIdx;
+              slots[targetIdx] = letterObj;
+              letterObj.placed = true;
+              letterObj.slotIdx = targetIdx;
+
+              if (letterObj.badgeEl) {
+                letterObj.badgeEl.style.opacity = "0.3";
+                letterObj.badgeEl.style.pointerEvents = "none";
+              }
+
+              const slotEl = document.querySelector(
+                `.mg-slot[data-slot-idx="${targetIdx}"]`,
+              );
+              slotEl.textContent = letterObj.char;
+              slotEl.classList.add("filled");
+
+              if (i === unlockedLetters.length - 1) {
+                setTimeout(checkWinCondition, 200);
+              }
+            }, i * 150);
+          });
+        }
+
+        function checkWinCondition() {
+          if (slots.includes(null)) return;
+
+          const spelled = slots.map((obj) => obj.char).join("");
+          const correctWord = "CONNGUOI";
+
+          if (spelled === correctWord) {
+            showVictoryScreen();
           }
         }
-      });
-    });
-  }
 
-  function solveKeyword() {
-    clearBtn.click();
-    unlockedLetters.forEach((letterObj, i) => {
-      setTimeout(() => {
-        const targetIdx = letterObj.origIdx;
-        slots[targetIdx] = letterObj;
-        letterObj.placed = true;
-        letterObj.slotIdx = targetIdx;
-        
-        if (letterObj.badgeEl) {
-          letterObj.badgeEl.style.opacity = '0.3';
-          letterObj.badgeEl.style.pointerEvents = 'none';
-        }
-        
-        const slotEl = document.querySelector(`.mg-slot[data-slot-idx="${targetIdx}"]`);
-        slotEl.textContent = letterObj.char;
-        slotEl.classList.add('filled');
-        
-        if (i === unlockedLetters.length - 1) {
-          setTimeout(checkWinCondition, 200);
-        }
-      }, i * 150);
-    });
-  }
+        function showVictoryScreen() {
+          createConfetti();
 
-  function checkWinCondition() {
-    if (slots.includes(null)) return;
-    
-    const spelled = slots.map(obj => obj.char).join('');
-    const correctWord = 'CONNGUOI';
-    
-    if (spelled === correctWord) {
-      showVictoryScreen();
-    }
-  }
+          clearBtn.style.display = "none";
+          document.getElementById("mg-solve-btn").style.display = "none";
+          hintMsgEl.textContent = "Từ khóa chính xác! 🎉";
+          hintMsgEl.style.color = "#15803d";
 
-  function showVictoryScreen() {
-    createConfetti();
-    
-    clearBtn.style.display = 'none';
-    document.getElementById('mg-solve-btn').style.display = 'none';
-    hintMsgEl.textContent = 'Từ khóa chính xác! 🎉';
-    hintMsgEl.style.color = '#15803d';
-    
-    document.querySelectorAll('.mg-slot').forEach(s => {
-      s.style.borderColor = '#22c55e';
-      s.style.background = '#dcfce7';
-      s.style.color = '#15803d';
-      s.style.boxShadow = '0 0 12px rgba(34, 197, 94, 0.4)';
-    });
+          document.querySelectorAll(".mg-slot").forEach((s) => {
+            s.style.borderColor = "#22c55e";
+            s.style.background = "#dcfce7";
+            s.style.color = "#15803d";
+            s.style.boxShadow = "0 0 12px rgba(34, 197, 94, 0.4)";
+          });
 
-    cardContainer.innerHTML = `
+          cardContainer.innerHTML = `
       <div class="mg-success-card" style="animation: scaleUpIn 0.5s both;">
         <div class="mg-success-icon">🎉</div>
         <div class="mg-success-title">TỪ KHÓA: CON NGƯỜI</div>
@@ -1609,69 +3293,78 @@ document.addEventListener('touchend',e=>{
         <button class="mg-reset-btn" id="mg-reset-btn">Chơi lại</button>
       </div>
     `;
-    
-    document.getElementById('mg-reset-btn').addEventListener('click', () => {
-      document.querySelectorAll('.mg-slot').forEach(s => {
-        s.style.borderColor = '';
-        s.style.background = '';
-        s.style.color = '';
-        s.style.boxShadow = '';
-      });
-      initGame();
-    });
-  }
 
-  function createConfetti() {
-    const parent = document.getElementById('mg-card-container');
-    const colors = ['#f59e0b', '#3b82f6', '#7c3aed', '#10b981', '#ef4444'];
-    for (let i = 0; i < 40; i++) {
-      const p = document.createElement('div');
-      p.className = 'confetti';
-      p.style.left = (Math.random() * 90) + '%';
-      p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-      p.style.animationDelay = (Math.random() * 1.5) + 's';
-      p.style.width = (6 + Math.random() * 6) + 'px';
-      p.style.height = p.style.width;
-      parent.appendChild(p);
-      
-      setTimeout(() => p.remove(), 4000);
-    }
-  }
+          document
+            .getElementById("mg-reset-btn")
+            .addEventListener("click", () => {
+              document.querySelectorAll(".mg-slot").forEach((s) => {
+                s.style.borderColor = "";
+                s.style.background = "";
+                s.style.color = "";
+                s.style.boxShadow = "";
+              });
+              initGame();
+            });
+        }
 
-  clearBtn.addEventListener('click', () => {
-    slots.fill(null);
-    unlockedLetters.forEach(letterObj => {
-      letterObj.placed = false;
-      letterObj.slotIdx = -1;
-      if (letterObj.badgeEl) {
-        letterObj.badgeEl.style.opacity = '1';
-        letterObj.badgeEl.style.pointerEvents = 'auto';
-      }
-    });
-    
-    document.querySelectorAll('.mg-slot').forEach(slot => {
-      slot.textContent = '?';
-      slot.classList.remove('filled');
-    });
-  });
+        function createConfetti() {
+          const parent = document.getElementById("mg-card-container");
+          const colors = [
+            "#f59e0b",
+            "#3b82f6",
+            "#7c3aed",
+            "#10b981",
+            "#ef4444",
+          ];
+          for (let i = 0; i < 40; i++) {
+            const p = document.createElement("div");
+            p.className = "confetti";
+            p.style.left = Math.random() * 90 + "%";
+            p.style.backgroundColor =
+              colors[Math.floor(Math.random() * colors.length)];
+            p.style.animationDelay = Math.random() * 1.5 + "s";
+            p.style.width = 6 + Math.random() * 6 + "px";
+            p.style.height = p.style.width;
+            parent.appendChild(p);
 
-  // Toggle keyword hint
-  const kwHintBtn = document.getElementById('mg-keyword-hint-btn');
-  const kwHintText = document.getElementById('mg-keyword-hint-text');
-  kwHintBtn.addEventListener('click', () => {
-    if (kwHintText.style.display === 'none') {
-      kwHintText.style.display = 'block';
-      kwHintBtn.textContent = '🙈 Ẩn gợi ý';
-    } else {
-      kwHintText.style.display = 'none';
-      kwHintBtn.textContent = '💡 Xem gợi ý';
-    }
-  });
+            setTimeout(() => p.remove(), 4000);
+          }
+        }
 
-  initGame();
-})();
+        clearBtn.addEventListener("click", () => {
+          slots.fill(null);
+          unlockedLetters.forEach((letterObj) => {
+            letterObj.placed = false;
+            letterObj.slotIdx = -1;
+            if (letterObj.badgeEl) {
+              letterObj.badgeEl.style.opacity = "1";
+              letterObj.badgeEl.style.pointerEvents = "auto";
+            }
+          });
 
-ui();
-</script>
-</body>
+          document.querySelectorAll(".mg-slot").forEach((slot) => {
+            slot.textContent = "?";
+            slot.classList.remove("filled");
+          });
+        });
+
+        // Toggle keyword hint
+        const kwHintBtn = document.getElementById("mg-keyword-hint-btn");
+        const kwHintText = document.getElementById("mg-keyword-hint-text");
+        kwHintBtn.addEventListener("click", () => {
+          if (kwHintText.style.display === "none") {
+            kwHintText.style.display = "block";
+            kwHintBtn.textContent = "🙈 Ẩn gợi ý";
+          } else {
+            kwHintText.style.display = "none";
+            kwHintBtn.textContent = "💡 Xem gợi ý";
+          }
+        });
+
+        initGame();
+      })();
+
+      ui();
+    </script>
+  </body>
 </html>
